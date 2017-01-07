@@ -277,6 +277,59 @@
 }
 
 
+.special {
+  position: relative;
+  height: 980px;
+  min-height: 980px;
+  padding-top: 340px;
+}
+
+
+.special__row {
+  position: relative;
+  width: 50%;
+}
+
+
+.special__img {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.special__title {
+  position: absolute;
+  left: -800px;
+  top: -150px;
+  z-index: 0;
+  width: 100%;
+  white-space: nowrap;
+}
+
+
+.special__wrap {
+  float: right;
+  width: 54.5%;
+}
+
+
+.special__sub-title {
+  padding-top: 40px;
+  padding-bottom: 150px;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.special__btn {
+  display: block;
+}
+
+
 .internal-container,
 .container,
 .container-fluid {
@@ -356,11 +409,19 @@
 }
 
 
+.special {
+  background-color: #232323;
+}
+
+
 .main__title {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -369,6 +430,11 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+
+.main__title_white .main__title-text {
+  color: #fff;
 }
 
 
@@ -407,6 +473,15 @@
 
 .main__title-text_color {
   color: #232323;
+}
+
+
+.big__title {
+  font-size: 150px;
+  font-family: "Proxima Nova Black";
+  text-transform: uppercase;
+  color: #4e4e4e;
+  opacity: .1;
 }
 
 
@@ -453,7 +528,7 @@
 .btn-icon {
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 20px;
   background-image: url(../img/sprite_AKENORI.png);
   background-position: 0px -27px;
   width: 19px;

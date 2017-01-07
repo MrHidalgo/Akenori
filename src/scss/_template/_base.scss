@@ -13,6 +13,7 @@ $c-nero             : return-value(color, nero);
 $c-pinkSwan         : return-value(color, pinkSwan);
 $c-silver           : return-value(color, silver);
 $c-ruby             : return-value(color, ruby);
+$c-matterhorn       : return-value(color, matterhorn);
 
 $f-PN_bold          : return-value(fonts, PN_bold);
 $f-PN_black         : return-value(fonts, PN_black);
@@ -24,13 +25,23 @@ $f-PN_black         : return-value(fonts, PN_black);
 	background-color: $c-magnolia;
 }
 //- bg block dark
-
+.special {
+	background-color: $c-nero;
+}
 
 //- main titile
 .main__title {
 	display: flex;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
+
+
+	&_white {
+		.main__title-text {
+			color: $c-white;
+		}
+	}
 
 
 	&-icon {
@@ -59,6 +70,17 @@ $f-PN_black         : return-value(fonts, PN_black);
 			color: $c-nero;
 		}
 	}
+}
+
+//- big title
+.big__title {
+	font: {
+		size: 150px;
+		family: $f-PN_black;
+	}
+	text-transform: uppercase;
+	color: $c-matterhorn;
+	opacity: .1;
 }
 
 //- btn
@@ -93,7 +115,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&-icon {
 		position: absolute;
 		top: 15px;
-		right: 15px;
+		right: 20px;
 		@include retina-sprite($sp-i-btn-group);
 	}
 }

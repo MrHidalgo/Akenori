@@ -21,8 +21,8 @@ mixin headSite(titleName, styleFile, arrFontName)
             link(href= arrFontName[j], rel='stylesheet')
 
 //- MAIN TITLE
-mixin mainTitle(titleText)
-    .main__title
+mixin mainTitle(classNameColorText, titleText)
+    div(class="main__title main__title_" + classNameColorText)
         i.main__title-icon
         i.main__title-line
         p.main__title-text!= titleText
