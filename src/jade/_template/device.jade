@@ -1,0 +1,37 @@
+-
+    var deviceTitle = "<span class='main__title-text_color'>Самое инновационное устройство</span> </br> в мире для вашего авто";
+
+    var deviceText = [
+        "Флагманская камера Sony, снимающая настоящее Full HD видео",
+        "Удобное и понятное управление с Вашего смартфона",
+        "3 в 1: GPS, Glonass и оповещение про камерахы и превышениие скорости",
+        "Запатентованная AKENORI технология ‘Dark Room’, обеспечивающая максимально четкую съемку ночью"
+    ];
+
+.device
+
+    +mainTitle("gray", deviceTitle)
+
+    img(
+        src="./img/img-device.png"
+        title="image device car"
+        alt="image device car"
+        class="device__img"
+    )
+
+    .container-fluid.clearfix
+        .device__row
+
+            +mainListBig("device", 4, deviceText)
+
+            a(
+                href="javascript:void(0);"
+                title="buy"
+                class="device__btn btn-buy btn")
+                | купить
+                i.btn-icon
+
+            .device__price
+                i.device__price-icon
+                i.device__price-line
+                p.device__price-num!= "15 000"

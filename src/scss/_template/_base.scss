@@ -21,7 +21,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 /// MAIN
 ///
 //- bg block light
-.difference {
+.difference,
+.device {
 	background-color: $c-magnolia;
 }
 //- bg block dark
@@ -165,6 +166,19 @@ $f-PN_black         : return-value(fonts, PN_black);
 			(2, $sp-i-list-diff-2-group)
 {
 	.main__list-diff {
+		.main__icon-#{$className} {
+			@include retina-sprite($imgName);
+		}
+	}
+}
+//- device
+@each $className, $imgName in
+			(0, $sp-i-list-device-0-group),
+			(1, $sp-i-list-device-1-group),
+			(2, $sp-i-list-device-2-group),
+			(3, $sp-i-list-device-3-group)
+{
+	.main__list-device {
 		.main__icon-#{$className} {
 			@include retina-sprite($imgName);
 		}
