@@ -389,7 +389,7 @@
 
 .device__price-icon {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -79px;
+  background-position: 0px -104px;
   width: 18px;
   height: 18px;
 }
@@ -398,7 +398,7 @@
   
   .device__price-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
@@ -425,7 +425,7 @@
   top: -3px;
   margin-left: 10px;
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -54px;
+  background-position: 0px -79px;
   width: 15px;
   height: 20px;
 }
@@ -434,7 +434,7 @@
   
   .device__price-num:after {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
@@ -550,7 +550,7 @@
 
 .main__title-icon {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -102px;
+  background-position: 0px -143px;
   width: 28px;
   height: 28px;
 }
@@ -559,7 +559,7 @@
   
   .main__title-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
@@ -630,7 +630,7 @@
   
   .btn:hover .btn-icon, .btn:active .btn-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
@@ -649,7 +649,7 @@
   
   .btn-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
@@ -700,7 +700,7 @@
 
 .main__list-diff .main__icon-0 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -381px;
+  background-position: 0px -468px;
   width: 56px;
   height: 56px;
 }
@@ -709,14 +709,14 @@
   
   .main__list-diff .main__icon-0 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
 
 .main__list-diff .main__icon-1 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -442px;
+  background-position: 0px -529px;
   width: 60px;
   height: 56px;
 }
@@ -725,14 +725,14 @@
   
   .main__list-diff .main__icon-1 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
 
 .main__list-diff .main__icon-2 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -503px;
+  background-position: 0px -590px;
   width: 68px;
   height: 45px;
 }
@@ -741,14 +741,14 @@
   
   .main__list-diff .main__icon-2 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
 
 .main__list-device .main__icon-0 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -135px;
+  background-position: 0px -222px;
   width: 58px;
   height: 58px;
 }
@@ -757,14 +757,14 @@
   
   .main__list-device .main__icon-0 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
 
 .main__list-device .main__icon-1 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -198px;
+  background-position: 0px -285px;
   width: 74px;
   height: 56px;
 }
@@ -773,14 +773,14 @@
   
   .main__list-device .main__icon-1 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
 
 .main__list-device .main__icon-2 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -259px;
+  background-position: 0px -346px;
   width: 76px;
   height: 56px;
 }
@@ -789,14 +789,14 @@
   
   .main__list-device .main__icon-2 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
 
 .main__list-device .main__icon-3 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -320px;
+  background-position: 0px -407px;
   width: 56px;
   height: 56px;
 }
@@ -805,7 +805,7 @@
   
   .main__list-device .main__icon-3 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 76px 548px;
+    background-size: 128px 1947px;
   }
 }
 
