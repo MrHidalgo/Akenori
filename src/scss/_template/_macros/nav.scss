@@ -9,68 +9,6 @@
 $w-all              : return-value(dimension, all);
 
 $c-white            : return-value(color, white);
-$c-bunting          : return-value(color, bunting);
-$c-fireEngineRed    : return-value(color, fireEngineRed);
-
-$f-PN_bold          : return-value(fonts, PN_bold);
 ///
 /// MAIN
 ///
-.nav {
-	display: inline-block;
-	margin-left: 120px;
-	height: 124px;
-	line-height: 124px;
-	vertical-align: top;
-	@include respond-to(medium-all) {
-		line-height: 1.4;
-	}
-
-
-	&__row {
-		@include respond-to(medium-all) {
-			display: none;
-			padding-top: 80px;
-			text-align: center;
-			position: fixed;
-			z-index: 10;
-			overflow-y: auto;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: #fff;
-		}
-
-		&.animated {
-			display: block;
-		}
-	}
-
-
-	&__btn {
-		font: {
-			size: 13px;
-			family: $f-PN_bold;
-		}
-		color: $c-bunting;
-		margin-right: 50px;
-		@include respond-to(medium-all) {
-			display: block;
-			margin-right: 0;
-			padding-top: 15px;
-			padding-bottom: 15px;
-		}
-
-
-		&:hover {
-			color: $c-fireEngineRed;
-			transition: all .3s ease-in;
-		}
-
-
-		&.active {
-			color: $c-fireEngineRed;
-		}
-	}
-}
