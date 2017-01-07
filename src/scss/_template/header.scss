@@ -4,6 +4,8 @@
 @import "../_mixin/mixin";
 @import "../_function/function";
 
+@import "./_macros/headerFixed";
+@import "./_macros/register";
 @import "./_macros/logotype";
 @import "./_macros/nav";
 ///
@@ -13,29 +15,77 @@ $w-all              : return-value(dimension, all);
 
 $c-white            : return-value(color, white);
 $c-nero             : return-value(color, nero);
+$c-eclipse          : return-value(color, eclipse);
+$c-pinkSwan         : return-value(color, pinkSwan);
+$c-veryLightGrey    : return-value(color, veryLightGrey);
+
+$f-PN_light         : return-value(fonts, PN_light);
 ///
 /// MAIN BLOCK
 ///
 .header {
 	position: relative;
 	min-height: 100vh;
-	background: rgb(35,35,35);
-	background-image: -ms-linear-gradient(top, #232323 0%, #232323 45%, #232323 47%, #3C3C3C 65%, #3C3C3C 67%, #3c3c3c 70%, #232323 90%, #232323 100%);
-	background-image: -moz-linear-gradient(top, #232323 0%, #232323 45%, #232323 47%, #3C3C3C 65%, #3C3C3C 67%, #3c3c3c 70%, #232323 90%, #232323 100%);
-	background-image: -o-linear-gradient(top, #232323 0%, #232323 45%, #232323 47%, #3C3C3C 65%, #3C3C3C 67%, #3c3c3c 70%, #232323 90%, #232323 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #232323), color-stop(45, #232323), color-stop(47, #232323), color-stop(65, #3C3C3C), color-stop(67, #3C3C3C), color-stop(70, #3c3c3c), color-stop(90, #232323), color-stop(100, #232323));
-	background-image: -webkit-linear-gradient(top, #232323 0%, #232323 45%, #232323 47%, #3C3C3C 65%, #3C3C3C 67%, #3c3c3c 70%, #232323 90%, #232323 100%);
-	background-image: linear-gradient(to bottom, #232323 0%, #232323 45%, #232323 47%, #3C3C3C 65%, #3C3C3C 67%, #3c3c3c 70%, #232323 90%, #232323 100%);
+	background: $c-nero;
+	//background-image: -ms-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
+	//background-image: -moz-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
+	//background-image: -o-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
+	//background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $c-nero), color-stop(45, $c-nero), color-stop(47, $c-nero), color-stop(65, $c-eclipse), color-stop(67, $c-eclipse), color-stop(70, $c-eclipse), color-stop(90, $c-nero), color-stop(100, $c-nero));
+	//background-image: -webkit-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
+	//background-image: linear-gradient(to bottom, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
 
 
-	&__fixed {
-		height: 140px;
-		background: rgb(35,35,35);
-
-
-		&-logo {
-			margin-top: 59px;
-			float: left;
+	&__title {
+		font: {
+			size: 25px;
+			family: $f-PN_light;
 		}
+		color: $c-veryLightGrey;
+		text-align: center;
+	}
+
+
+	&__line {
+		position: absolute;
+		bottom: -56px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		@include mixinDimensions(1px, 112px);
+		background-color: $c-pinkSwan;
+	}
+
+
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		top: 280px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		@include mixinDimensions(657px, 308px);
+		background-image: url("../img/img-logo-bg.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		//@include mixinDimensions($w-all, 576px);
+		//background: -moz-radial-gradient(center, ellipse cover,  rgba(60,60,60,1) 0%, rgba(0,0,0,0) 100%);
+		//background: -webkit-radial-gradient(center, ellipse cover,  rgba(60,60,60,1) 0%,rgba(0,0,0,0) 100%);
+		//background: radial-gradient(ellipse at center,  rgba(60,60,60,1) 0%,rgba(0,0,0,0) 100%);
+		//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#00000000',GradientType=1 );
+		//background-image: url("../img/img-eclips.png");
+		//background-size: cover;
+		//background-repeat: no-repeat;
+		//background-position: center;
 	}
 }

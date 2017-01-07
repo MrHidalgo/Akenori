@@ -12,23 +12,20 @@ $c-white            : return-value(color, white);
 ///
 /// MAIN BLOCK
 ///
-.logotype {
+.register {
+	position: relative;
+	z-index: 10;
+	padding-top: 20px;
 
 
 	&__img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 
 
-		&-1 {
-			padding-top: 20px;
+		&-0 {
 			padding-bottom: 20px;
-		}
-
-
-		&-0,
-		&-1 {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
 		}
 	}
 }

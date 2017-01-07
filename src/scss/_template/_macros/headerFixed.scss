@@ -1,0 +1,99 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-nero             : return-value(color, nero);
+///
+/// MAIN BLOCK
+///
+.header__fixed {
+	height: 140px;
+	background: $c-nero;
+
+
+	&-logo {
+		margin-top: 59px;
+		float: left;
+	}
+
+
+	&-btn {
+		position: relative;
+		top: 58px;
+		float: right;
+		@include mixinDimensions(34px, 23px);
+
+
+		&:hover {
+			.header__fixed-btn_line-1,
+			.header__fixed-btn_line-2 {
+				width: 34px;
+				transition: all .3s ease-in-out;
+			}
+		}
+
+
+		&.active {
+			transition: all .3s ease-in-out;
+
+
+			.header__fixed-btn_line {
+				&-0,
+				&-1,
+				&-2 {
+					transition: all .3s ease-in-out;
+				}
+
+
+				&-0,
+				&-2 {
+					width: 34px;
+					top: 10.5px;
+				}
+
+
+				&-0 {
+					transform: rotate(-45deg);
+				}
+				&-1 {
+					opacity: 0;
+				}
+				&-2 {
+					transform: rotate(45deg);
+				}
+			}
+
+		}
+
+
+		&_line-0 {
+			width: 34px;
+		}
+		&_line-1 {
+			width: 23px;
+			top: 10px;
+		}
+		&_line-2 {
+			width: 30px;
+			top: 21px;
+		}
+
+
+		&_line-0,
+		&_line-1,
+		&_line-2 {
+			position: absolute;
+			right: 0;
+			height: 2px;
+			background-color: $c-white;
+			transition: all .3s ease-in-out;
+		}
+	}
+}

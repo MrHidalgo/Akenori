@@ -1,0 +1,24 @@
+-
+    var navLink = [
+        "Пункт меню 1",
+        "Пункт меню 2",
+        "Пункт меню 3",
+        "Пункт меню 4",
+        "Пункт меню 5",
+        "Пункт меню 6",
+        "Пункт меню 7",
+        "Пункт меню 8"
+    ];
+
+
+nav.nav
+    .container-fluid
+        ul.nav__list
+            -for(var i = 0; i < navLink.length; i++)
+                li.nav__list
+                    a(
+                        href="javascript:void()0;"
+                        title=""
+                        class="nav__btn"
+                    )!= navLink[i]
+

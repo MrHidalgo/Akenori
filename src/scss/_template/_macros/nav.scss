@@ -9,6 +9,74 @@
 $w-all              : return-value(dimension, all);
 
 $c-white            : return-value(color, white);
+$c-neroLight        : return-value(color, neroLight);
+$c-gainsboro        : return-value(color, gainsboro);
+$c-pinkSwan         : return-value(color, pinkSwan);
+
+$f-PN_bold          : return-value(fonts, PN_bold);
 ///
 /// MAIN
 ///
+.nav {
+	display: none;
+	position: absolute;
+	z-index: 11;
+	top: 140px;
+	left: 0;
+	padding-top: 100px;
+	background-color: $c-neroLight;
+	width: $w-all;
+	height: calc(100% - 140px);
+
+
+	&__list {
+		width: 740px;
+		margin-left: auto;
+		margin-right: auto;
+
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+
+	&__list {
+		width: 50%;
+	}
+
+
+	&__btn {
+		font: {
+			size: 22px;
+			family: $f-PN_bold;
+		}
+		color: $c-gainsboro;
+		text-transform: uppercase;
+		position: relative;
+		height: 40px;
+		line-height: 40px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		transition: all .3s ease-in-out;
+
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 19px;
+			left: -100px;
+			@include mixinDimensions(100px, 1px);
+			background-color: $c-pinkSwan;
+			transition: all .3s ease-in-out;
+		}
+
+
+		&:hover {
+			padding-left: 110px;
+			transition: all .3s ease-in-out;
+
+			&:before {
+				left: 0;
+			}
+		}
+	}
+}
