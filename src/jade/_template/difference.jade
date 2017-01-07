@@ -1,0 +1,34 @@
+include ../_mixin/mixin
+
+
+-
+    var diffTitle = "Этот девайс <span class='main__title-text_color'>отличается от всех</span> </br> видеорегистраторов, что вы видели раньше";
+
+    var diffText = [
+        "Футуристичный инновационный дизайн, объединяющий стиль и функциональность",
+        "Уникальная система крепления – надежность и никаких дребезжаний",
+        "Эффект маскировки – видеорегистратор сливается с интерьером и не портит дизайн салона"
+    ];
+
+
+.difference
+
+    +mainTitle(diffTitle)
+
+    img(
+        src="./img/img-difference.png"
+        title="image difference"
+        alt="image difference"
+        class="difference__img"
+    )
+
+    .container-fluid.clearfix
+        .difference__row
+            +mainListBig("diff", 3, diffText)
+
+            a(
+                href="javascript:void(0);"
+                title="buy"
+                class="difference__btn btn-buy btn")
+                | купить
+                i.btn-icon

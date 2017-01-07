@@ -1,12 +1,150 @@
 @import "../_mixin/mixin";
 @import "../_function/function";
-//@import "../_variable/sprite_MYWGA";
+@import "../_variable/sprite_AKENORI";
 ///
 /// DECLARATION VARIABLE
 ///
 $w-all              : return-value(dimension, all);
 
 $c-white				    : return-value(color, white);
+$c-magnolia         : return-value(color, magnolia);
+$c-dimGray          : return-value(color, dimGray);
+$c-nero             : return-value(color, nero);
+$c-pinkSwan         : return-value(color, pinkSwan);
+$c-silver           : return-value(color, silver);
+$c-ruby             : return-value(color, ruby);
+
+$f-PN_bold          : return-value(fonts, PN_bold);
+$f-PN_black         : return-value(fonts, PN_black);
 ///
 /// MAIN
 ///
+//- bg block light
+.difference {
+	background-color: $c-magnolia;
+}
+//- bg block dark
+
+
+//- main titile
+.main__title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+
+	&-icon {
+		@include retina-sprite($sp-i-eclips-pink-group);
+	}
+
+
+	&-line {
+		@include mixinDimensions(100px, 1px);
+		margin-left: 40px;
+		margin-right: 60px;
+		background-color: $c-pinkSwan;
+	}
+
+
+	&-text {
+		font: {
+			size: 25px;
+			family: $f-PN_bold;
+		}
+		color: $c-dimGray;
+		text-transform: uppercase;
+
+
+		&_color {
+			color: $c-nero;
+		}
+	}
+}
+
+//- btn
+.btn {
+	position: relative;
+	@include mixinDimensions(230px, 56px);
+	line-height: 54px;
+	padding-left: 20px;
+	border: 3px solid $c-ruby;
+	transition: all .3s ease-in-out;
+	text-transform: uppercase;
+	color: $c-ruby;
+	font: {
+		size: 20px;
+		family: $f-PN_black;
+	}
+
+
+	&:hover,
+	&:active {
+		background-color: $c-ruby;
+		color: $c-white;
+		transition: all .3s ease-in-out;
+
+
+		.btn-icon {
+			@include retina-sprite($sp-i-btn-h-group);
+		}
+	}
+
+
+	&-icon {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		@include retina-sprite($sp-i-btn-group);
+	}
+}
+
+//- main list
+.main {
+	&__list {
+		font-family: $f-PN_bold;
+		padding-top: 80px;
+	}
+
+
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 60px;
+	}
+
+
+	&__num {
+		color: $c-silver;
+		font-size: 18px;
+	}
+
+
+	&__line {
+		@include mixinDimensions(30px, 1px);
+		background-color: $c-silver;
+		margin-left: 40px;
+		margin-right: 60px;
+		position: relative;
+		top: 11px;
+	}
+
+
+	&__text {
+		color: $c-nero;
+		font-size: 20px;
+		max-width: 340px;
+		margin-right: 40px;
+	}
+}
+//- diff
+@each $className, $imgName in
+			(0, $sp-i-list-diff-0-group),
+			(1, $sp-i-list-diff-1-group),
+			(2, $sp-i-list-diff-2-group)
+{
+	.main__list-diff {
+		.main__icon-#{$className} {
+			@include retina-sprite($imgName);
+		}
+	}
+}

@@ -47,6 +47,7 @@ $f-PN_light         : return-value(fonts, PN_light);
 
 	&__line {
 		position: absolute;
+		z-index: 10;
 		bottom: -56px;
 		left: 0;
 		right: 0;

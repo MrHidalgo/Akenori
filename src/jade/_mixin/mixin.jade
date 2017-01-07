@@ -19,3 +19,20 @@ mixin headSite(titleName, styleFile, arrFontName)
         //- LINK FONTS
         - for(var j = 0, arrFontNameLength = arrFontName.length; j < arrFontNameLength; j++)
             link(href= arrFontName[j], rel='stylesheet')
+
+//- MAIN TITLE
+mixin mainTitle(titleText)
+    .main__title
+        i.main__title-icon
+        i.main__title-line
+        p.main__title-text!= titleText
+
+//- MAIN LIST BIG
+mixin mainListBig(className, count, arrText)
+    ul(class="main__list main__list-" + className)
+        - for(var i = 0, j = 1; i < count; i++, j++)
+            li.main__item
+                p.main__num!= "0" + j
+                span.main__line
+                p.main__text!= arrText[i]
+                i(class="main__icon main__icon-" + i)
