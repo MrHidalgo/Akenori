@@ -28,7 +28,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 }
 //- bg block dark
 .special,
-.quality {
+.quality,
+.salon {
 	background-color: $c-nero;
 }
 
@@ -200,4 +201,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 			@include retina-sprite($imgName);
 		}
 	}
+}
+
+//- image centered in block
+.img-centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

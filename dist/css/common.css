@@ -612,16 +612,6 @@
 }
 
 
-.quality__wrap-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-
 .quality__wrap-btn {
   position: absolute;
   left: 20px;
@@ -852,6 +842,193 @@
 }
 
 
+
+
+
+
+
+
+.salon {
+  position: relative;
+  padding-top: 140px;
+  min-height: 820px;
+}
+
+
+.salon__title {
+  left: -650px;
+  top: 0;
+}
+
+
+.salon__row {
+  float: left;
+  width: 50%;
+}
+
+
+.salon__wrap {
+  float: right;
+  width: 58%;
+}
+
+
+.salon__sub-title {
+  padding-top: 80px;
+  padding-bottom: 280px;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.salon__btn {
+  display: block;
+}
+
+
+.salon__carousel {
+  position: absolute;
+  right: 0;
+  top: 130px;
+  width: 840px;
+  height: 620px;
+  background-color: #fff;
+  box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.18);
+}
+
+
+.salon__carousel.owl-carousel .owl-item {
+  height: 620px;
+}
+
+
+.salon__carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 840px;
+  height: 620px;
+}
+
+
+.owl-nav {
+  left: -67%;
+}
+
+
+.owl-dots {
+  left: -30%;
+}
+
+
+.owl-dots:after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  right: -150px;
+  width: 100px;
+  height: 2px;
+  background-color: #BEBEBE;
+}
+
+
+.owl-nav, .owl-dots {
+  position: absolute;
+  top: 58%;
+}
+
+
+.owl-prev {
+  margin-right: 40px;
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1272px;
+  width: 13px;
+  height: 30px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .owl-prev {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.owl-prev:hover, .owl-prev:active {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1237px;
+  width: 13px;
+  height: 30px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .owl-prev:hover, .owl-prev:active {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.owl-next {
+  margin-left: 40px;
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -676px;
+  width: 13px;
+  height: 31px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .owl-next {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.owl-next:hover, .owl-next:active {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -640px;
+  width: 13px;
+  height: 31px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .owl-next:hover, .owl-next:active {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.owl-prev, .owl-next {
+  font-size: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.owl-dot {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Proxima Nova Bold";
+}
+
+
+.owl-dot.active {
+  color: #e61e6c;
+}
+
+
 .internal-container,
 .container,
 .container-fluid {
@@ -934,7 +1111,8 @@
 
 
 .special,
-.quality {
+.quality,
+.salon {
   background-color: #232323;
 }
 
@@ -1273,6 +1451,16 @@
     background-image: url(../img/sprite_AKENORI@2x.png);
     background-size: 128px 1947px;
   }
+}
+
+
+.img-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 

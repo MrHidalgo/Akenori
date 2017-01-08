@@ -1,0 +1,160 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-ruby             : return-value(color, ruby);
+$c-silver           : return-value(color, silver);
+
+$f-PN_bold					: return-value(fonts, PN_bold);
+///
+/// MAIN BLOCK
+///
+.salon {
+	position: relative;
+	padding-top: 140px;
+	min-height: 820px;
+
+
+	&__title {
+		left: -650px;
+		top: 0;
+	}
+
+
+	&__row {
+		float: left;
+		width: 50%;
+	}
+
+
+	&__wrap {
+		float: right;
+		width: 58%;
+	}
+
+
+	&__sub-title {
+		padding-top: 80px;
+		padding-bottom: 280px;
+		font-size: 20px;
+		color: $c-white;
+	}
+
+
+	&__btn {
+		display: block;
+	}
+
+
+	&__carousel {
+		position: absolute;
+		right: 0;
+		top: 130px;
+		@include mixinDimensions(840px, 620px);
+		background-color: $c-white;
+		box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
+
+
+		&.owl-carousel {
+			.owl-item {
+				height: 620px;
+			}
+		}
+
+
+		&-item {
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			@include mixinDimensions(840px, 620px);
+		}
+	}
+}
+
+
+.owl {
+
+	&-nav {
+		left: -67%;
+	}
+
+
+	&-dots {
+		left: -30%;
+
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 17px;
+			right: -150px;
+			@include mixinDimensions(100px, 2px);
+			background-color: $c-silver;
+		}
+	}
+
+
+	&-nav,
+	&-dots {
+		position: absolute;
+		top: 58%;
+	}
+
+
+	&-prev {
+		margin-right: 40px;
+		@include retina-sprite($sp-i-prev-group);
+
+
+		&:hover,
+		&:active {
+			@include retina-sprite($sp-i-prev-h-group);
+		}
+	}
+	&-next {
+		margin-left: 40px;
+		@include retina-sprite($sp-i-next-group);
+
+
+		&:hover,
+		&:active {
+			@include retina-sprite($sp-i-next-h-group);
+		}
+	}
+
+
+	&-prev,
+	&-next {
+		font-size: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+
+	&-dot {
+		display: inline-block;
+		vertical-align: middle;
+		padding-top: 6px;
+		margin-left: 10px;
+		margin-right: 10px;
+		color: $c-white;
+		font: {
+			size: 18px;
+			family: $f-PN_bold;
+		}
+
+
+		&.active {
+			color: $c-ruby;
+		}
+	}
+}

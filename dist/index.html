@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Akenori</title>
     <!--link(rel="icon" type="image/png" href="./img/favicon.png")-->
+    <link href="./css/owl.carousel.min.css" rel="stylesheet"/>
     <link href="./css/common.min.css" rel="stylesheet"/>
     <link href="./css/fonts.min.css" rel="stylesheet"/>
   </head>
@@ -30,26 +31,25 @@
     include _template/quality
     
     -->
-    <div class="phone"><img src="./img/img-phone.png" alt="phone hand" title="phone hand" class="phone__img">
-      <div class="container-fluid phone__container clearfix">
-        <div class="main__title main__title_gray"><i class="main__title-icon"></i><i class="main__title-line"></i>
-          <p class="main__title-text">Akenori – первый видеорегистратор, </br> которым вы <span class='main__title-text_color'>можете управлять </br> с iPhone или Android</span> смартфона</p>
-        </div>
-        <div class="phone__row">
-          <ul class="main__list main__list-phone">
-            <li class="main__item">
-              <p class="main__num">01</p><span class="main__line"></span>
-              <p class="main__text">Отправляйте видео и информацию о вашей поездке онлайн на смартфон, почту, мессенджеры или в социальные сети.</p><i class="main__icon main__icon-0"></i>
-            </li>
-            <li class="main__item">
-              <p class="main__num">02</p><span class="main__line"></span>
-              <p class="main__text">Обновляйте прошивку и актуальную информацию о камерах на дорогах</p><i class="main__icon main__icon-1"></i>
-            </li>
-            <li class="main__item">
-              <p class="main__num">03</p><span class="main__line"></span>
-              <p class="main__text">Меняйте настройки видеорегистратора прямо в приложении</p><i class="main__icon main__icon-2"></i>
-            </li>
-          </ul><span class="phone__download">скачать</span><a href="javascript:void(0);" title="" class="phone__btn phone__btn-android"></a><a href="javascript:void(0);" title="" class="phone__btn phone__btn-iphone"></a>
+    <!--block phone
+    include _template/phone
+    
+    -->
+    <div class="salon">
+      <p class="salon__title big__title">Создан специально</p>
+      <div class="owl-carousel salon__carousel">
+        <div class="salon__carousel-item"><img src="./img/img-salon.png" alt="" title="" class="salon__carousel-img img-centered"></div>
+        <div class="salon__carousel-item"><img src="./img/img-salon.png" alt="" title="" class="salon__carousel-img img-centered"></div>
+        <div class="salon__carousel-item"><img src="./img/img-salon.png" alt="" title="" class="salon__carousel-img img-centered"></div>
+      </div>
+      <div class="container-fluid clearfix">
+        <div class="salon__row clearfix">
+          <div class="main__title main__title_white"><i class="main__title-icon"></i><i class="main__title-line"></i>
+            <p class="main__title-text">AKENORI органично </br> сливается с интерьером </br> салона и не привлекает </br> к себе лишнее внимание</p>
+          </div>
+          <div class="salon__wrap">
+            <p class="salon__sub-title">Больше никаких громоздких устройств </br> на лобовом стекле! </p><a href="javascript:void(0);" title="buy" class="salon__btn btn-buy btn">купить<i class="btn-icon"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -60,6 +60,7 @@
     
     -->
     <script src="./script/jquery-1.11.1.min.js"></script>
+    <script src="./script/owl.carousel.min.js"></script>
     <script src="./script/main.min.js"></script>
   </body>
 </html>

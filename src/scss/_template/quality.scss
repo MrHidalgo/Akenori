@@ -142,14 +142,6 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		}
 
 
-		&-img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-
 		&-btn {
 			position: absolute;
 			left: 20px;

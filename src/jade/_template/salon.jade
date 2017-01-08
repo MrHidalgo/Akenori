@@ -1,0 +1,37 @@
+-
+    var salonTitle = "AKENORI органично </br> сливается с интерьером </br> салона и не привлекает </br> к себе лишнее внимание";
+
+    var salonSubTitle = "Больше никаких громоздких устройств </br> на лобовом стекле! "
+
+
+.salon
+
+    p.salon__title.big__title!= "Создан специально"
+
+    .owl-carousel.salon__carousel
+        - for(var i = 0; i < 3; i++)
+            .salon__carousel-item
+                img(
+                    src="./img/img-salon.png"
+                    alt=""
+                    title=""
+                    class="salon__carousel-img img-centered"
+                )
+
+    .container-fluid.clearfix
+        .salon__row.clearfix
+
+            +mainTitle("white", salonTitle)
+
+            .salon__wrap
+
+                p.salon__sub-title!= salonSubTitle
+
+                a(
+                    href="javascript:void(0);"
+                    title="buy"
+                    class="salon__btn btn-buy btn"
+                )
+                    | купить
+                    i.btn-icon
+
