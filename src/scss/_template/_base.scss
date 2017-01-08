@@ -29,7 +29,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 //- bg block dark
 .special,
 .quality,
-.salon {
+.salon,
+.nature,
+.city {
 	background-color: $c-nero;
 }
 
@@ -209,4 +211,41 @@ $f-PN_black         : return-value(fonts, PN_black);
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+//- small list
+.small {
+	&__list {
+		margin-top: 100px;
+		width: 680px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+
+	&__item {
+		width: 50%;
+		padding: 0 10px 20px;
+		color: $c-pinkSwan;
+		display: flex;
+		flex: 1px 300px;
+	}
+
+
+	&__icon {
+		display: inline-block;
+		@include retina-sprite($sp-i-eclips-pink-small-group);
+
+
+		&-wrap {
+			width: 30px;
+		}
+	}
+
+
+	&__text {
+		width: calc(100% - 30px);
+	}
 }

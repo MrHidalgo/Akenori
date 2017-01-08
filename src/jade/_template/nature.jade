@@ -1,0 +1,28 @@
+-
+    var natureTitle = "Яркие впечатления </br> на природе";
+
+    var natureText = [
+        "Снимайте на память свои загородные поездки в формате FULL HD",
+        "Самые красивые пейзажи можно сразу же скачать на смартфон и поделиться в соцсетях",
+        "Надежное крепление, которое не отвалится и не будет дребезжать",
+        "Защита от пыли, грязи и других повреждение"
+    ];
+
+.nature
+
+    p.nature__title.big__title!= "Яркие впечатления на природе"
+
+    .nature__img-wrap
+
+        img(
+            src="./img/img-nature.png"
+            alt=""
+            title=""
+            class="nature__img img-centered"
+        )
+
+    .container-fluid.clearfix
+        .nature__row
+            +mainTitle("white", natureTitle)
+
+            +smallList(natureText)

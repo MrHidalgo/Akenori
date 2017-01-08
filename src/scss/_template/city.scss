@@ -1,0 +1,48 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+///
+/// MAIN BLOCK
+///
+.city {
+	position: relative;
+	min-height: 620px;
+
+
+	&__img {
+
+		&-wrap {
+			position: absolute;
+			top: -80px;
+			right: 0;
+			overflow: hidden;
+			@include mixinDimensions(840px, 620px);
+		}
+	}
+
+
+	&__title {
+		top: 0;
+		left: -10%;
+	}
+
+
+	&__row {
+		float: left;
+		padding-top: 100px;
+		width: 50%;
+		padding-left: 15%;
+
+		.main__title {
+			justify-content: flex-start;
+		}
+	}
+}

@@ -1029,6 +1029,83 @@
 }
 
 
+.nature {
+  position: relative;
+  min-height: 700px;
+  padding-top: 20px;
+}
+
+
+.nature__img-wrap {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  overflow: hidden;
+  width: 840px;
+  height: 620px;
+}
+
+
+.nature__title {
+  top: 0;
+  left: 35%;
+  line-height: 1;
+}
+
+
+.nature__row {
+  float: right;
+  padding-top: 60px;
+  width: 55%;
+}
+
+
+.nature__row .main__title {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+
+.city {
+  position: relative;
+  min-height: 620px;
+}
+
+
+.city__img-wrap {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  overflow: hidden;
+  width: 840px;
+  height: 620px;
+}
+
+
+.city__title {
+  top: 0;
+  left: -10%;
+}
+
+
+.city__row {
+  float: left;
+  padding-top: 100px;
+  width: 50%;
+  padding-left: 15%;
+}
+
+
+.city__row .main__title {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+
 .internal-container,
 .container,
 .container-fluid {
@@ -1112,7 +1189,9 @@
 
 .special,
 .quality,
-.salon {
+.salon,
+.nature,
+.city {
   background-color: #232323;
 }
 
@@ -1461,6 +1540,69 @@
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+
+.small__list {
+  margin-top: 100px;
+  width: 680px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+
+.small__item {
+  width: 50%;
+  padding: 0 10px 20px;
+  color: #b7b7b7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1px;
+  -webkit-flex: 1px 300px;
+      -ms-flex: 1px 300px;
+          flex: 1px 300px;
+}
+
+
+.small__icon {
+  display: inline-block;
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -127px;
+  width: 11px;
+  height: 11px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .small__icon {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.small__icon-wrap {
+  width: 30px;
+}
+
+
+.small__text {
+  width: calc(100% - 30px);
 }
 
 

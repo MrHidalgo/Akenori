@@ -37,7 +37,7 @@ $(document).ready(function(){
         //         items: 3
         //     }
         // }
-    })
+    });
     var count = 1;
     $(".owl-dot").each(function(){
         $(this).find("span").text("0" + count);

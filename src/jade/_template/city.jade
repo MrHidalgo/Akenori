@@ -1,0 +1,28 @@
+-
+    var cityTitle = "Безопасность </br> и стиль в городе";
+
+    var cityText = [
+        "FULL HD видео, где можно рассмотреть мельчайшие детали, в том числе и номера машин",
+        "Уникальная технология ‘Dark Room’, обеспечивающая максимально высокое качество сьемки ночью",
+        "Управляйте видеорегистратором и всеми видеозаписями со своего смартфона",
+        "GPS и уведомления о ближайших камерах фиксации скорости – избавьтесь от штрафов"
+    ];
+
+.city
+
+    p.city__title.big__title!= "Безопасность и стиль в городе"
+
+    .city__img-wrap
+
+        img(
+            src="./img/img-city.png"
+            alt=""
+            title=""
+            class="city__img img-centered"
+        )
+
+    .container-fluid.clearfix
+        .city__row
+            +mainTitle("white", natureTitle)
+
+            +smallList(natureText)
