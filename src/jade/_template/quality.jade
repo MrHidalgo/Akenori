@@ -1,0 +1,75 @@
+-
+    var qualityTitle = "Оцените качество съемки </br> AKENORI прямо сейчас!";
+
+    var qualityWrapText = [
+        "Четкая картинка, без </br> бликов и засвечиваний днем",
+        "Качественная съемка и </br> полная видимость на дороге </br> ночью"
+    ];
+
+    var qualityWrapImg = [
+        "./img/img-quality-0.png",
+        "./img/img-quality-1.png"
+    ];
+
+
+mixin qualityWrap(arrText, arrImg)
+    .quality__wrap
+        .quality__wrap-left
+            .quality__wrap-line
+            p.quality__wrap-text!= arrText[i]
+        .quality__wrap-right
+            img(
+                src= arrImg[i]
+                alt=""
+                title=""
+                class="quality__wrap-img"
+            )
+
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="quality__wrap-btn"
+            )
+
+
+.quality
+
+    img(
+        src="./img/img-quality.png"
+        alt="image device"
+        title="image device"
+        class="quality__img"
+    )
+
+    img(
+        src="./img/img-register-shadow.png"
+        alt="image device"
+        title="image device"
+        class="quality__img-shadow"
+    )
+
+    p.quality__title.big__title!= "Оцените качество съемки"
+
+    .container-fluid.clearfix
+        .quality__row
+
+            +mainTitle("white", qualityTitle)
+
+            - for(var i = 0; i < qualityWrapText.length; i++)
+                +qualityWrap(qualityWrapText, qualityWrapImg)
+
+            .quality__bottom
+
+                a(
+                    href="javascript:void(0);"
+                    title="buy"
+                    class="quality__btn btn-buy btn"
+                )
+                    | купить
+                    i.btn-icon
+
+                .quality__wrap-price
+                    .quality__price
+                        i.quality__price-icon
+                        i.quality__price-line
+                        p.quality__price-num!= "15 000"

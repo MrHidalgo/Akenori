@@ -22,11 +22,13 @@ $f-PN_black         : return-value(fonts, PN_black);
 ///
 //- bg block light
 .difference,
-.device {
+.device,
+.phone {
 	background-color: $c-magnolia;
 }
 //- bg block dark
-.special {
+.special,
+.quality {
 	background-color: $c-nero;
 }
 
@@ -82,6 +84,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 	text-transform: uppercase;
 	color: $c-matterhorn;
 	opacity: .1;
+	white-space: nowrap;
+	position: absolute;
+	z-index: 0;
 }
 
 //- btn
@@ -179,6 +184,18 @@ $f-PN_black         : return-value(fonts, PN_black);
 			(3, $sp-i-list-device-3-group)
 {
 	.main__list-device {
+		.main__icon-#{$className} {
+			@include retina-sprite($imgName);
+		}
+	}
+}
+//- phone
+@each $className, $imgName in
+			(0, $sp-i-phone-0-group),
+			(1, $sp-i-phone-1-group),
+			(2, $sp-i-phone-2-group)
+{
+	.main__list-phone {
 		.main__icon-#{$className} {
 			@include retina-sprite($imgName);
 		}

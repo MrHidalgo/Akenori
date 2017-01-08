@@ -1,0 +1,126 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-ruby             : return-value(color, ruby);
+
+$f-PN_black         : return-value(fonts, PN_black);
+///
+/// MAIN BLOCK
+///
+.phone {
+	min-height: 900px;
+	position: relative;
+	padding-top: 150px;
+
+
+	&__img {
+		position: absolute;
+		z-index: 0;
+		bottom: 0;
+		left: 200px;
+	}
+
+
+	&__container {
+		position: relative;
+		z-index: 10;
+	}
+
+
+	&__row {
+		float: right;
+		width: 50%;
+	}
+
+
+	&__download {
+		display: inline-block;
+		vertical-align: middle;
+		text-transform: uppercase;
+		margin-right: 40px;
+		font: {
+			size: 20px;
+			family: $f-PN_black;
+		}
+		color: $c-ruby;
+	}
+
+
+	&__btn {
+		display: inline-block;
+		margin-right: -.32em;
+		vertical-align: middle;
+		position: relative;
+		height: 56px;
+		width: (230 / 2) * 1px;
+		border-top: 3px solid $c-ruby;
+		border-bottom: 3px solid $c-ruby;
+
+
+		&-android,
+		&-iphone {
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+
+
+			&:hover {
+				background-color: $c-ruby;
+			}
+		}
+
+
+		&-android {
+			border-left: 3px solid $c-ruby;
+			border-right: 3px solid $c-ruby;
+
+
+			&:before {
+				@include retina-sprite($sp-i-phone-android-group);
+			}
+			&:hover {
+				&:before {
+					@include retina-sprite($sp-i-phone-android-h-group);
+				}
+			}
+			&:active {
+				&:before {
+					@include retina-sprite($sp-i-phone-android-a-group);
+				}
+			}
+		}
+		&-iphone {
+			border-right: 3px solid $c-ruby;
+
+
+			&:before {
+				@include retina-sprite($sp-i-phone-iphone-group);
+			}
+			&:hover {
+				&:before {
+					@include retina-sprite($sp-i-phone-iphone-h-group);
+				}
+			}
+			&:active {
+				&:before {
+					@include retina-sprite($sp-i-phone-iphone-a-group);
+				}
+			}
+		}
+	}
+}

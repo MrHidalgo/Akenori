@@ -1,0 +1,39 @@
+-
+    var phoneTitle = "Akenori – первый видеорегистратор, </br> которым вы <span class='main__title-text_color'>можете управлять </br> с iPhone или Android</span> смартфона";
+
+    var phoneText = [
+        "Отправляйте видео и информацию о вашей поездке онлайн на смартфон, почту, мессенджеры или в социальные сети.",
+        "Обновляйте прошивку и актуальную информацию о камерах на дорогах",
+        "Меняйте настройки видеорегистратора прямо в приложении"
+    ];
+
+.phone
+
+    img(
+        src="./img/img-phone.png"
+        alt="phone hand"
+        title="phone hand"
+        class="phone__img"
+    )
+
+    .container-fluid.phone__container.clearfix
+
+        +mainTitle("gray", phoneTitle)
+
+        .phone__row
+            +mainListBig("phone", 3, phoneText)
+
+
+            span.phone__download!= "скачать"
+
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="phone__btn phone__btn-android"
+            )
+
+            a(
+                href="javascript:void(0);"
+                title=""
+                class="phone__btn phone__btn-iphone"
+            )
