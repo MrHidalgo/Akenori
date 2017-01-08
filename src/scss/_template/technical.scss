@@ -1,0 +1,32 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+///
+/// MAIN BLOCK
+///
+.technical {
+	position: relative;
+	min-height: 1320px;
+	padding-top: 100px;
+
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+
+	&__row {
+		float: right;
+		width: 50%;
+	}
+}

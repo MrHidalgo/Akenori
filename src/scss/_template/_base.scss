@@ -23,7 +23,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 //- bg block light
 .difference,
 .device,
-.phone {
+.phone,
+.technical {
 	background-color: $c-magnolia;
 }
 //- bg block dark
@@ -147,13 +148,14 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__num {
 		color: $c-silver;
 		font-size: 18px;
+		width: 40px;
 	}
 
 
 	&__line {
 		@include mixinDimensions(30px, 1px);
 		background-color: $c-silver;
-		margin-left: 40px;
+		margin-left: 20px;
 		margin-right: 60px;
 		position: relative;
 		top: 11px;
@@ -163,8 +165,20 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__text {
 		color: $c-nero;
 		font-size: 20px;
+		flex: 1 340px;
 		max-width: 340px;
 		margin-right: 40px;
+	}
+
+
+	&__icon {
+		display: inline-block;
+
+
+		&-wrap {
+			width: 130px;
+			text-align: center;
+		}
 	}
 }
 //- diff
@@ -199,6 +213,25 @@ $f-PN_black         : return-value(fonts, PN_black);
 			(2, $sp-i-phone-2-group)
 {
 	.main__list-phone {
+		.main__icon-#{$className} {
+			@include retina-sprite($imgName);
+		}
+	}
+}
+//- technical
+@each $className, $imgName in
+			(0, $sp-i-technical-0-group),
+			(1, $sp-i-technical-1-group),
+			(2, $sp-i-technical-2-group),
+			(3, $sp-i-technical-3-group),
+			(4, $sp-i-technical-4-group),
+			(5, $sp-i-technical-5-group),
+			(6, $sp-i-technical-6-group),
+			(7, $sp-i-technical-7-group),
+			(8, $sp-i-technical-8-group),
+			(9, $sp-i-technical-9-group)
+{
+	.main__list-technical {
 		.main__icon-#{$className} {
 			@include retina-sprite($imgName);
 		}

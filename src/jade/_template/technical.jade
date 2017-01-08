@@ -1,0 +1,31 @@
+-
+    var technicalTitle = "<span class='main__title-text_color'>Технические особенности</span> AKENORI";
+
+    var technicalText = [
+        "FULL HD видео",
+        "Уникальная технология Dark Room для ночной съемки",
+        "GPS модуль",
+        "Отслеживание скорости и ускорения авто",
+        "Звуковое оповещение про камеры и превышение скорости",
+        "Надежное крепление без дребезжаний",
+        "Функция экстренного сохранения данных на внутренний защищенный носитель",
+        "Корпус, защищенный от пыли и ударов",
+        "Комплектующие из Японии и США",
+        "Никаких громоздких креплений и экранов, портящих салон"
+    ];
+
+.technical
+
+    img(
+        src="./img/img-technical.png"
+        alt=""
+        title=""
+        class="technical__img"
+    )
+
+    +mainTitle("gray", technicalTitle)
+
+    .container-fluid.clearfix
+        .technical__row
+
+            +mainListBig("technical", 10, technicalText)

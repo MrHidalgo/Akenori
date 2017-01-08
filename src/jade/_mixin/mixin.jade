@@ -35,7 +35,8 @@ mixin mainListBig(className, count, arrText)
                 p.main__num!= "0" + j
                 span.main__line
                 p.main__text!= arrText[i]
-                i(class="main__icon main__icon-" + i)
+                .main__icon-wrap
+                    i(class="main__icon main__icon-" + i)
 
 //- SMALL LIST
 mixin smallList(arrText)

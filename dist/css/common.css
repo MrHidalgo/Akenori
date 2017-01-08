@@ -1106,6 +1106,26 @@
 }
 
 
+.technical {
+  position: relative;
+  min-height: 1320px;
+  padding-top: 100px;
+}
+
+
+.technical__img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+.technical__row {
+  float: right;
+  width: 50%;
+}
+
+
 .internal-container,
 .container,
 .container-fluid {
@@ -1182,7 +1202,8 @@
 
 .difference,
 .device,
-.phone {
+.phone,
+.technical {
   background-color: #f1f0f3;
 }
 
@@ -1351,6 +1372,7 @@
 .main__num {
   color: #BEBEBE;
   font-size: 18px;
+  width: 40px;
 }
 
 
@@ -1358,7 +1380,7 @@
   width: 30px;
   height: 1px;
   background-color: #BEBEBE;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-right: 60px;
   position: relative;
   top: 11px;
@@ -1368,8 +1390,23 @@
 .main__text {
   color: #232323;
   font-size: 20px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 340px;
+      -ms-flex: 1 340px;
+          flex: 1 340px;
   max-width: 340px;
   margin-right: 40px;
+}
+
+
+.main__icon {
+  display: inline-block;
+}
+
+
+.main__icon-wrap {
+  width: 130px;
+  text-align: center;
 }
 
 
@@ -1527,6 +1564,166 @@
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   
   .main__list-phone .main__icon-2 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-0 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1307px;
+  width: 72px;
+  height: 58px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-0 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-1 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1370px;
+  width: 55px;
+  height: 57px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-1 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-2 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1432px;
+  width: 94px;
+  height: 58px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-2 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-3 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1495px;
+  width: 97px;
+  height: 63px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-3 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-4 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1563px;
+  width: 60px;
+  height: 56px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-4 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-5 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1624px;
+  width: 58px;
+  height: 55px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-5 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-6 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1684px;
+  width: 73px;
+  height: 58px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-6 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-7 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1747px;
+  width: 73px;
+  height: 57px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-7 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-8 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1809px;
+  width: 57px;
+  height: 59px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-8 {
+    background-image: url(../img/sprite_AKENORI@2x.png);
+    background-size: 128px 1947px;
+  }
+}
+
+
+.main__list-technical .main__icon-9 {
+  background-image: url(../img/sprite_AKENORI.png);
+  background-position: 0px -1873px;
+  width: 128px;
+  height: 56px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .main__list-technical .main__icon-9 {
     background-image: url(../img/sprite_AKENORI@2x.png);
     background-size: 128px 1947px;
   }
