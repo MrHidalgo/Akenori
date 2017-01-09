@@ -1,0 +1,32 @@
+-
+    var tripWithTitle = "Поездка </br> с AKENORI ";
+
+    var tripWithText = [
+        "Вы защищены от подстав – видео доказывает невиновность",
+        "Научно доказано: видеорегистратор отпугивает недобросовестных сотрудников ГИБДД :)",
+        "Видео с регистратора с GPS является доказательством в суде",
+        "AKENORI уведомляет про камеры фиксации скорости и превышение скоростного режима",
+        "Метеориты, милые олени и красивые закаты – лучшие моменты вашей поездки останутся на память"
+    ];
+
+
+.tripWith.right
+
+    p.tripWith__title.big__title.right__title!= "Поездка с AKENORI"
+
+
+    .tripWith__img-wrap.right__img-wrap
+
+        img(
+            src="./img/img-tripWith.png"
+            alt=""
+            title=""
+            class="tripWith__img right__img img-centered"
+        )
+
+    .container-fluid.clearfix
+
+        .tripWith__row.right__row
+            +mainTitle("white", tripWithTitle)
+
+            +smallList(tripWithText)

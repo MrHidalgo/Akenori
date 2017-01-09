@@ -24,7 +24,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 .difference,
 .device,
 .phone,
-.technical {
+.technical,
+.more,
+.testimonials {
 	background-color: $c-magnolia;
 }
 //- bg block dark
@@ -32,7 +34,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 .quality,
 .salon,
 .nature,
-.city {
+.city,
+.sentence,
+.tripWithoutW,
+.tripWith,
+.delivery {
 	background-color: $c-nero;
 }
 
@@ -47,6 +53,13 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&_white {
 		.main__title-text {
 			color: $c-white;
+		}
+	}
+
+
+	&_ruby {
+		.main__title-text {
+			color: $c-ruby;
 		}
 	}
 
@@ -280,5 +293,232 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&__text {
 		width: calc(100% - 30px);
+	}
+}
+
+//- owl dots & nav
+.salon__carousel,
+.testimonials__carousel {
+	.owl {
+		&-nav {
+			left: -67%;
+		}
+
+
+		&-dots {
+			left: -30%;
+
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 17px;
+				right: -150px;
+				@include mixinDimensions(100px, 2px);
+				background-color: $c-silver;
+			}
+		}
+
+
+		&-prev {
+			margin-right: 40px;
+		}
+
+
+		&-next {
+			margin-left: 40px;
+		}
+
+
+		&-nav,
+		&-dots {
+			position: absolute;
+			top: 58%;
+		}
+
+
+		&-dot {
+			display: inline-block;
+			vertical-align: middle;
+			padding-top: 6px;
+			margin-left: 10px;
+			margin-right: 10px;
+			color: $c-white;
+			font: {
+				size: 18px;
+				family: $f-PN_bold;
+			}
+
+
+			&.active {
+				color: $c-ruby;
+			}
+		}
+	}
+}
+.more__carousel {
+	.owl {
+		&-nav {
+			position: relative;
+			width: 370px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 80px;
+			text-align: center;
+		}
+
+
+		&-prev {
+			left: 0;
+		}
+
+
+		&-next {
+			right: 0;
+		}
+
+
+		&-prev,
+		&-next {
+			position: absolute;
+			top: 0;
+		}
+
+
+		&-dots {
+			width: 370px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+
+
+		&-dot {
+			position: relative;
+			margin-left: 10px;
+			margin-right: 10px;
+			display: inline-block;
+			vertical-align: middle;
+			@include mixinDimensions(20px);
+			border-radius: $w-all;
+			border: 1px solid transparent;
+
+
+			span {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				@include mixinDimensions(8px);
+				border-radius: $w-all;
+				border: 1px solid $c-pinkSwan;
+				background-color: transparent;
+			}
+
+
+
+
+			&.active {
+				border: 1px solid $c-pinkSwan;
+
+
+				span {
+					background-color: $c-pinkSwan;
+				}
+			}
+		}
+	}
+}
+
+.owl {
+	&-prev {
+		@include retina-sprite($sp-i-prev-group);
+
+
+		&:hover,
+		&:active {
+			@include retina-sprite($sp-i-prev-h-group);
+		}
+	}
+	&-next {
+		@include retina-sprite($sp-i-next-group);
+
+
+		&:hover,
+		&:active {
+			@include retina-sprite($sp-i-next-h-group);
+		}
+	}
+	&-prev,
+	&-next {
+		font-size: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+//- right/left block
+.right {
+	&__img {
+
+		&-wrap {
+			position: absolute;
+			top: -80px;
+			right: 0;
+			overflow: hidden;
+			box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
+			@include mixinDimensions(840px, 620px);
+		}
+	}
+
+
+	&__title {
+		top: 0;
+		left: -10%;
+	}
+
+
+	&__row {
+		float: left;
+		padding-top: 100px;
+		width: 50%;
+		padding-left: 15%;
+
+		.main__title {
+			justify-content: flex-start;
+		}
+	}
+}
+.left {
+	&__img {
+
+		&-wrap {
+			position: absolute;
+			top: 20px;
+			left: 0;
+			overflow: hidden;
+			box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
+			@include mixinDimensions(840px, 620px);
+		}
+	}
+
+
+	&__title {
+		top: 0;
+		left: 35%;
+		line-height: 1;
+	}
+
+
+	&__row {
+		float: right;
+		padding-top: 60px;
+		width: 55%;
+
+		.main__title {
+			justify-content: flex-start;
+		}
 	}
 }

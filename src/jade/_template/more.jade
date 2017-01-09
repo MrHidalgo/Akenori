@@ -1,0 +1,31 @@
+-
+    var moreTitle = "Подробнее об устройстве";
+
+
+.more
+    .container-fluid
+
+        +mainTitle("gray", moreTitle)
+
+        .more__btn
+            -for(var i = 0, j = 1; i < 2; i++, j++)
+                if(i == 0)
+                    p.more__btn-wrap.active
+                        span.more__num!= "0" + j
+                        span.more__line
+                        span.more__text!= "Устройство"
+                else
+                    p.more__btn-wrap
+                        span.more__num!= "0" + j
+                        span.more__line
+                        span.more__text!= "Комплектация"
+
+        .owl-carousel.more__carousel
+            -for(var k = 0; k < 4; k++)
+                .more__item
+                    img(
+                        src="./img/img-more.png"
+                        alt=""
+                        title=""
+                        class="more__img"
+                    )

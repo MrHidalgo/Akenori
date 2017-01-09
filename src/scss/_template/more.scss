@@ -1,0 +1,118 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-ruby             : return-value(color, ruby);
+$c-pinkSwan         : return-value(color, pinkSwan);
+$c-nero             : return-value(color, nero);
+
+$f-PN_bold          : return-value(fonts, PN_bold);
+$f-PN_black         : return-value(fonts, PN_black);
+///
+/// MAIN BLOCK
+///
+.more {
+	min-height: 850px;
+	padding-top: 100px;
+
+
+	&__btn {
+		cursor: pointer;
+		padding-top: 80px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+
+		&-wrap {
+			width: 350px;
+
+
+			&.active {
+				.more__num {
+					opacity: 1;
+				}
+				.more__line {
+					opacity: 1;
+				}
+				.more__text {
+					color: $c-nero;
+
+
+					&:after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+
+	&__num {
+		opacity: 0;
+		width: 30px;
+		text-align: center;
+		color: $c-pinkSwan;
+		font: {
+			size: 18px;
+			family: $f-PN_bold;
+		}
+	}
+
+
+	&__line {
+		opacity: 0;
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
+		@include mixinDimensions(30px, 1px);
+		background-color: $c-pinkSwan;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+
+
+	&__text {
+		position: relative;
+		font: {
+			size: 20px;
+			family: $f-PN_black;
+		}
+		text-transform: uppercase;
+
+
+		&:after {
+			opacity: 0;
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -10px;
+			@include mixinDimensions($w-all, 3px);
+			background-color: $c-ruby;
+		}
+	}
+
+
+	&__carousel {
+		margin-top: 80px;
+	}
+
+
+	&__item {
+		text-align: center;
+	}
+
+
+	&__img {
+		display: inline-block !important;
+	}
+}

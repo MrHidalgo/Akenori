@@ -12,7 +12,18 @@ $c-white            : return-value(color, white);
 ///
 /// MAIN BLOCK
 ///
-.city {
+.tripWithoutW {
 	position: relative;
-	min-height: 620px;
+	min-height: 780px;
+	padding-top: 20px;
+
+
+	.left__title {
+		top: 60px;
+	}
+
+
+	.left__img-wrap {
+		top: 80px;
+	}
 }

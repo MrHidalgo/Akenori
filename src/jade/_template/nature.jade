@@ -8,21 +8,21 @@
         "Защита от пыли, грязи и других повреждение"
     ];
 
-.nature
+.nature.left
 
-    p.nature__title.big__title!= "Яркие впечатления на природе"
+    p.nature__title.big__title.left__title!= "Яркие впечатления на природе"
 
-    .nature__img-wrap
+    .nature__img-wrap.left__img-wrap
 
         img(
             src="./img/img-nature.png"
             alt=""
             title=""
-            class="nature__img img-centered"
+            class="nature__img left__img img-centered"
         )
 
     .container-fluid.clearfix
-        .nature__row
+        .nature__row.left__row
             +mainTitle("white", natureTitle)
 
             +smallList(natureText)

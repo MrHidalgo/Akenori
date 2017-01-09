@@ -1,0 +1,48 @@
+-
+    var deliveryTitle = "Доставка / оплата";
+
+    var deliveryText = [
+        "Доставка по всей России",
+        "Срок от 1 до 5 дней",
+        "Оплата при получении либо онлайн"
+    ];
+
+.delivery
+
+    p.delivery__title.big__title!= "Доставка / оплата"
+
+    img(
+        src="./img/img-delivery.png"
+        alt=""
+        title=""
+        class="delivery__img"
+    )
+
+    .container-fluid.clearfix
+
+        .delivery__row.clearfix
+            +mainTitle("white", deliveryTitle)
+
+            ul.delivery__list
+                -for(var i = 0; i < deliveryText.length; i++)
+                    li.delivery__item
+                        .delivery__icon-wrap
+                            i.delivery__icon
+                        p.delivery__text!= deliveryText[i]
+
+            .clearfix
+
+            .delivery__bottom.clearfix
+                .delivery__price
+                    p.delivery__price-num!= "15 000"
+                    i.delivery__price-icon
+
+
+                a(
+                    href="javascript:void(0);"
+                    title="buy"
+                    class="delivery__btn btn-buy btn"
+                )
+                    | купить
+                    i.btn-icon
+

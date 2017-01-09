@@ -3,12 +3,50 @@
 ///
 @import "../_mixin/mixin";
 @import "../_function/function";
+@import "../_variable/sprite_AKENORI";
 ///
 /// DECLARATION VARIABLE
 ///
 $w-all              : return-value(dimension, all);
 
 $c-white            : return-value(color, white);
+$c-black            : return-value(color, black);
+$c-nero             : return-value(color, nero);
 ///
 /// MAIN BLOCK
 ///
+.footer {
+	min-height: 115px;
+	background-color: lighten($c-black, 5%);
+	border-bottom: 5px solid $c-nero;
+
+
+	&__img {
+		padding-top: 45px;
+	}
+
+
+	&__btn {
+		float: right;
+		padding-top: 40px;
+
+
+		&-vk {
+			@include retina-sprite($sp-i-vk-group);
+		}
+
+
+		&-fb {
+			@include retina-sprite($sp-i-fb-group);
+		}
+
+
+		&-vk,
+		&-fb {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+	}
+}

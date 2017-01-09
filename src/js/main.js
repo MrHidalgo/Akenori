@@ -39,7 +39,55 @@ $(document).ready(function(){
         // }
     });
     var count = 1;
-    $(".owl-dot").each(function(){
+    $(".salon__carousel .owl-dot").each(function(){
+        $(this).find("span").text("0" + count);
+        count++;
+    });
+
+
+    /* MORE */
+    $(".more__btn-wrap").on("click", function(e) {
+        $(".more__btn-wrap").removeClass("active");
+        $(this).addClass("active");
+    });
+    $(".more__carousel").owlCarousel({
+        items:1,
+        lazyLoad: true,
+        dots: true,
+        nav:true
+        // responsive:{
+        //     0:{
+        //         items: 1
+        //     },
+        //     768:{
+        //         items: 2
+        //     },
+        //     992:{
+        //         items: 3
+        //     }
+        // }
+    });
+
+
+    /* TESTIMONIALS */
+    $(".testimonials__carousel").owlCarousel({
+        items:1,
+        lazyLoad: true,
+        dots: true,
+        nav:true
+        // responsive:{
+        //     0:{
+        //         items: 1
+        //     },
+        //     768:{
+        //         items: 2
+        //     },
+        //     992:{
+        //         items: 3
+        //     }
+        // }
+    });
+    $(".testimonials__carousel .owl-dot").each(function(){
         $(this).find("span").text("0" + count);
         count++;
     });

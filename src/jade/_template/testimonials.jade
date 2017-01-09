@@ -1,0 +1,42 @@
+-
+    var testimonialsTitle = "<span class='main__title-text_color'>Отзывы</span> покупателей";
+
+    var testimonialsText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+
+.testimonials
+    
+    img(
+        src="./img/img-testimonials.png"
+        alt=""
+        title=""
+        class="testimonials__img"    
+    )
+    
+    .container
+        +mainTitle("gray", testimonialsTitle)
+
+
+        .owl-carousel.testimonials__carousel
+            -for(var i = 0; i < 3; i++)
+                .testimonials__item
+                    .testimonials__left
+                        .testimonials__left-top.clearfix
+                            span.testimonials__name!= "Имя Отчество"
+                            span.testimonials__city!= "Город"
+
+                        p.testimonials__left-bottom!= testimonialsText
+
+                    .testimonials__right
+                        .testimonials__right-wrap
+                            img(
+                                src="./img/img-quality-0.png"
+                                alt=""
+                                title=""
+                                class="testimonials__carousel-img img-centered"
+                            )
+
+                            a(
+                                href="javascript:void(0);"
+                                title=""
+                                class="testimonials__wrap-btn"
+                            )

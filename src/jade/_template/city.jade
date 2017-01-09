@@ -8,21 +8,21 @@
         "GPS и уведомления о ближайших камерах фиксации скорости – избавьтесь от штрафов"
     ];
 
-.city
+.city.right
 
-    p.city__title.big__title!= "Безопасность и стиль в городе"
+    p.city__title.big__title.right__title!= "Безопасность и стиль в городе"
 
-    .city__img-wrap
+    .city__img-wrap.right__img-wrap
 
         img(
             src="./img/img-city.png"
             alt=""
             title=""
-            class="city__img img-centered"
+            class="city__img right__img img-centered"
         )
 
     .container-fluid.clearfix
-        .city__row
-            +mainTitle("white", natureTitle)
+        .city__row.right__row
+            +mainTitle("white", cityTitle)
 
-            +smallList(natureText)
+            +smallList(cityText)

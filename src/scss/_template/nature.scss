@@ -16,34 +16,4 @@ $c-white            : return-value(color, white);
 	position: relative;
 	min-height: 700px;
 	padding-top: 20px;
-
-
-	&__img {
-
-		&-wrap {
-			position: absolute;
-			top: 20px;
-			left: 0;
-			overflow: hidden;
-			@include mixinDimensions(840px, 620px);
-		}
-	}
-
-
-	&__title {
-		top: 0;
-		left: 35%;
-		line-height: 1;
-	}
-
-
-	&__row {
-		float: right;
-		padding-top: 60px;
-		width: 55%;
-
-		.main__title {
-			justify-content: flex-start;
-		}
-	}
 }

@@ -1,0 +1,122 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../_variable/sprite_AKENORI";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-pinkSwan         : return-value(color, pinkSwan);
+$c-matterhorn       : return-value(color, matterhorn);
+
+$f-PN_extraBold			: return-value(fonts, PN_extraBold);
+///
+/// MAIN BLOCK
+///
+.testimonials {
+	position: relative;
+	min-height: 720px;
+	padding-top: 100px;
+
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+
+	&__carousel {
+		margin-top: 60px;
+		@include mixinDimensions($w-all, 400px);
+	}
+
+
+	&__right {
+		&-wrap {
+			position: relative;
+			overflow: hidden;
+			@include mixinDimensions(470px, 280px);
+		}
+	}
+
+
+	&__left,
+	&__right {
+		float: left;
+		width: 50%;
+		padding: 30px;
+	}
+
+
+	&__left {
+		padding-top: 90px;
+
+
+		&-top {
+			padding-bottom: 20px;
+		}
+
+
+		&-bottom {
+			color: $c-matterhorn;
+		}
+	}
+
+
+	&__wrap-btn {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+		@include retina-sprite($sp-i-play-group);
+
+
+		&:hover {
+			@include retina-sprite($sp-i-play-h-group);
+		}
+
+
+		&:active {
+			@include retina-sprite($sp-i-play-a-group);
+		}
+	}
+
+
+	&__name {
+		float: left;
+		font-family: $f-PN_extraBold;
+	}
+
+
+	&__city {
+		float: right;
+		padding-right: 20px;
+	}
+
+
+	&__name,
+	&__city {
+		font-size: 25px;
+	}
+}
+
+
+.owl-carousel.testimonials__carousel {
+	.owl {
+		&-nav {
+			top: 30px;
+			left: 30px;
+		}
+		&-dots {
+			top: 25px;
+			left: 343px;
+		}
+		&-dot {
+			color: $c-pinkSwan;
+		}
+	}
+}

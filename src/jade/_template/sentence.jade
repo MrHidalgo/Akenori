@@ -1,0 +1,55 @@
+-
+    var sentenceTitle = "Спецпредложение";
+
+
+.sentence
+
+    p.sentence__title.big__title!= "Спецпредложение"
+
+    .container-fluid
+
+        +mainTitle("ruby", sentenceTitle)
+
+        .sentence__row
+
+            p.sentence__sub-title!= "Закажите AKENORI прямо сейчас и получите тест-драйв 30 дней!"
+            p.sentence__text!= "Если вам не понравится, в течение 30 дней вы можете вернуть устройство производителю."
+
+
+    .sentence__center
+
+        img(
+            src="./img/img-device.png"
+            alt=""
+            title=""
+            class="sentence__img img-centered"
+        )
+
+        .container-fluid
+            .sentence__center-wrap
+                p.sentence__center-text!= "До конца акции осталось"
+
+                .sentence__center-count
+                    .sentence__center-day.sentence__circle
+                        span.sentence__center-num!= "10"
+                        | дней
+                    .sentence__center-hours.sentence__circle
+                        span.sentence__center-num!= "10"
+                        | часов
+                    .sentence__center-minute.sentence__circle
+                        span.sentence__center-num!= "10"
+                        | минут
+
+    .sentence__bottom.clearfix
+
+        .container-fluid
+
+            p.sentence__price!= "15 000"
+
+            a(
+                href="javascript:void(0);"
+                title="buy"
+                class="sentence__btn btn-buy btn"
+            )
+                | купить
+                i.btn-icon
