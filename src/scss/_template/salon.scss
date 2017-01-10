@@ -19,8 +19,39 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 ///
 .salon {
 	position: relative;
-	padding-top: 140px;
+	padding-top: 130px;
 	min-height: 820px;
+	padding-bottom: 40px;
+	overflow: hidden;
+	@include respond-to(hard-max) {
+		padding-top: 100px;
+	}
+	@include respond-to(small-max) {
+		padding-top: 40px;
+	}
+
+
+	.main__title {
+		white-space: nowrap;
+		@include respond-to(hard-max) {
+			display: none;
+		}
+	}
+
+
+
+	&__hide {
+		&.main__title {
+			display: none;
+			padding-left: 15px;
+			padding-right: 15px;
+			@include respond-to(hard-max) {
+				display: flex;
+				white-space: normal;
+				margin-bottom: 30px;
+			}
+		}
+	}
 
 
 	&__title {
@@ -31,13 +62,30 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__row {
 		float: left;
-		width: 50%;
+		width: calc(100% - 825px);
+		@include respond-to(hard-max) {
+			float: none;
+			width: 840px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include respond-to(medium) {
+			width: 720px;
+		}
+		@include respond-to(small-max) {
+			width: 100%;
+			padding-top: 100px;
+		}
 	}
 
 
 	&__wrap {
 		float: right;
 		width: 58%;
+		@include respond-to(hard-max) {
+			float: none;
+			width: 100%;
+		}
 	}
 
 
@@ -46,11 +94,31 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		padding-bottom: 280px;
 		font-size: 20px;
 		color: $c-white;
+		@include respond-to(hard-max) {
+			padding-bottom: 30px;
+			padding-top: 30px;
+			width: 50%;
+			float: left;
+		}
+		@include respond-to(small-max) {
+			float: none;
+			width: 100%;
+			font-size: 15px;
+		}
 	}
 
 
 	&__btn {
 		display: block;
+		@include respond-to(hard-max) {
+			margin-top: 30px;
+			float: right;
+		}
+		@include respond-to(small-max) {
+			float: none;
+			margin-top: 0;
+			width: 100%;
+		}
 	}
 
 
@@ -61,11 +129,83 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		@include mixinDimensions(840px, 620px);
 		background-color: $c-white;
 		box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
+		@include respond-to(hard-max) {
+			position: relative;
+			left: 0;
+			top: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include respond-to(medium) {
+			width: 720px;
+			height: 580px;
+		}
+		@include respond-to(small-max) {
+			width: calc(100% - 30px);
+			height: 300px;
+		}
 
 
 		&.owl-carousel {
 			.owl-item {
 				height: 620px;
+				@include respond-to(medium) {
+					height: 580px;
+				}
+				@include respond-to(small-max) {
+					height: 300px;
+				}
+			}
+			.owl-nav {
+				@include respond-to(hard-max) {
+					display: none;
+				}
+				@include respond-to(small-max) {
+					display: block;
+					position: relative;
+					height: 90px;
+					top: 0;
+					left: 0;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			}
+			.owl-prev {
+				@include respond-to(small-max) {
+					left: 0;
+				}
+			}
+			.owl-next {
+				@include respond-to(small-max) {
+					right: 0;
+				}
+			}
+			.owl-prev,
+			.owl-next {
+				@include respond-to(small-max) {
+					position: absolute;
+				}
+			}
+			.owl-dots {
+				@include respond-to(hard-max) {
+					top: auto;
+					left: 20px;
+					bottom: 20px;
+				}
+				@include respond-to(small-max) {
+					position: absolute;
+					left: 0;
+					bottom: -70px;
+					text-align: center;
+					width: 100%;
+				}
+
+
+				&:after {
+					@include respond-to(small-max) {
+						display: none;
+					}
+				}
 			}
 		}
 

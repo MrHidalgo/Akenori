@@ -315,7 +315,7 @@
       @content
     }
   }
-  @else if ($media == 'small-all') {
+  @else if ($media == 'small-max') {
     @media screen and (max-width: 767px) {
       @content
     }
@@ -325,13 +325,13 @@
       @content
     }
   }
-  @else if ($media == 'medium-all') {
+  @else if ($media == 'medium-max') {
     @media screen and (max-width: 991px) {
       @content
     }
   }
-  @else if ($media == 'medium-min') {
-    @media screen and (min-width: 991px) {
+  @else if ($media == 'large-min') {
+    @media screen and (min-width: 992px) {
       @content
     }
   }
@@ -340,13 +340,23 @@
       @content
     }
   }
-  @else if ($media == 'large-all') {
+  @else if ($media == 'large-max') {
     @media screen and (max-width: 1199px) {
       @content
     }
   }
   @else if ($media == 'extra-large') {
     @media screen and (min-width: 1200px) {
+      @content
+    }
+  }
+  @else if ($media == 'hard') {
+    @media screen and (min-width: 992px) and (max-width: 1366px) {
+      @content
+    }
+  }
+  @else if ($media == 'hard-max') {
+    @media screen and (max-width: 1366px) {
       @content
     }
   }

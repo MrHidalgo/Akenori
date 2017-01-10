@@ -21,6 +21,9 @@ $c-white            : return-value(color, white);
 		&-1 {
 			padding-top: 20px;
 			padding-bottom: 20px;
+			@include respond-to(small-max) {
+				max-width: 40%;
+			}
 		}
 
 
@@ -29,6 +32,21 @@ $c-white            : return-value(color, white);
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
+		}
+
+
+		&-big {
+			@include respond-to(small-max) {
+				display: none;
+			}
+		}
+
+
+		&-mobile {
+			display: none;
+			@include respond-to(small-max) {
+				display: block;
+			}
 		}
 	}
 }

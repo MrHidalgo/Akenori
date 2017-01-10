@@ -20,25 +20,64 @@ $f-PN_black         : return-value(fonts, PN_black);
 	min-height: 900px;
 	position: relative;
 	padding-top: 150px;
+	overflow: hidden;
+	@include respond-to(large-max) {
+		padding-top: 80px;
+		padding-bottom: 40px;
+	}
+	@include respond-to(small-max) {
+		padding-top: 40px;
+		padding-bottom: 400px;
+	}
 
 
 	&__img {
 		position: absolute;
 		z-index: 0;
 		bottom: 0;
-		left: 200px;
+		left: 150px;
+
+
+		&_big {
+			@include respond-to(hard-max) {
+				display: none;
+			}
+		}
+
+
+		&_small {
+			display: none;
+			@include respond-to(hard-max) {
+				display: block;
+			}
+			@include respond-to(large-max) {
+				left: 0;
+				bottom: -100px;
+			}
+			@include respond-to(small-max) {
+				left: -70px;
+				bottom: -200px;
+			}
+		}
 	}
 
 
 	&__container {
 		position: relative;
-		z-index: 10;
+		z-index: 11;
 	}
 
 
 	&__row {
 		float: right;
 		width: 50%;
+		@include respond-to(medium) {
+			width: 60%;
+		}
+		@include respond-to(small-max) {
+			float: none;
+			width: 100%;
+		}
 	}
 
 
@@ -52,6 +91,15 @@ $f-PN_black         : return-value(fonts, PN_black);
 			family: $f-PN_black;
 		}
 		color: $c-ruby;
+		@include respond-to(small-max) {
+			display: block;
+			margin-bottom: 15px;
+			margin-right: 0;
+			float: right;
+			clear: both;
+			width: 220px;
+			text-align: left;
+		}
 	}
 
 
@@ -64,6 +112,14 @@ $f-PN_black         : return-value(fonts, PN_black);
 		width: (230 / 2) * 1px;
 		border-top: 3px solid $c-ruby;
 		border-bottom: 3px solid $c-ruby;
+
+
+		&-wrap {
+			@include respond-to(small-max) {
+				float: right;
+				clear: both;
+			}
+		}
 
 
 		&-android,

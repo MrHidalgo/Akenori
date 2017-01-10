@@ -8,6 +8,10 @@
 
     p.salon__title.big__title!= "Создан специально"
 
+
+    +mainTitle("white salon__hide", salonTitle)
+
+
     .owl-carousel.salon__carousel
         - for(var i = 0; i < 3; i++)
             .salon__carousel-item
@@ -18,12 +22,13 @@
                     class="salon__carousel-img img-centered"
                 )
 
+
     .container-fluid.clearfix
         .salon__row.clearfix
 
             +mainTitle("white", salonTitle)
 
-            .salon__wrap
+            .salon__wrap.clearfix
 
                 p.salon__sub-title!= salonSubTitle
 

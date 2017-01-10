@@ -16,11 +16,17 @@ $c-nero             : return-value(color, nero);
 .header__fixed {
 	height: 140px;
 	background: $c-nero;
+	@include respond-to(small-max) {
+		height: 100px;
+	}
 
 
 	&-logo {
 		margin-top: 59px;
 		float: left;
+		@include respond-to(small-max) {
+			margin-top: 39px;
+		}
 	}
 
 
@@ -29,6 +35,9 @@ $c-nero             : return-value(color, nero);
 		top: 58px;
 		float: right;
 		@include mixinDimensions(34px, 23px);
+		@include respond-to(small-max) {
+			top: 38px;
+		}
 
 
 		&:hover {

@@ -23,7 +23,8 @@ mixin headSite(titleName, styleFile, arrFontName)
 //- MAIN TITLE
 mixin mainTitle(classNameColorText, titleText)
     div(class="main__title main__title_" + classNameColorText)
-        i.main__title-icon
+        .main__title-icon-wrap
+            i.main__title-icon
         i.main__title-line
         p.main__title-text!= titleText
 

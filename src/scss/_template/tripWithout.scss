@@ -12,10 +12,34 @@ $c-white            : return-value(color, white);
 ///
 /// MAIN BLOCK
 ///
-.tripWithoutW {
+.tripWithout {
 	position: relative;
 	min-height: 780px;
 	padding-top: 20px;
+	@include respond-to(medium-max) {
+		overflow: hidden;
+	}
+
+
+	.main__title {
+		@include respond-to(medium-max) {
+			display: none;
+		}
+	}
+
+
+	&__hide {
+		&.main__title {
+			display: none;
+			padding-top: 20px;
+			padding-left: 15px;
+			padding-right: 15px;
+			@include respond-to(medium-max) {
+				display: flex;
+				justify-content: flex-start;
+			}
+		}
+	}
 
 
 	.left__title {

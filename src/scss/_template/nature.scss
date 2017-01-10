@@ -16,4 +16,25 @@ $c-white            : return-value(color, white);
 	position: relative;
 	min-height: 700px;
 	padding-top: 20px;
+	overflow: hidden;
+
+
+	.main__title {
+		@include respond-to(medium-max) {
+			display: none;
+		}
+	}
+
+
+	&__hide {
+		&.main__title {
+			display: none;
+			padding-left: 15px;
+			padding-right: 15px;
+			@include respond-to(medium-max) {
+				display: flex;
+				justify-content: flex-start;
+			}
+		}
+	}
 }

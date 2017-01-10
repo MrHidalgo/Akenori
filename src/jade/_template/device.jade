@@ -12,17 +12,15 @@
 
     +mainTitle("gray", deviceTitle)
 
-    img(
-        src="./img/img-device.png"
-        title="image device car"
-        alt="image device car"
-        class="device__img"
-    )
-
     .container-fluid.clearfix
-        .device__row
+        .device__row.clearfix
 
             +mainListBig("device", 4, deviceText)
+
+            .device__price
+                i.device__price-icon
+                i.device__price-line
+                p.device__price-num!= "15 000"
 
             a(
                 href="javascript:void(0);"
@@ -31,7 +29,15 @@
                 | купить
                 i.btn-icon
 
-            .device__price
-                i.device__price-icon
-                i.device__price-line
-                p.device__price-num!= "15 000"
+    img(
+        src="./img/img-device.png"
+        title="image device car"
+        alt="image device car"
+        class="device__img device__img_big"
+    )
+    img(
+        src="./img/img-device-small.png"
+        title="image device car"
+        alt="image device car"
+        class="device__img device__img_small"
+    )

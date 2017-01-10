@@ -10,11 +10,13 @@
     ];
 
 
-.tripWithoutW.left
+.tripWithout.left
 
-    p.tripWithoutW__title.big__title.left__title!= "Поездка без видеорегистратора"
+    p.tripWithout__title.big__title.left__title!= "Поездка без видеорегистратора"
 
-    .tripWithoutW__img-wrap.left__img-wrap
+    +mainTitle("white tripWithout__hide", tripWithoutWTitle)
+
+    .tripWithout__img-wrap.left__img-wrap
 
         img(
             src="./img/img-tripWithout.png"
@@ -24,7 +26,7 @@
         )
 
     .container-fluid.clearfix
-        .tripWithoutW__row.left__row
+        .tripWithout__row.left__row
             +mainTitle("white", tripWithoutWTitle)
 
             +smallList(tripWithoutWText)

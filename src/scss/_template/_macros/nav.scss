@@ -20,13 +20,17 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 .nav {
 	display: none;
 	position: absolute;
-	z-index: 11;
+	z-index: 12;
 	top: 140px;
 	left: 0;
 	padding-top: 100px;
 	background-color: $c-neroLight;
 	width: $w-all;
 	height: calc(100% - 140px);
+	@include respond-to(small-max) {
+		top: 100px;
+		height: calc(100% - 100px);
+	}
 
 
 	&__list {
@@ -39,8 +43,9 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	}
 
 
-	&__list {
+	&__item {
 		width: 50%;
+		overflow: hidden;
 	}
 
 
@@ -62,7 +67,7 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 		&:before {
 			content: "";
 			position: absolute;
-			top: 19px;
+			top: 12px;
 			left: -100px;
 			@include mixinDimensions(100px, 1px);
 			background-color: $c-pinkSwan;

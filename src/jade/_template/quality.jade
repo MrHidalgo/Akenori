@@ -38,7 +38,13 @@ mixin qualityWrap(arrText, arrImg)
         src="./img/img-quality.png"
         alt="image device"
         title="image device"
-        class="quality__img"
+        class="quality__img quality__img_big"
+    )
+    img(
+        src="./img/img-quality-small.png"
+        alt="image device"
+        title="image device"
+        class="quality__img quality__img_small"
     )
 
     img(
@@ -60,6 +66,12 @@ mixin qualityWrap(arrText, arrImg)
 
             .quality__bottom
 
+                .quality__wrap-price
+                    .quality__price
+                        i.quality__price-icon
+                        i.quality__price-line
+                        p.quality__price-num!= "15 000"
+
                 a(
                     href="javascript:void(0);"
                     title="buy"
@@ -67,9 +79,3 @@ mixin qualityWrap(arrText, arrImg)
                 )
                     | купить
                     i.btn-icon
-
-                .quality__wrap-price
-                    .quality__price
-                        i.quality__price-icon
-                        i.quality__price-line
-                        p.quality__price-num!= "15 000"

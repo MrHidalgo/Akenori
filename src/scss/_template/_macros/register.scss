@@ -27,5 +27,30 @@ $c-white            : return-value(color, white);
 		&-0 {
 			padding-bottom: 20px;
 		}
+
+
+		&-0,
+		&-1 {
+			//@include respond-to(small-max) {
+			//	position: relative;
+			//	left: -140px;
+			//	max-width: 70%;
+			//}
+		}
+
+
+		&-large {
+			@include respond-to(small-max) {
+				display: none;
+			}
+		}
+		&-mobile {
+			display: none;
+			@include respond-to(small-max) {
+				display: block;
+				position: relative;
+				left: -140px;
+			}
+		}
 	}
 }

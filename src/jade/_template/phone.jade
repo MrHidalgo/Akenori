@@ -9,31 +9,37 @@
 
 .phone
 
-    img(
-        src="./img/img-phone.png"
-        alt="phone hand"
-        title="phone hand"
-        class="phone__img"
-    )
-
     .container-fluid.phone__container.clearfix
 
         +mainTitle("gray", phoneTitle)
 
-        .phone__row
+        .phone__row.clearfix
             +mainListBig("phone", 3, phoneText)
-
 
             span.phone__download!= "скачать"
 
-            a(
-                href="javascript:void(0);"
-                title=""
-                class="phone__btn phone__btn-android"
-            )
+            .phone__btn-wrap
+                a(
+                    href="javascript:void(0);"
+                    title=""
+                    class="phone__btn phone__btn-android"
+                )
 
-            a(
-                href="javascript:void(0);"
-                title=""
-                class="phone__btn phone__btn-iphone"
-            )
+                a(
+                    href="javascript:void(0);"
+                    title=""
+                    class="phone__btn phone__btn-iphone"
+                )
+
+    img(
+        src="./img/img-phone.png"
+        alt="phone hand"
+        title="phone hand"
+        class="phone__img phone__img_big"
+    )
+    img(
+        src="./img/img-phone-medium.png"
+        alt="phone hand"
+        title="phone hand"
+        class="phone__img phone__img_small"
+    )

@@ -14,5 +14,30 @@ $c-white            : return-value(color, white);
 ///
 .city {
 	position: relative;
+	padding-bottom: 20px;
 	min-height: 620px;
+	@include respond-to(medium-max) {
+		overflow: hidden;
+	}
+
+
+	.main__title {
+		@include respond-to(medium-max) {
+			display: none;
+		}
+	}
+
+
+	&__hide {
+		&.main__title {
+			display: none;
+			padding-top: 20px;
+			padding-left: 15px;
+			padding-right: 15px;
+			@include respond-to(medium-max) {
+				display: flex;
+				justify-content: flex-start;
+			}
+		}
+	}
 }

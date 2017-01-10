@@ -36,7 +36,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 .nature,
 .city,
 .sentence,
-.tripWithoutW,
+.tripWithout,
 .tripWith,
 .delivery {
 	background-color: $c-nero;
@@ -45,9 +45,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 //- main titile
 .main__title {
 	display: flex;
-	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
+	@include respond-to(small-max) {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
 
 
 	&_white {
@@ -65,7 +68,14 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 
 	&-icon {
+		display: inline-block;
 		@include retina-sprite($sp-i-eclips-pink-group);
+
+
+		&-wrap {
+			width: 30px;
+			text-align: center;
+		}
 	}
 
 
@@ -84,6 +94,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 		}
 		color: $c-dimGray;
 		text-transform: uppercase;
+		@include respond-to(small-max) {
+			flex: 1 500px;
+			margin-top: 10px;
+			font-size: 16px;
+		}
 
 
 		&_color {
@@ -104,6 +119,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 	white-space: nowrap;
 	position: absolute;
 	z-index: 0;
+	@include respond-to(small-max) {
+		font-size: 80px;
+		line-height: 1;
+	}
 }
 
 //- btn
@@ -155,6 +174,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 		display: flex;
 		align-items: flex-start;
 		margin-bottom: 60px;
+		@include respond-to(small-max) {
+		  flex-direction: row-reverse;
+			justify-content: center;
+		}
 	}
 
 
@@ -162,6 +185,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 		color: $c-silver;
 		font-size: 18px;
 		width: 40px;
+		@include respond-to(small-max) {
+			display: none;
+		}
 	}
 
 
@@ -172,6 +198,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 		margin-right: 60px;
 		position: relative;
 		top: 11px;
+		@include respond-to(small-max) {
+			display: none;
+		}
 	}
 
 
@@ -181,6 +210,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 		flex: 1 340px;
 		max-width: 340px;
 		margin-right: 40px;
+		@include respond-to(small-max) {
+		  max-width: 100%;
+			margin-right: 0;
+			font-size: 15px;
+		}
 	}
 
 
@@ -263,20 +297,21 @@ $f-PN_black         : return-value(fonts, PN_black);
 .small {
 	&__list {
 		margin-top: 100px;
-		width: 680px;
 		display: flex;
 		flex-flow: row wrap;
 		justify-content: space-between;
 		align-items: flex-start;
+		@include respond-to(medium-max) {
+			margin-top: 10px;
+		}
 	}
 
 
 	&__item {
-		width: 50%;
+		display: flex;
+		flex: 1 320px;
 		padding: 0 10px 20px;
 		color: $c-pinkSwan;
-		display: flex;
-		flex: 1px 300px;
 	}
 
 
@@ -301,7 +336,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 .testimonials__carousel {
 	.owl {
 		&-nav {
-			left: -67%;
+			left: -57%;
 		}
 
 
@@ -470,6 +505,27 @@ $f-PN_black         : return-value(fonts, PN_black);
 			overflow: hidden;
 			box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
 			@include mixinDimensions(840px, 620px);
+			@include respond-to(hard) {
+				@include mixinDimensions(740px, 560px);
+			}
+			@include respond-to(large) {
+				@include mixinDimensions(600px, 520px);
+			}
+			@include respond-to(medium-max) {
+				position: relative;
+				top: 20px;
+				width: calc(100% - 30px);
+				height: 530px;
+				right: 0;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@include respond-to(small-max) {
+				height: 380px;
+			}
+			@include respond-to(extra-small) {
+				height: 230px;
+			}
 		}
 	}
 
@@ -483,8 +539,19 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__row {
 		float: left;
 		padding-top: 100px;
-		width: 50%;
-		padding-left: 15%;
+		width: calc(100% - 840px);
+		@include respond-to(hard) {
+			width: calc(100% - 740px);
+		}
+		@include respond-to(large) {
+			width: calc(100% - 600px);
+		}
+		@include respond-to(medium-max) {
+			float: none;
+			width: 100%;
+			padding-top: 60px;
+		}
+
 
 		.main__title {
 			justify-content: flex-start;
@@ -501,6 +568,27 @@ $f-PN_black         : return-value(fonts, PN_black);
 			overflow: hidden;
 			box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
 			@include mixinDimensions(840px, 620px);
+			@include respond-to(hard) {
+			  @include mixinDimensions(740px, 560px);
+			}
+			@include respond-to(large) {
+			  @include mixinDimensions(600px, 520px);
+			}
+			@include respond-to(medium-max) {
+				position: relative;
+				top: 20px !important;
+				width: calc(100% - 30px);
+				height: 530px;
+				right: 0;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@include respond-to(small-max) {
+				height: 380px;
+			}
+			@include respond-to(extra-small) {
+				height: 230px;
+			}
 		}
 	}
 
@@ -515,7 +603,18 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__row {
 		float: right;
 		padding-top: 60px;
-		width: 55%;
+		width: calc(100% - 840px);
+		@include respond-to(hard) {
+			width: calc(100% - 740px);
+		}
+		@include respond-to(large) {
+			width: calc(100% - 600px);
+		}
+		@include respond-to(medium-max) {
+			float: none;
+			width: 100%;
+		}
+
 
 		.main__title {
 			justify-content: flex-start;

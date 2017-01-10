@@ -19,11 +19,29 @@ $f-PN_black         : return-value(fonts, PN_black);
 	height: 980px;
 	min-height: 980px;
 	padding-top: 340px;
+	@include respond-to(hard-max) {
+		height: 700px;
+		min-height: 700px;
+		padding-top: 200px;
+	}
+	@include respond-to(small-max) {
+		height: 590px;
+		min-height: 590px;
+		padding-top: 40px;
+		overflow: hidden;
+	}
 
 
 	&__row {
 		position: relative;
 		width: 50%;
+		@include respond-to(medium) {
+			width: 70%;
+		}
+		@include respond-to(small-max) {
+			width: 100%;
+			z-index: 11;
+		}
 	}
 
 
@@ -34,18 +52,45 @@ $f-PN_black         : return-value(fonts, PN_black);
 		bottom: 0;
 		right: 0;
 		margin: auto;
+
+
+		&_big {
+			@include respond-to(hard-max) {
+				display: none;
+			}
+		}
+		&_medium {
+			display: none;
+			@include respond-to(hard) {
+				display: block;
+			}
+		}
+		&_small {
+			display: none;
+			@include respond-to(medium-max) {
+				display: block;
+			}
+		}
 	}
 
 
 	&__title {
 		left: -800px;
 		top: -150px;
+		@include respond-to(small-max) {
+			left: -450px;
+			top: 0;
+		}
 	}
 
 
 	&__wrap {
 		float: right;
 		width: 54.5%;
+		@include respond-to(small-max) {
+			float: left;
+			width: 100%;
+		}
 	}
 
 
@@ -54,6 +99,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 		padding-bottom: 150px;
 		font-size: 20px;
 		color: $c-white;
+		@include respond-to(small-max) {
+			padding-top: 100px;
+			font-size: 15px;
+			padding-right: 160px;
+		}
 	}
 
 
