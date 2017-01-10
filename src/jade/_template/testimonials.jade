@@ -16,15 +16,9 @@
         +mainTitle("gray", testimonialsTitle)
 
 
-        .owl-carousel.testimonials__carousel
+        .owl-carousel.testimonials__carousel.clearfix
             -for(var i = 0; i < 3; i++)
-                .testimonials__item
-                    .testimonials__left
-                        .testimonials__left-top.clearfix
-                            span.testimonials__name!= "Имя Отчество"
-                            span.testimonials__city!= "Город"
-
-                        p.testimonials__left-bottom!= testimonialsText
+                .testimonials__item.clearfix
 
                     .testimonials__right
                         .testimonials__right-wrap
@@ -40,3 +34,10 @@
                                 title=""
                                 class="testimonials__wrap-btn"
                             )
+
+                    .testimonials__left
+                        .testimonials__left-top.clearfix
+                            span.testimonials__name!= "Имя Отчество"
+                            span.testimonials__city!= "Город"
+
+                        p.testimonials__left-bottom!= testimonialsText

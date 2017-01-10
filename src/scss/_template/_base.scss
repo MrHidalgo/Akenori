@@ -400,6 +400,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 			margin-right: auto;
 			margin-top: 80px;
 			text-align: center;
+			@include respond-to(small-max) {
+				width: calc(100% - 30px);
+			}
 		}
 
 
@@ -425,6 +428,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 			margin-left: auto;
 			margin-right: auto;
 			text-align: center;
+			@include respond-to(small-max) {
+				width: calc(100% - 30px);
+			}
 		}
 
 

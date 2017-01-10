@@ -19,6 +19,11 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	position: relative;
 	min-height: 650px;
 	padding-top: 100px;
+	padding-bottom: 30px;
+	overflow: hidden;
+	@include respond-to(small-max) {
+		padding-top: 40px;
+	}
 
 
 	&__title {
@@ -31,13 +36,47 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	&__img {
 		position: absolute;
 		bottom: 0;
-		right: 200px;
+		right: 100px;
+
+
+		&_big {
+			@include respond-to(hard-max) {
+				display: none;
+			}
+		}
+
+
+		&_medium {
+			display: none;
+			@include respond-to(hard-max) {
+				display: block;
+				bottom: -50px;
+			}
+			@include respond-to(large-max) {
+				right: -50px;
+			}
+			@include respond-to(small-max) {
+				display: none;
+			}
+		}
+
+
+		&_small {
+			display: none;
+			@include respond-to(small-max) {
+				display: block;
+				right: -40px;
+			}
+		}
 	}
 
 
 	&__row {
 		float: left;
 		width: 55%;
+		@include respond-to(small-max) {
+			width: 100%;
+		}
 	}
 
 
@@ -45,6 +84,12 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 		margin-top: 80px;
 		float: right;
 		width: 60%;
+		@include respond-to(hard-max) {
+			width: 70%;
+		}
+		@include respond-to(large-max) {
+			width: 100%;
+		}
 	}
 
 
@@ -78,6 +123,9 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 			size: 20px;
 			family: $f-PN_bold;
 		}
+		@include respond-to(small-max) {
+			font-size: 15px;
+		}
 	}
 
 
@@ -85,11 +133,24 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 		float: right;
 		width: 60%;
 		margin-top: 80px;
+		@include respond-to(hard-max) {
+			width: 70%;
+		}
+		@include respond-to(large-max) {
+			width: 100%;
+		}
+		@include respond-to(small-max) {
+			margin-top: 40px;
+		}
 	}
 
 
 	&__price {
 		float: left;
+		@include respond-to(small-max) {
+			float: none;
+			margin-bottom: 30px;
+		}
 
 
 		&-num {
@@ -114,5 +175,9 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 
 	&__btn {
 		float: right;
+		@include respond-to(small-max) {
+			float: none;
+			display: block;
+		}
 	}
 }
