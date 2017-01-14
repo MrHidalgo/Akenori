@@ -22,6 +22,8 @@ var gulp                =   require('gulp'),
     uglify              =   require('gulp-uglify'),
     fixmyjs             =   require("gulp-fixmyjs"),
     prettify            =   require('gulp-prettify'),
+    changed             =   require('gulp-changed-aster'),
+    shell               =   require('gulp-shell'),
     YOUR_LOCALS         =   {};
 
 
@@ -48,6 +50,7 @@ function jadeMainTask(taskName) {
     return gulp.task(taskName, function() {
         gulp.src('./src/jade/*.jade')
             .pipe(plumber())
+            .pipe(changed('./dist/'))
             .pipe(data(getJsonData))
             .pipe(jade(
                 {
@@ -56,13 +59,11 @@ function jadeMainTask(taskName) {
             ))
             .pipe(plumber.stop())
             .pipe(gulp.dest('./dist/'))
-            // .pipe(
-            //     notify(
-            //         {
-            //             message : 'JADE file complete in ... ',
-            //             onLast  : true
-            //         })
-            // )
+            .pipe(notify(
+                {
+                    message: 'JADE task complete'
+                }
+            ));
     })
 }
 
@@ -75,6 +76,7 @@ function mainScriptTask(taskName) {
     return gulp.task(taskName, function () {
         gulp.src(src)
             .pipe(plumber())
+            .pipe(changed(dist))
             .pipe(fixmyjs(
                 {
                     legacy : true
@@ -83,13 +85,6 @@ function mainScriptTask(taskName) {
             .pipe(plumber.stop())
             .pipe(
                 gulp.dest(dist)
-            )
-            .pipe(
-                notify(
-                    {
-                        message : 'SCRIPT file complete ... ',
-                        onLast  : true
-                    })
             )
             .pipe(plumber())
             .pipe(uglify())
@@ -102,13 +97,11 @@ function mainScriptTask(taskName) {
             .pipe(
                 gulp.dest(dist)
             )
-            // .pipe(
-            //     notify(
-            //         {
-            //             message : 'SCRIPT file minify... ',
-            //             onLast  : true
-            //         })
-            // )
+            .pipe(notify(
+                {
+                    message: 'SCRIPT task complete'
+                }
+            ));
     });
 }
 
@@ -124,8 +117,8 @@ function styleMainTask(taskName) {
 
 		var autoPrefixOptions = {
 			browsers: [
-				'last 4 versions',
-				'> 5%',
+				'last 10 versions',
+				'> 1%',
 				'Firefox ESR'
 			]
 		};
@@ -136,6 +129,7 @@ function styleMainTask(taskName) {
 
         gulp.src(src)
 			.pipe(plumber())
+            .pipe(changed(dest))
             .pipe(sourcemaps.init(
                 {
                     loadMaps: true
@@ -156,24 +150,10 @@ function styleMainTask(taskName) {
 			.pipe(
 				gulp.dest(dest)
 			)
-            // .pipe(
-            //     notify(
-            //         {
-            //             message : 'SCSS file complete... ',
-            //             onLast  : true
-            //         })
-            // )
             .pipe(stripCssComments())
             .pipe(
                 gulp.dest(dest)
             )
-            // .pipe(
-            //     notify(
-            //         {
-            //             message : 'Remove comments in CSS file... ',
-            //             onLast  : true
-            //         })
-            // )
             .pipe(cssmin(
                 {
                     showLog : true,
@@ -189,13 +169,11 @@ function styleMainTask(taskName) {
             .pipe(
                 gulp.dest(dest)
             )
-            // .pipe(
-            //     notify(
-            //         {
-            //             message : 'CSS files minify finish ... ',
-            //             onLast  : true
-            //         })
-            // )
+            .pipe(notify(
+                {
+                    message: 'STYLE task complete'
+                }
+            ));
 	});
 }
 
@@ -212,13 +190,11 @@ function imageSprites(taskName) {
         destCss         = './src/scss/_variable/';
 
         var spriteData = gulp.src(src)
-            // .pipe(
-            //     notify(
-            //         {
-            //             message : 'Sprite build in ... ',
-            //             onLast  : true
-            //         }
-            //     ))
+            .pipe(notify(
+                {
+                    message: 'SPRITE task complete'
+                }
+            ))
             .pipe(spritesmith(
                 {
                     imgName         : 'sprite_AKENORI.png',

@@ -1,8 +1,8 @@
 {
   "styleLink" : [
+    "./css/fonts.min.css",
     "./css/owl.carousel.min.css",
-    "./css/common.min.css",
-    "./css/fonts.min.css"
+    "./css/common.min.css"
   ],
 
   "scriptLink" : [

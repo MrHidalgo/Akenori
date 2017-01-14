@@ -3,6 +3,7 @@
 
 /* NPM PACKAGE */
 var gulp        =   require('gulp'),
+    plumber     =   require('gulp-plumber'),
     notify      =   require('gulp-notify'),
     args        =   require('yargs').argv,
     browserSync =   require('browser-sync').create(),
@@ -17,7 +18,6 @@ var command     =   require('./gulpTemplate/gulp-command.js'),
 
 
 
-
 task.jadeMainTask(command.buildJade);
 
 task.styleMainTask(command.buildScss);
@@ -29,24 +29,25 @@ task.imageSprites(command.sprites);
 
 
 /* WATCH FILES FOR RELOAD ---> 'gulp watch'*/
-gulp.task(command.watch, function() {
+gulp.task(command.watch, function(event) {
 
-    var srcWatch  = [
-        './src/scss/**.scss',
-        './src/scss/**/**.scss',
-        './src/jade/**.jade',
-        './src/jade/**/**.jade',
-        './src/_data/*.json',
-        './src/js/**.js'
-    ];
+    var srcWatchSCSS = ['./src/scss/**.scss', './src/scss/**/**.scss'];
+    var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
+    var srcWatchJSON = ['./src/_data/*.json'];
+    var srcWatchJS   = ['./src/js/**.js'];
 
-	watch(srcWatch,
-		function() {
-			gulp.start(
-				command.build
-			)
-		}
-    );
+    watch(srcWatchSCSS, function() {
+        gulp.start(command.buildScss)
+    });
+    watch(srcWatchJADE, function() {
+        gulp.start(command.buildJade)
+    });
+    watch(srcWatchJS, function() {
+        gulp.start(command.buildScript)
+    });
+    watch(srcWatchJSON, function() {
+        gulp.start(command.build)
+    });
 });
 
 

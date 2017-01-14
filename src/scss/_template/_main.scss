@@ -79,38 +79,48 @@ a{
 	color: #222;
 
 	&:hover,
+	&:active,
 	&:focus {
 		outline: none;
 	}
 }
 
+
 input{
 	outline: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	-o-appearance: none;
+}
+input[type="text"] {
 	appearance: none;
 }
-
-
-.clearfix:before,
-.clearfix:after {
-	content: "\0020";
-	display: block;
-	height: 0;
-	visibility: hidden;
+input[type="checkbox"],
+input[type="radio"] {
+	margin: 0;
 }
 
-.clearfix:after {
-	clear: both;
-}
 
 .clearfix {
-	zoom: 1;
+	*zoom: 1;
+
+	:after {
+		clear: both;
+	}
+
+	&:before,
+	&:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
 }
 
+
+.hide {display: none;}
+.show {display: block;}
 .hidden{opacity:0}
 .visibly{opacity:1}
+
+
 .animated {
 	animation-duration: 1s;
 	animation-fill-mode: both;

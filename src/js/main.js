@@ -26,17 +26,6 @@ $(document).ready(function(){
         lazyLoad: true,
         dots: true,
         nav:true
-        // responsive:{
-        //     0:{
-        //         items: 1
-        //     },
-        //     768:{
-        //         items: 2
-        //     },
-        //     992:{
-        //         items: 3
-        //     }
-        // }
     });
     var count = 1;
     $(".salon__carousel .owl-dot").each(function(){
@@ -55,17 +44,6 @@ $(document).ready(function(){
         lazyLoad: true,
         dots: true,
         nav:true
-        // responsive:{
-        //     0:{
-        //         items: 1
-        //     },
-        //     768:{
-        //         items: 2
-        //     },
-        //     992:{
-        //         items: 3
-        //     }
-        // }
     });
 
 
@@ -75,17 +53,6 @@ $(document).ready(function(){
         lazyLoad: true,
         dots: true,
         nav:true
-        // responsive:{
-        //     0:{
-        //         items: 1
-        //     },
-        //     768:{
-        //         items: 2
-        //     },
-        //     992:{
-        //         items: 3
-        //     }
-        // }
     });
     $(".testimonials__carousel .owl-dot").each(function(){
         $(this).find("span").text("0" + count);
