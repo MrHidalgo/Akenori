@@ -11,24 +11,15 @@
 
     p.delivery__title.big__title!= "Доставка / оплата"
 
-    img(
-        src="./img/img-delivery.png"
-        alt=""
-        title=""
-        class="delivery__img delivery__img_big"
-    )
-    img(
-        src="./img/img-delivery-medium.png"
-        alt=""
-        title=""
-        class="delivery__img delivery__img_medium"
-    )
-    img(
-        src="./img/img-delivery-small.png"
-        alt=""
-        title=""
-        class="delivery__img delivery__img_small"
-    )
+    .row
+        .row__left.row__left-half
+        .row__right.row__right-half
+            img(
+                src="./img/img-delivery.png"
+                alt=""
+                title=""
+                class="delivery__img img_responsive"
+            )
 
     .container-fluid.clearfix
 

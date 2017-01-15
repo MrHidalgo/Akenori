@@ -12,15 +12,18 @@
     +mainTitle("white salon__hide", salonTitle)
 
 
-    .owl-carousel.salon__carousel
-        - for(var i = 0; i < 3; i++)
-            .salon__carousel-item
-                img(
-                    src="./img/img-salon.png"
-                    alt=""
-                    title=""
-                    class="salon__carousel-img img-centered"
-                )
+    .row
+        .row__left.row__left-half
+        .row__right.row__right-down
+            .owl-carousel.salon__carousel
+                - for(var i = 0; i < 3; i++)
+                    .salon__carousel-item
+                        img(
+                            src="./img/img-salon.png"
+                            alt=""
+                            title=""
+                            class="salon__carousel-img img_centered"
+                        )
 
 
     .container-fluid.clearfix

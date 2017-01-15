@@ -26,6 +26,20 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	}
 
 
+	.row {
+		&__left {
+			@include respond-to(small-max) {
+				width: 30%;
+			}
+		}
+		&__right {
+			@include respond-to(small-max) {
+				width: 70%;
+			}
+		}
+	}
+
+
 	&__title {
 		top: 0;
 		left: -300px;
@@ -36,44 +50,13 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	&__img {
 		position: absolute;
 		bottom: 0;
-		right: 100px;
-
-
-		&_big {
-			@include respond-to(hard-max) {
-				display: none;
-			}
-		}
-
-
-		&_medium {
-			display: none;
-			@include respond-to(hard-max) {
-				display: block;
-				bottom: -50px;
-			}
-			@include respond-to(large-max) {
-				right: -50px;
-			}
-			@include respond-to(small-max) {
-				display: none;
-			}
-		}
-
-
-		&_small {
-			display: none;
-			@include respond-to(small-max) {
-				display: block;
-				right: -40px;
-			}
-		}
+		left: 100px;
 	}
 
 
 	&__row {
 		float: left;
-		width: 55%;
+		width: 50%;
 		@include respond-to(small-max) {
 			width: 100%;
 		}

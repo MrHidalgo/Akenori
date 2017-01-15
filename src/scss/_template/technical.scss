@@ -19,8 +19,25 @@ $c-white            : return-value(color, white);
 	padding-bottom: 40px;
 	overflow: hidden;
 	@include respond-to(medium-max) {
-		padding-bottom: 220px;
-		padding-top: 60px;
+		padding-bottom: 200px;
+		padding-top: 40px;
+	}
+	@include respond-to(medium-max) {
+		padding-bottom: 150px;
+	}
+
+
+	.row {
+		&__left {
+			@include respond-to(small-max) {
+				width: 60%;
+			}
+		}
+		&__right {
+			@include respond-to(small-max) {
+				width: 40%;
+			}
+		}
 	}
 
 
@@ -36,24 +53,9 @@ $c-white            : return-value(color, white);
 		position: absolute;
 		bottom: -100px;
 		left: -100px;
-
-
-		&_big {
-			@include respond-to(hard-max) {
-				display: none;
-			}
-		}
-		&_medium {
-			display: none;
-			@include respond-to(hard-max) {
-				display: block;
-				left: 0;
-				bottom: 0;
-			}
-			@include respond-to(medium-max) {
-				bottom: -100px;
-				left: -40px;
-			}
+		@include respond-to(small-max) {
+			left: -20px;
+			bottom: -20px;
 		}
 	}
 

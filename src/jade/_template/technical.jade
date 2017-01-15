@@ -16,18 +16,16 @@
 
 .technical
 
-    img(
-        src="./img/img-technical.png"
-        alt=""
-        title=""
-        class="technical__img technical__img_big"
-    )
-    img(
-        src="./img/img-technical-medium.png"
-        alt=""
-        title=""
-        class="technical__img technical__img_medium"
-    )
+    .row
+        .row__left.row__left-half
+            img(
+                src="./img/img-technical.png"
+                alt=""
+                title=""
+                class="technical__img img_responsive"
+            )
+        .row__right.row__right-half
+
 
     +mainTitle("gray", technicalTitle)
 

@@ -13,9 +13,17 @@ $c-white            : return-value(color, white);
 /// MAIN BLOCK
 ///
 .register {
-	position: relative;
+	position: absolute;
 	z-index: 10;
+	top: 280px;
+	width: $w-all;
 	padding-top: 20px;
+	@include respond-to(small-max) {
+		position: relative;
+		left: -150px;
+		top: 0;
+		padding: 0 30px 20px;
+	}
 
 
 	&__img {
@@ -26,31 +34,6 @@ $c-white            : return-value(color, white);
 
 		&-0 {
 			padding-bottom: 20px;
-		}
-
-
-		&-0,
-		&-1 {
-			//@include respond-to(small-max) {
-			//	position: relative;
-			//	left: -140px;
-			//	max-width: 70%;
-			//}
-		}
-
-
-		&-large {
-			@include respond-to(small-max) {
-				display: none;
-			}
-		}
-		&-mobile {
-			display: none;
-			@include respond-to(small-max) {
-				display: block;
-				position: relative;
-				left: -140px;
-			}
 		}
 	}
 }

@@ -101,7 +101,7 @@ input[type="radio"] {
 .clearfix {
 	*zoom: 1;
 
-	:after {
+	&:after {
 		clear: both;
 	}
 
@@ -111,6 +111,23 @@ input[type="radio"] {
 		display: block;
 		height: 0;
 		visibility: hidden;
+	}
+}
+
+
+.img {
+	&_responsive {
+		display: block;
+		max-width: $w-all;
+		height: auto;
+	}
+
+
+	&_centered {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 

@@ -27,7 +27,24 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 	@include respond-to(small-max) {
 		padding-top: 40px;
-		padding-bottom: 400px;
+		padding-bottom: 250px;
+	}
+	@include respond-to(extra-small) {
+		padding-bottom: 150px;
+	}
+
+
+	.row {
+		&__left {
+			@include respond-to(small-max) {
+				width: 50%;
+			}
+		}
+		&__right {
+			@include respond-to(small-max) {
+				width: 50%;
+			}
+		}
 	}
 
 
@@ -35,29 +52,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 		position: absolute;
 		z-index: 0;
 		bottom: 0;
-		left: 150px;
-
-
-		&_big {
-			@include respond-to(hard-max) {
-				display: none;
-			}
-		}
-
-
-		&_small {
-			display: none;
-			@include respond-to(hard-max) {
-				display: block;
-			}
-			@include respond-to(large-max) {
-				left: 0;
-				bottom: -100px;
-			}
-			@include respond-to(small-max) {
-				left: -70px;
-				bottom: -200px;
-			}
+		left: 120px;
+		@include respond-to(small-max) {
+			left: 0;
 		}
 	}
 
@@ -115,6 +112,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 
 		&-wrap {
+			display: inline-block;
 			@include respond-to(small-max) {
 				float: right;
 				clear: both;

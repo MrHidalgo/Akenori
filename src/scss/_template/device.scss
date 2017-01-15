@@ -26,7 +26,21 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		padding-bottom: 50px;
 	}
 	@include respond-to(small-max) {
-		padding-top: 50px;
+		padding-top: 40px;
+	}
+
+
+	.row {
+		&__left {
+			@include respond-to(extra-small) {
+				width: 80%;
+			}
+		}
+		&__right {
+			@include respond-to(extra-small) {
+				width: 20%;
+			}
+		}
 	}
 
 
@@ -41,25 +55,8 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		z-index: 0;
 		bottom: -50px;
 		left: -100px;
-
-
-		&_big {
-			@include respond-to(hard-max) {
-				display: none;
-			}
-		}
-
-
-		&_small {
-			display: none;
-			@include respond-to(hard-max) {
-				display: block;
-				left: 0;
-				bottom: -20%;
-			}
-			@include respond-to(medium-max) {
-				bottom: -30%;
-			}
+		@include respond-to(medium-max) {
+			left: -30px;
 		}
 	}
 

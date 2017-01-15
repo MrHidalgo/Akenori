@@ -34,25 +34,21 @@ mixin qualityWrap(arrText, arrImg)
 
 .quality
 
-    img(
-        src="./img/img-quality.png"
-        alt="image device"
-        title="image device"
-        class="quality__img quality__img_big"
-    )
-    img(
-        src="./img/img-quality-small.png"
-        alt="image device"
-        title="image device"
-        class="quality__img quality__img_small"
-    )
-
-    img(
-        src="./img/img-register-shadow.png"
-        alt="image device"
-        title="image device"
-        class="quality__img-shadow"
-    )
+    .row
+        .row__left.row__left-down
+        .row__right.row__right-up
+            img(
+                src="./img/img-quality.png"
+                alt="image device"
+                title="image device"
+                class="quality__img img_responsive"
+            )
+            img(
+                src="./img/img-register-shadow.png"
+                alt="image device"
+                title="image device"
+                class="quality__img-shadow"
+            )
 
     p.quality__title.big__title!= "Оцените качество съемки"
 

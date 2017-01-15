@@ -23,7 +23,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 	min-height: 820px;
 	padding-bottom: 40px;
 	overflow: hidden;
-	@include respond-to(hard-max) {
+	@include respond-to(medium-max) {
 		padding-top: 100px;
 	}
 	@include respond-to(small-max) {
@@ -31,9 +31,26 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 	}
 
 
+	.row {
+		&__left {
+			@include respond-to(medium-max) {
+				display: none;
+			}
+		}
+		&__right {
+			@include respond-to(medium-max) {
+				position: static;
+				width: $w-all;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+
 	.main__title {
 		white-space: nowrap;
-		@include respond-to(hard-max) {
+		@include respond-to(medium-max) {
 			display: none;
 		}
 	}
@@ -45,7 +62,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 			display: none;
 			padding-left: 15px;
 			padding-right: 15px;
-			@include respond-to(hard-max) {
+			@include respond-to(medium-max) {
 				display: flex;
 				white-space: normal;
 				margin-bottom: 30px;
@@ -62,18 +79,14 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__row {
 		float: left;
-		width: calc(100% - 825px);
-		@include respond-to(hard-max) {
+		width: 55%;
+		@include respond-to(medium-max) {
 			float: none;
-			width: 840px;
+			width: $w-all;
 			margin-left: auto;
 			margin-right: auto;
 		}
-		@include respond-to(medium) {
-			width: 720px;
-		}
 		@include respond-to(small-max) {
-			width: 100%;
 			padding-top: 100px;
 		}
 	}
@@ -82,7 +95,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 	&__wrap {
 		float: right;
 		width: 58%;
-		@include respond-to(hard-max) {
+		@include respond-to(medium-max) {
 			float: none;
 			width: 100%;
 		}
@@ -94,7 +107,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		padding-bottom: 280px;
 		font-size: 20px;
 		color: $c-white;
-		@include respond-to(hard-max) {
+		@include respond-to(medium-max) {
 			padding-bottom: 30px;
 			padding-top: 30px;
 			width: 50%;
@@ -110,7 +123,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__btn {
 		display: block;
-		@include respond-to(hard-max) {
+		@include respond-to(medium-max) {
 			margin-top: 30px;
 			float: right;
 		}
@@ -126,22 +139,20 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		position: absolute;
 		right: 0;
 		top: 130px;
-		@include mixinDimensions(840px, 620px);
+		@include mixinDimensions($w-all, 620px);
 		background-color: $c-white;
 		box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
-		@include respond-to(hard-max) {
+		@include respond-to(medium-max) {
 			position: relative;
 			left: 0;
 			top: 0;
+			height: 580px;
 			margin-left: auto;
 			margin-right: auto;
-		}
-		@include respond-to(medium) {
-			width: 720px;
-			height: 580px;
+			width: calc(100% - 30px);
+			background-color: transparent;
 		}
 		@include respond-to(small-max) {
-			width: calc(100% - 30px);
 			height: 300px;
 		}
 
@@ -157,7 +168,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 				}
 			}
 			.owl-nav {
-				@include respond-to(hard-max) {
+				@include respond-to(medium-max) {
 					display: none;
 				}
 				@include respond-to(small-max) {
@@ -187,7 +198,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 				}
 			}
 			.owl-dots {
-				@include respond-to(hard-max) {
+				@include respond-to(medium-max) {
 					top: auto;
 					left: 20px;
 					bottom: 20px;
@@ -215,7 +226,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 			top: 0;
 			left: 0;
 			overflow: hidden;
-			@include mixinDimensions(840px, 620px);
+			@include mixinDimensions($w-all);
 		}
 	}
 }

@@ -17,6 +17,10 @@ $c-white            : return-value(color, white);
 	padding-top: 100px;
 	min-height: 950px;
 	overflow: hidden;
+	@include respond-to(small-max) {
+		min-height: 830px;
+		padding-top: 30px;
+	}
 
 
 	.main__title {
@@ -28,29 +32,15 @@ $c-white            : return-value(color, white);
 	&__img {
 		position: absolute;
 		z-index: 0;
-		bottom: -50px;
-		left: -50px;
-
-
-		&_big {
-			@include respond-to(hard-max) {
-				display: none;
-			}
+		bottom: -80px;
+		left: -80px;
+		@include respond-to(small-max) {
+			bottom: -30px;
+			left: -30px;
 		}
-		&_medium {
-			display: none;
-			@include respond-to(hard) {
-				display: block;
-				left: 0;
-				bottom: -120px;
-			}
-		}
-		&_small {
-			display: none;
-			@include respond-to(medium-max) {
-				display: block;
-				bottom: -80px;
-			}
+		@include respond-to(extra-small) {
+			bottom: 0;
+			left: 0;
 		}
 	}
 

@@ -6,7 +6,7 @@
 ///
 $w-all              : return-value(dimension, all);
 
-$c-white				    : return-value(color, white);
+$c-white			: return-value(color, white);
 $c-magnolia         : return-value(color, magnolia);
 $c-dimGray          : return-value(color, dimGray);
 $c-nero             : return-value(color, nero);
@@ -56,6 +56,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&_white {
 		.main__title-text {
 			color: $c-white;
+		}
+		.main__title-text_color {
+			color: $c-dimGray;
 		}
 	}
 
@@ -138,6 +141,16 @@ $f-PN_black         : return-value(fonts, PN_black);
 	font: {
 		size: 20px;
 		family: $f-PN_black;
+	}
+	
+	
+	&_light {
+		background-color: $c-magnolia;
+	}
+
+
+	&_dark {
+		//background-color: $c-nero;
 	}
 
 
@@ -285,13 +298,6 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 }
 
-//- image centered in block
-.img-centered {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
 
 //- small list
 .small {
@@ -336,7 +342,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 .testimonials__carousel {
 	.owl {
 		&-nav {
-			left: -57%;
+			left: -80%;
 		}
 
 
@@ -459,8 +465,6 @@ $f-PN_black         : return-value(fonts, PN_black);
 			}
 
 
-
-
 			&.active {
 				border: 1px solid $c-pinkSwan;
 
@@ -472,7 +476,6 @@ $f-PN_black         : return-value(fonts, PN_black);
 		}
 	}
 }
-
 .owl {
 	&-prev {
 		@include retina-sprite($sp-i-prev-group);
@@ -501,30 +504,34 @@ $f-PN_black         : return-value(fonts, PN_black);
 }
 
 //- right/left block
+.left,
 .right {
-	&__img {
+	&__row {
+		width: 50%;
+		@include respond-to(medium-max) {
+			float: none;
+			width: 100%;
+		}
+	}
 
-		&-wrap {
-			position: absolute;
-			top: -80px;
-			right: 0;
+
+	.row {
+		&__left,
+		&__right {
+			height: 92%;
+			top: 0;
+			bottom: 0;
+			margin-top: auto;
+			margin-bottom: auto;
 			overflow: hidden;
-			box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
-			@include mixinDimensions(840px, 620px);
-			@include respond-to(hard) {
-				@include mixinDimensions(740px, 560px);
-			}
-			@include respond-to(large) {
-				@include mixinDimensions(600px, 520px);
-			}
 			@include respond-to(medium-max) {
 				position: relative;
-				top: 20px;
 				width: calc(100% - 30px);
+				height: 100%;
+				margin: 20px auto;
+			}
+			@include respond-to(medium-max) {
 				height: 530px;
-				right: 0;
-				margin-left: auto;
-				margin-right: auto;
 			}
 			@include respond-to(small-max) {
 				height: 380px;
@@ -532,98 +539,102 @@ $f-PN_black         : return-value(fonts, PN_black);
 			@include respond-to(extra-small) {
 				height: 230px;
 			}
+
+
+			.img {
+				@include respond-to(large-min) {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					margin-top: auto;
+					margin-bottom: auto;
+					transform: translate(0);
+				}
+			}
 		}
 	}
-
-
-	&__title {
-		top: 0;
-		left: -10%;
-	}
-
-
+}
+.right {
 	&__row {
 		float: left;
-		padding-top: 100px;
-		width: calc(100% - 840px);
-		@include respond-to(hard) {
-			width: calc(100% - 740px);
-		}
-		@include respond-to(large) {
-			width: calc(100% - 600px);
-		}
+		padding-right: 30px;
 		@include respond-to(medium-max) {
-			float: none;
-			width: 100%;
-			padding-top: 60px;
+			padding-right: 0;
 		}
+	}
 
 
-		.main__title {
-			justify-content: flex-start;
+	.row {
+		&__left {
+			@include respond-to(medium-max) {
+				display: none;
+			}
+		}
+		&__right {
+			.img {
+				@include respond-to(large-min) {
+					left: initial;
+					right: 0;
+				}
+			}
 		}
 	}
 }
 .left {
-	&__img {
-
-		&-wrap {
-			position: absolute;
-			top: 20px;
-			left: 0;
-			overflow: hidden;
-			box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
-			@include mixinDimensions(840px, 620px);
-			@include respond-to(hard) {
-			  @include mixinDimensions(740px, 560px);
-			}
-			@include respond-to(large) {
-			  @include mixinDimensions(600px, 520px);
-			}
-			@include respond-to(medium-max) {
-				position: relative;
-				top: 20px !important;
-				width: calc(100% - 30px);
-				height: 530px;
-				right: 0;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			@include respond-to(small-max) {
-				height: 380px;
-			}
-			@include respond-to(extra-small) {
-				height: 230px;
-			}
-		}
-	}
-
-
-	&__title {
-		top: 0;
-		left: 35%;
-		line-height: 1;
-	}
-
-
 	&__row {
 		float: right;
-		padding-top: 60px;
-		width: calc(100% - 840px);
-		@include respond-to(hard) {
-			width: calc(100% - 740px);
-		}
-		@include respond-to(large) {
-			width: calc(100% - 600px);
-		}
+		padding-left: 30px;
 		@include respond-to(medium-max) {
-			float: none;
-			width: 100%;
+			padding-left: 0;
 		}
+	}
 
 
-		.main__title {
-			justify-content: flex-start;
+	.row {
+		&__left {
+
+
+			.img {
+				@include respond-to(large-min) {
+					left: 0;
+				}
+			}
+		}
+		&__right {
+			@include respond-to(medium-max) {
+				display: none;
+			}
+		}
+	}
+}
+
+
+/* ROW LEFT RIGHT */
+
+.row {
+	&__left {
+		left: 0;
+	}
+	&__right {
+		right: 0;
+	}
+
+
+	&__left,
+	&__right {
+		position: absolute;
+		top: 0;
+		height: $w-all;
+
+
+		&-up {
+			width: 60%;
+		}
+		&-down {
+			width: 40%;
+		}
+		&-half {
+			width: 50%;
 		}
 	}
 }

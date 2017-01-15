@@ -13,11 +13,10 @@ $c-white            : return-value(color, white);
 /// MAIN BLOCK
 ///
 .logotype {
+	position: relative;
 
 
 	&__img {
-
-
 		&-1 {
 			padding-top: 20px;
 			padding-bottom: 20px;
@@ -28,25 +27,32 @@ $c-white            : return-value(color, white);
 
 
 		&-0,
-		&-1 {
+		&-1,
+		&-2 {
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
 
 
-		&-big {
-			@include respond-to(small-max) {
-				display: none;
-			}
+	&__row {
+		@include respond-to(small-max) {
+			padding-left: 100px;
+			padding-right: 100px;
 		}
+	}
 
 
-		&-mobile {
-			display: none;
-			@include respond-to(small-max) {
-				display: block;
-			}
+	&__wrap {
+		@include respond-to(small-max) {
+			position: absolute;
+			z-index: 0;
+			width: $w-all;
+			left: 0;
+			top: 140px;
+			padding-left: 30px;
+			padding-right: 30px;
 		}
 	}
 }

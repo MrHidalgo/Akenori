@@ -30,6 +30,20 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 	}
 
 
+	.row {
+		&__left {
+			@include respond-to(small-max) {
+				width: 30%;
+			}
+		}
+		&__right {
+			@include respond-to(small-max) {
+				width: 70%;
+			}
+		}
+	}
+
+
 	&__img {
 		position: absolute;
 		top: 0;
@@ -38,23 +52,10 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		right: 0;
 
 
-		&_big {
-			@include respond-to(small-max) {
-				display: none;
-			}
-		}
-		&_small {
-			display: none;
-			@include respond-to(small-max) {
-				display: block;
-			}
-		}
-
-
 		&-shadow {
 			position: absolute;
 			right: -200px;
-			bottom: 100px;
+			bottom: 150px;
 			@include respond-to(small-max) {
 				display: none;
 			}
@@ -73,7 +74,7 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 	&__row {
 		float: left;
-		width: 55%;
+		width: 60%;
 		@include respond-to(large-max) {
 			float: none;
 			width: 100%;

@@ -27,14 +27,7 @@ $f-PN_light         : return-value(fonts, PN_light);
 	position: relative;
 	min-height: 100vh;
 	background: $c-nero;
-	//background-image: -ms-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
-	//background-image: -moz-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
-	//background-image: -o-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
-	//background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $c-nero), color-stop(45, $c-nero), color-stop(47, $c-nero), color-stop(65, $c-eclipse), color-stop(67, $c-eclipse), color-stop(70, $c-eclipse), color-stop(90, $c-nero), color-stop(100, $c-nero));
-	//background-image: -webkit-linear-gradient(top, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
-	//background-image: linear-gradient(to bottom, $c-nero 0%, $c-nero 45%, $c-nero 47%, $c-eclipse 65%, $c-eclipse 67%, $c-eclipse 70%, $c-nero 90%, $c-nero 100%);
 	@include respond-to(small-max) {
-		height: 480px;
 		min-height: 480px;
 		overflow: hidden;
 		position: relative;
@@ -48,16 +41,24 @@ $f-PN_light         : return-value(fonts, PN_light);
 		}
 		color: $c-veryLightGrey;
 		text-align: center;
+		padding-top: 180px;
 		padding-bottom: 100px;
 		@include respond-to(small-max) {
-			font-size: 15px;
+			padding-top: 0;
+			font-size: 20px;
 			text-align: left;
-			width: 64%;
+			width: 40%;
 			position: absolute;
 			z-index: 11;
-			bottom: 20px;
+			margin-top: -50px;
+			top: 50%;
 			right: 0;
 			padding-right: 15px;
+		}
+		@include respond-to(extra-small) {
+			font-size: 15px;
+			width: 55%;
+			margin-top: 0;
 		}
 	}
 
@@ -75,43 +76,5 @@ $f-PN_light         : return-value(fonts, PN_light);
 		@include respond-to(small-max) {
 			display: none;
 		}
-	}
-
-
-	&:before {
-		content: "";
-		position: absolute;
-		z-index: 0;
-		top: 280px;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		@include mixinDimensions(657px, 308px);
-		background-image: url("../img/img-logo-bg.png");
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		@include respond-to(small-max) {
-			top: 240px;
-			@include mixinDimensions(355px, 175px);
-			background-image: url("../img/img-logo-bg-mobile.png");
-		}
-	}
-
-
-	&:after {
-		//content: "";
-		//position: absolute;
-		//bottom: 0;
-		//@include mixinDimensions($w-all, 576px);
-		//background: -moz-radial-gradient(center, ellipse cover,  rgba(60,60,60,1) 0%, rgba(0,0,0,0) 100%);
-		//background: -webkit-radial-gradient(center, ellipse cover,  rgba(60,60,60,1) 0%,rgba(0,0,0,0) 100%);
-		//background: radial-gradient(ellipse at center,  rgba(60,60,60,1) 0%,rgba(0,0,0,0) 100%);
-		//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', endColorstr='#00000000',GradientType=1 );
-		//background-image: url("../img/img-eclips.png");
-		//background-size: cover;
-		//background-repeat: no-repeat;
-		//background-position: center;
 	}
 }
