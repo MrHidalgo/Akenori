@@ -801,6 +801,7 @@
 
 .quality__img {
   position: absolute;
+  z-index: 10;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -837,6 +838,8 @@
 
 .quality__row {
   float: left;
+  position: relative;
+  z-index: 10;
   width: 60%;
 }
 
@@ -3114,6 +3117,17 @@
 .tripWith,
 .delivery {
   background-color: #232323;
+}
+
+
+.img-shadow {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 3%;
 }
 
 

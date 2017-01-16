@@ -46,6 +46,7 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 	&__img {
 		position: absolute;
+		z-index: 10;
 		top: 0;
 		bottom: 0;
 		margin: auto;
@@ -74,6 +75,8 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 	&__row {
 		float: left;
+		position: relative;
+		z-index: 10;
 		width: 60%;
 		@include respond-to(large-max) {
 			float: none;
