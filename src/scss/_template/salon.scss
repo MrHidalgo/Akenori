@@ -94,7 +94,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__wrap {
 		float: right;
-		width: 58%;
+		width: 60%;
 		@include respond-to(medium-max) {
 			float: none;
 			width: 100%;

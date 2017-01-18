@@ -24,6 +24,7 @@ $f-PN_light         : return-value(fonts, PN_light);
 /// MAIN BLOCK
 ///
 .header {
+	display: block !important;
 	position: relative;
 	min-height: 100vh;
 	background: $c-nero;

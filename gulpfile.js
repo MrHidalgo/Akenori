@@ -29,7 +29,7 @@ task.imageSprites(command.sprites);
 
 
 /* WATCH FILES FOR RELOAD ---> 'gulp watch'*/
-gulp.task(command.watch, function(event) {
+gulp.task(command.watch, function() {
 
     var srcWatchSCSS = ['./src/scss/**.scss', './src/scss/**/**.scss'];
     var srcWatchJADE = ['./src/jade/**.jade', './src/jade/**/**.jade'];
@@ -46,7 +46,7 @@ gulp.task(command.watch, function(event) {
         gulp.start(command.buildScript)
     });
     watch(srcWatchJSON, function() {
-        gulp.start(command.build)
+        gulp.start(command.buildJade)
     });
 });
 

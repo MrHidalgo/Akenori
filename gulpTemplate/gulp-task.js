@@ -76,7 +76,6 @@ function mainScriptTask(taskName) {
     return gulp.task(taskName, function () {
         gulp.src(src)
             .pipe(plumber())
-            .pipe(changed(dist))
             .pipe(fixmyjs(
                 {
                     legacy : true

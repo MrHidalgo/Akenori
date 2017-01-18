@@ -55,8 +55,8 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 		&-shadow {
 			position: absolute;
-			right: -200px;
-			bottom: 150px;
+			right: -150px;
+			bottom: 100px;
 			@include respond-to(small-max) {
 				display: none;
 			}
@@ -212,23 +212,12 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 			position: absolute;
 			left: 20px;
 			bottom: 20px;
-			@include retina-sprite($sp-i-play-group);
 			@include respond-to(small-max) {
 				left: 0;
 				right: 0;
 				bottom: 0;
 				top: 0;
 				margin: auto;
-			}
-
-
-			&:hover {
-				@include retina-sprite($sp-i-play-h-group);
-			}
-
-
-			&:active {
-				@include retina-sprite($sp-i-play-a-group);
 			}
 		}
 	}

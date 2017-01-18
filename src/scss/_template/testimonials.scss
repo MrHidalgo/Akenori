@@ -124,23 +124,12 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 		position: absolute;
 		bottom: 20px;
 		left: 20px;
-		@include retina-sprite($sp-i-play-group);
 		@include respond-to(hard-max) {
 			bottom: 0;
 			left: 0;
 			right: 0;
 			top: 0;
 			margin: auto;
-		}
-
-
-		&:hover {
-			@include retina-sprite($sp-i-play-h-group);
-		}
-
-
-		&:active {
-			@include retina-sprite($sp-i-play-a-group);
 		}
 	}
 

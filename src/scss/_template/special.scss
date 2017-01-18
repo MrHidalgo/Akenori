@@ -19,6 +19,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 	min-height: 980px;
 	padding-top: 340px;
 	padding-bottom: 100px;
+	overflow: hidden;
 	@include respond-to(hard-max) {
 		min-height: initial;
 		padding-top: 250px;

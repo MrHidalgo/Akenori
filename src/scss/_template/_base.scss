@@ -51,6 +51,28 @@ $f-PN_black         : return-value(fonts, PN_black);
 	bottom: 3%;
 }
 
+.header {
+	.img-shadow {
+		bottom: 80px;
+	}
+}
+.special {
+	.img-shadow {
+		bottom: 0;
+	}
+}
+.quality {
+	.img-shadow {
+		bottom: -100px;
+	}
+}
+.salon,
+.tripWithout {
+	.img-shadow {
+		bottom: 0;
+	}
+}
+
 //- main titile
 .main__title {
 	display: flex;
@@ -75,6 +97,22 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&_ruby {
 		.main__title-text {
 			color: $c-ruby;
+		}
+	}
+
+
+	&_big {
+		.main__title-text {
+			font-size: 45px;
+			@include respond-to(medium) {
+				font-size: 40px;
+			}
+			@include respond-to(small-max) {
+				font-size: 30px;
+			}
+			@include respond-to(extra-small) {
+				font-size: 22px;
+			}
 		}
 	}
 
@@ -106,6 +144,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 		}
 		color: $c-dimGray;
 		text-transform: uppercase;
+		letter-spacing: 2px;
 		@include respond-to(small-max) {
 			flex: 1 500px;
 			margin-top: 10px;
@@ -351,7 +390,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 .testimonials__carousel {
 	.owl {
 		&-nav {
-			left: -80%;
+			left: -84%;
 		}
 
 
@@ -645,5 +684,24 @@ $f-PN_black         : return-value(fonts, PN_black);
 		&-half {
 			width: 50%;
 		}
+	}
+}
+
+.btn_play {
+	@include retina-sprite($sp-i-play-group);
+
+	&:hover {
+		@include retina-sprite($sp-i-play-h-group);
+	}
+
+	&:active {
+		@include retina-sprite($sp-i-play-a-group);
+	}
+}
+.btn_pause {
+	@include retina-sprite($sp-i-pause-group);
+
+	&:hover {
+		@include retina-sprite($sp-i-pause-h-group);
 	}
 }
