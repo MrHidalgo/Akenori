@@ -35,6 +35,11 @@ $f-PN_light         : return-value(fonts, PN_light);
 	}
 
 
+	.fixed & {
+		min-height: calc(100vh - 140px);
+	}
+
+
 	&__title {
 		font: {
 			size: 25px;

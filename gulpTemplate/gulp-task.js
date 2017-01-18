@@ -85,9 +85,7 @@ function mainScriptTask(taskName) {
             .pipe(
                 gulp.dest(dist)
             )
-            .pipe(plumber())
             .pipe(uglify())
-            .pipe(plumber.stop())
             .pipe(rename(
                 {
                     suffix : '.min'

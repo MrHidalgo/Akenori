@@ -19,7 +19,7 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 ///
 .nav {
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 12;
 	top: 140px;
 	left: 0;
@@ -32,6 +32,12 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 		height: calc(100% - 100px);
 	}
 
+	.open-menu & {
+		@include respond-to(small-max) {
+			overflow-y: auto;
+		}
+	}
+
 
 	&__list {
 		width: 740px;
@@ -40,16 +46,21 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 
 		display: flex;
 		flex-flow: row wrap;
+		@include respond-to(small-max) {
+			width: $w-all;
+		}
 	}
 
 
 	&__item {
 		width: 50%;
 		overflow: hidden;
+		flex: 1 320px;
 	}
 
 
 	&__btn {
+		display: block;
 		font: {
 			size: 22px;
 			family: $f-PN_bold;
@@ -57,8 +68,8 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 		color: $c-gainsboro;
 		text-transform: uppercase;
 		position: relative;
-		height: 40px;
-		line-height: 40px;
+		height: 50px;
+		line-height: 50px;
 		margin-bottom: 20px;
 		overflow: hidden;
 		transition: all .3s ease-in-out;
@@ -67,7 +78,7 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 		&:before {
 			content: "";
 			position: absolute;
-			top: 12px;
+			top: 23px;
 			left: -100px;
 			@include mixinDimensions(100px, 1px);
 			background-color: $c-pinkSwan;

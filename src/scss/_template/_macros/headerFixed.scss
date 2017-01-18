@@ -21,9 +21,20 @@ $c-nero             : return-value(color, nero);
 	}
 
 
+	.fixed & {
+		position: fixed;
+		z-index: 100;
+		left: 0;
+		top: 0;
+		width: $w-all;
+		box-shadow: 0 0 5px 0 rgba(255,255,255,.1);
+	}
+
+
 	&-logo {
 		margin-top: 59px;
 		float: left;
+		cursor: pointer;
 		@include respond-to(small-max) {
 			margin-top: 39px;
 		}

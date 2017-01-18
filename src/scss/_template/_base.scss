@@ -43,6 +43,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 }
 .img-shadow {
 	position: absolute;
+	opacity: .9;
 	z-index: 0;
 	left: 0;
 	right: 0;

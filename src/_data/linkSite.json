@@ -2,6 +2,7 @@
   "styleLink" : [
     "./css/fonts.min.css",
     "./css/owl.carousel.min.css",
+    "./css/animate.min.css",
     "./css/common.min.css"
   ],
 
