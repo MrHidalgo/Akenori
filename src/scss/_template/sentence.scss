@@ -76,6 +76,10 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 
 	&__img {
 		min-width: 100%;
+
+		&.img_centered {
+			top: -440%;
+		}
 	}
 
 

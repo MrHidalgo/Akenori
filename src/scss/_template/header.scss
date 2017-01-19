@@ -44,6 +44,7 @@ $f-PN_light         : return-value(fonts, PN_light);
 		font: {
 			size: 25px;
 			family: $f-PN_light;
+			weight: 300;
 		}
 		color: $c-veryLightGrey;
 		text-align: center;

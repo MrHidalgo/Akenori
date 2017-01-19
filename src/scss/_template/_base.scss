@@ -112,7 +112,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 				font-size: 30px;
 			}
 			@include respond-to(extra-small) {
-				font-size: 22px;
+				font-size: 25px;
 			}
 		}
 	}
@@ -456,7 +456,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 			margin-top: 80px;
 			text-align: center;
 			@include respond-to(small-max) {
-				width: calc(100% - 30px);
+				margin-top: 30px;
+				width: $w-all;
 			}
 		}
 
@@ -484,7 +485,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 			margin-right: auto;
 			text-align: center;
 			@include respond-to(small-max) {
-				width: calc(100% - 30px);
+				width: $w-all;
+				margin-top: 60px;
 			}
 		}
 
@@ -528,20 +530,30 @@ $f-PN_black         : return-value(fonts, PN_black);
 .owl {
 	&-prev {
 		@include retina-sprite($sp-i-prev-group);
+		@include respond-to(small-max) {
+			@include retina-sprite($sp-i-prev-mobile-group);
+		}
 
 
 		&:hover,
 		&:active {
-			@include retina-sprite($sp-i-prev-h-group);
+			@include respond-to(small-min) {
+				@include retina-sprite($sp-i-prev-h-group);
+			}
 		}
 	}
 	&-next {
 		@include retina-sprite($sp-i-next-group);
+		@include respond-to(small-max) {
+			@include retina-sprite($sp-i-next-mobile-group);
+		}
 
 
 		&:hover,
 		&:active {
-			@include retina-sprite($sp-i-next-h-group);
+			@include respond-to(small-min) {
+				@include retina-sprite($sp-i-next-h-group);
+			}
 		}
 	}
 	&-prev,
@@ -556,7 +568,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 .left,
 .right {
 	&__row {
-		width: 50%;
+		width: 60%;
 		@include respond-to(medium-max) {
 			float: none;
 			width: 100%;
@@ -620,6 +632,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 			}
 		}
 		&__right {
+			top: -80px;
+			@include respond-to(large-max) {
+				top: 0;
+			}
 			.img {
 				@include respond-to(large-min) {
 					left: initial;
@@ -641,8 +657,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	.row {
 		&__left {
-
-
+			top: 80px;
+			@include respond-to(large-max) {
+				top: 0;
+			}
 			.img {
 				@include respond-to(large-min) {
 					left: 0;

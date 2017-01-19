@@ -14,7 +14,7 @@ $c-white            : return-value(color, white);
 ///
 .tripWithout {
 	position: relative;
-	min-height: 780px;
+	min-height: 700px;
 	padding-top: 40px;
 	padding-bottom: 20px;
 	@include respond-to(medium-max) {

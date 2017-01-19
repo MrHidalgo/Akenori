@@ -206,9 +206,11 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 				@include respond-to(small-max) {
 					position: absolute;
 					left: 0;
+					right: 0;
+					margin-left: auto;
 					bottom: -70px;
 					text-align: center;
-					width: 100%;
+					width: calc(100% - 68px);
 				}
 
 

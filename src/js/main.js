@@ -14,12 +14,6 @@ function scrollWindowNavigationFixedLarge() {
     }
 }
 
-$(window).on("load resize ready scroll", function(){
-    if($(window).width() > '1024') {
-        scrollWindowNavigationFixedLarge();
-    }
-});
-
 $(document).ready(function(){
 
     /* LOGO CLICK SCROLL TO TOP */
@@ -67,13 +61,12 @@ $(document).ready(function(){
 
 
     /* MORE */
-    $(".more__btn-wrap").on("click", function(e) {
+    $(".more__btn-wrap").on("click", function() {
         $(".more__btn-wrap").removeClass("active");
         $(this).addClass("active");
     });
     $(".more__carousel").owlCarousel({
         items:1,
-        lazyLoad: true,
         dots: true,
         nav:true
     });
@@ -103,245 +96,256 @@ $(document).ready(function(){
     })
 });
 
-(function() {
-    $(function() {
+$(window).on("load resize ready scroll", function(){
+    if($(window).width() > '1024') {
+        scrollWindowNavigationFixedLarge();
+    }
+});
 
-        /*  Globals
-         -------------------------------------------------- */
-        var PROPERTIES =               ['translateX', 'translateY', 'opacity', 'rotate', 'scale'],
-            $window =                  $(window),
-            $body =                    $('body'),
-            wrappers =                 [],
-            currentWrapper =           null,
-            scrollTimeoutID =          0,
-            bodyHeight =               0,
-            windowHeight =             0,
-            windowWidth =              0,
-            prevKeyframesDurations =   0,
-            scrollTop =                0,
-            relativeScrollTop =        0,
-            currentKeyframe =          0,
-            keyframes = [
-                {
-                    'wrapper' : '#header',
-                    'duration' : '90%',
-                    'animations' :  [
+
+$(window).on("load resize", function(){
+    if($(window).width() > '1024') {
+        (function() {
+            $(function() {
+
+                /*  Globals
+                 -------------------------------------------------- */
+                var PROPERTIES =               ['translateX', 'translateY', 'opacity', 'rotate', 'scale'],
+                    $window =                  $(window),
+                    $body =                    $('body'),
+                    wrappers =                 [],
+                    currentWrapper =           null,
+                    scrollTimeoutID =          0,
+                    bodyHeight =               0,
+                    windowHeight =             0,
+                    windowWidth =              0,
+                    prevKeyframesDurations =   0,
+                    scrollTop =                0,
+                    relativeScrollTop =        0,
+                    currentKeyframe =          0,
+                    keyframes = [
                         {
-                            'selector'    : '.logotype__img-0',
-                            'translateY'  : 300,
-                            'opacity'     : [1, 0],
-                            'scale'       : 0.5
-                        } , {
-                            'selector'    : '.logotype__img-1',
-                            'translateY'  : 300,
-                            'opacity'     : [1, 0],
-                            'scale'       : 0.5
-                        } , {
-                            'selector'    : '.logotype__img-2',
-                            'translateY'  : 150,
-                            'opacity'     : [1, 0.15]
-                        } , {
-                            'selector'    : '.register__img-0',
-                            'translateY'  : '-45%'
-                        }, {
-                            'selector'    : '.register__img-1',
-                            'opacity'     : [1, 0],
-                            'scale'       : 0
+                            'wrapper' : '#header',
+                            'duration' : '90%',
+                            'animations' :  [
+                                {
+                                    'selector'    : '.logotype__img-0',
+                                    'translateY'  : 300,
+                                    'opacity'     : [1, 0],
+                                    'scale'       : 0.5
+                                } , {
+                                    'selector'    : '.logotype__img-1',
+                                    'translateY'  : 300,
+                                    'opacity'     : [1, 0],
+                                    'scale'       : 0.5
+                                } , {
+                                    'selector'    : '.logotype__img-2',
+                                    'translateY'  : 150,
+                                    'opacity'     : [1, 0.15]
+                                } , {
+                                    'selector'    : '.register__img-0',
+                                    'translateY'  : '-45%'
+                                }, {
+                                    'selector'    : '.register__img-1',
+                                    'opacity'     : [1, 0],
+                                    'scale'       : 0
+                                }
+                            ]
+                        } ,  {
+                            'duration' : '100%',
+                            'animations' :  []
                         }
                     ]
-                } ,  {
-                    'duration' : '100%',
-                    'animations' :  []
-                }
-            ]
 
-        /*  Construction
-         -------------------------------------------------- */
-        init = function() {
-            scrollIntervalID = setInterval(updatePage, 10);
-            setupValues();
-            $window.resize(throwError);
-            if(isTouchDevice) {
-                $window.resize(throwError)
-            }
-        };
+                /*  Construction
+                 -------------------------------------------------- */
+                init = function() {
+                    scrollIntervalID = setInterval(updatePage, 10);
+                    setupValues();
+                    $window.resize(throwError);
+                    if(isTouchDevice) {
+                        $window.resize(throwError)
+                    }
+                };
 
-        setupValues = function() {
-            scrollTop = $window.scrollTop();
-            windowHeight = $window.height();
-            windowWidth = $window.width();
-            convertAllPropsToPx();
-            buildPage();
-        };
+                setupValues = function() {
+                    scrollTop = $window.scrollTop();
+                    windowHeight = $window.height();
+                    windowWidth = $window.width();
+                    convertAllPropsToPx();
+                    buildPage();
+                };
 
-        buildPage = function() {
-            var i, j, k;
-            for(i=0;i<keyframes.length;i++) { // loop keyframes
-                bodyHeight += keyframes[i].duration;
-                if($.inArray(keyframes[i].wrapper, wrappers) == -1) {
-                    wrappers.push(keyframes[i].wrapper);
-                }
-                for(j=0;j<keyframes[i].animations.length;j++) { // loop animations
-                    Object.keys(keyframes[i].animations[j]).forEach(function(key) { // loop properties
-                        value = keyframes[i].animations[j][key];
-                        if(key !== 'selector' && value instanceof Array === false) {
-                            var valueSet = [];
-                            valueSet.push(getDefaultPropertyValue(key), value);
-                            value = valueSet;
+                buildPage = function() {
+                    var i, j, k;
+                    for(i=0;i<keyframes.length;i++) { // loop keyframes
+                        bodyHeight += keyframes[i].duration;
+                        if($.inArray(keyframes[i].wrapper, wrappers) == -1) {
+                            wrappers.push(keyframes[i].wrapper);
                         }
-                        keyframes[i].animations[j][key] = value;
-                    });
-                }
-            }
-            $body.height(bodyHeight);
-            $window.scroll(0);
-            currentWrapper = wrappers[0];
-            $(currentWrapper).show();
-        };
+                        for(j=0;j<keyframes[i].animations.length;j++) { // loop animations
+                            Object.keys(keyframes[i].animations[j]).forEach(function(key) { // loop properties
+                                value = keyframes[i].animations[j][key];
+                                if(key !== 'selector' && value instanceof Array === false) {
+                                    var valueSet = [];
+                                    valueSet.push(getDefaultPropertyValue(key), value);
+                                    value = valueSet;
+                                }
+                                keyframes[i].animations[j][key] = value;
+                            });
+                        }
+                    }
+                    $body.height(bodyHeight);
+                    $window.scroll(0);
+                    currentWrapper = wrappers[0];
+                    $(currentWrapper).show();
+                };
 
-        convertAllPropsToPx = function() {
-            var i, j, k;
-            for(i=0;i<keyframes.length;i++) { // loop keyframes
-                keyframes[i].duration = convertPercentToPx(keyframes[i].duration, 'y');
-                for(j=0;j<keyframes[i].animations.length;j++) { // loop animations
-                    Object.keys(keyframes[i].animations[j]).forEach(function(key) { // loop properties
-                        value = keyframes[i].animations[j][key];
-                        if(key !== 'selector') {
-                            if(value instanceof Array) { // if its an array
-                                for(k=0;k<value.length;k++) { // if value in array is %
-                                    if(typeof value[k] === "string") {
-                                        if(key === 'translateY') {
-                                            value[k] = convertPercentToPx(value[k], 'y');
-                                        } else {
-                                            value[k] = convertPercentToPx(value[k], 'x');
+                convertAllPropsToPx = function() {
+                    var i, j, k;
+                    for(i=0;i<keyframes.length;i++) { // loop keyframes
+                        keyframes[i].duration = convertPercentToPx(keyframes[i].duration, 'y');
+                        for(j=0;j<keyframes[i].animations.length;j++) { // loop animations
+                            Object.keys(keyframes[i].animations[j]).forEach(function(key) { // loop properties
+                                value = keyframes[i].animations[j][key];
+                                if(key !== 'selector') {
+                                    if(value instanceof Array) { // if its an array
+                                        for(k=0;k<value.length;k++) { // if value in array is %
+                                            if(typeof value[k] === "string") {
+                                                if(key === 'translateY') {
+                                                    value[k] = convertPercentToPx(value[k], 'y');
+                                                } else {
+                                                    value[k] = convertPercentToPx(value[k], 'x');
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        if(typeof value === "string") { // if single value is a %
+                                            if(key === 'translateY') {
+                                                value = convertPercentToPx(value, 'y');
+                                            } else {
+                                                value = convertPercentToPx(value, 'x');
+                                            }
                                         }
                                     }
+                                    keyframes[i].animations[j][key] = value;
                                 }
-                            } else {
-                                if(typeof value === "string") { // if single value is a %
-                                    if(key === 'translateY') {
-                                        value = convertPercentToPx(value, 'y');
-                                    } else {
-                                        value = convertPercentToPx(value, 'x');
-                                    }
-                                }
-                            }
-                            keyframes[i].animations[j][key] = value;
+                            });
+                        }
+                    }
+                };
+
+                getDefaultPropertyValue = function(property) {
+                    switch (property) {
+                        case 'translateX':
+                            return 0;
+                        case 'translateY':
+                            return 0;
+                        case 'scale':
+                            return 1;
+                        case 'rotate':
+                            return 0;
+                        case 'opacity':
+                            return 1;
+                        default:
+                            return null;
+                    }
+                }
+
+                /*  Animation/Scrolling
+                 -------------------------------------------------- */
+                updatePage = function() {
+                    window.requestAnimationFrame(function() {
+                        setScrollTops();
+                        if(scrollTop > 0 && scrollTop <= (bodyHeight - windowHeight)) {
+                            animateElements();
+                            setKeyframe();
                         }
                     });
-                }
-            }
-        };
+                };
 
-        getDefaultPropertyValue = function(property) {
-            switch (property) {
-                case 'translateX':
-                    return 0;
-                case 'translateY':
-                    return 0;
-                case 'scale':
-                    return 1;
-                case 'rotate':
-                    return 0;
-                case 'opacity':
-                    return 1;
-                default:
-                    return null;
-            }
-        }
+                setScrollTops = function() {
+                    scrollTop = $window.scrollTop();
+                    relativeScrollTop = scrollTop - prevKeyframesDurations;
+                };
 
-        /*  Animation/Scrolling
-         -------------------------------------------------- */
-        updatePage = function() {
-            window.requestAnimationFrame(function() {
-                setScrollTops();
-                if(scrollTop > 0 && scrollTop <= (bodyHeight - windowHeight)) {
-                    animateElements();
-                    setKeyframe();
-                }
-            });
-        };
+                animateElements = function() {
+                    var animation, translateY, translateX, scale, rotate, opacity;
+                    for(var i=0;i<keyframes[currentKeyframe].animations.length;i++) {
+                        animation   = keyframes[currentKeyframe].animations[i];
+                        translateY  = calcPropValue(animation, 'translateY');
+                        translateX  = calcPropValue(animation, 'translateX');
+                        scale       = calcPropValue(animation, 'scale');
+                        rotate      = calcPropValue(animation, 'rotate');
+                        opacity     = calcPropValue(animation, 'opacity');
 
-        setScrollTops = function() {
-            scrollTop = $window.scrollTop();
-            relativeScrollTop = scrollTop - prevKeyframesDurations;
-        };
+                        $(animation.selector).css({
+                            'transform':    'translate3d(' + translateX +'px, ' + translateY + 'px, 0) scale('+ scale +') rotate('+ rotate +'deg)',
+                            'opacity' : opacity
+                        })
+                    }
+                };
 
-        animateElements = function() {
-            var animation, translateY, translateX, scale, rotate, opacity;
-            for(var i=0;i<keyframes[currentKeyframe].animations.length;i++) {
-                animation   = keyframes[currentKeyframe].animations[i];
-                translateY  = calcPropValue(animation, 'translateY');
-                translateX  = calcPropValue(animation, 'translateX');
-                scale       = calcPropValue(animation, 'scale');
-                rotate      = calcPropValue(animation, 'rotate');
-                opacity     = calcPropValue(animation, 'opacity');
+                calcPropValue = function(animation, property) {
+                    var value = animation[property];
+                    if(value) {
+                        value = easeInOutQuad(relativeScrollTop, value[0], (value[1]-value[0]), keyframes[currentKeyframe].duration);
+                    } else {
+                        value = getDefaultPropertyValue(property);
+                    }
+                    // value = +value.toFixed(2)
+                    // TEMPORARILY REMOVED CAUSE SCALE DOESN'T WORK WITHA AGRESSIVE ROUNDING LIKE THIS
+                    return value;
+                };
 
-                $(animation.selector).css({
-                    'transform':    'translate3d(' + translateX +'px, ' + translateY + 'px, 0) scale('+ scale +') rotate('+ rotate +'deg)',
-                    'opacity' : opacity
-                })
-            }
-        };
+                easeInOutQuad = function (t, b, c, d) {
+                    //sinusoadial in and out
+                    return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+                };
 
-        calcPropValue = function(animation, property) {
-            var value = animation[property];
-            if(value) {
-                value = easeInOutQuad(relativeScrollTop, value[0], (value[1]-value[0]), keyframes[currentKeyframe].duration);
-            } else {
-                value = getDefaultPropertyValue(property);
-            }
-            // value = +value.toFixed(2)
-            // TEMPORARILY REMOVED CAUSE SCALE DOESN'T WORK WITHA AGRESSIVE ROUNDING LIKE THIS
-            return value;
-        };
+                setKeyframe = function() {
+                    if(scrollTop > (keyframes[currentKeyframe].duration + prevKeyframesDurations)) {
+                        prevKeyframesDurations += keyframes[currentKeyframe].duration;
+                        currentKeyframe++;
+                        showCurrentWrappers();
+                    } else if(scrollTop < prevKeyframesDurations) {
+                        currentKeyframe--;
+                        prevKeyframesDurations -= keyframes[currentKeyframe].duration;
+                        showCurrentWrappers();
+                    }
+                };
 
-        easeInOutQuad = function (t, b, c, d) {
-            //sinusoadial in and out
-            return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
-        };
+                showCurrentWrappers = function() {
+                    var i;
+                    if(keyframes[currentKeyframe].wrapper != currentWrapper) {
+                        $(currentWrapper).hide();
+                        $(keyframes[currentKeyframe].wrapper).show();
+                        currentWrapper = keyframes[currentKeyframe].wrapper;
+                    }
+                };
 
-        setKeyframe = function() {
-            if(scrollTop > (keyframes[currentKeyframe].duration + prevKeyframesDurations)) {
-                prevKeyframesDurations += keyframes[currentKeyframe].duration;
-                currentKeyframe++;
-                showCurrentWrappers();
-            } else if(scrollTop < prevKeyframesDurations) {
-                currentKeyframe--;
-                prevKeyframesDurations -= keyframes[currentKeyframe].duration;
-                showCurrentWrappers();
-            }
-        };
+                /*  Helpers
+                 -------------------------------------------------- */
 
-        showCurrentWrappers = function() {
-            var i;
-            if(keyframes[currentKeyframe].wrapper != currentWrapper) {
-                $(currentWrapper).hide();
-                $(keyframes[currentKeyframe].wrapper).show();
-                currentWrapper = keyframes[currentKeyframe].wrapper;
-            }
-        };
+                convertPercentToPx = function(value, axis) {
+                    if(typeof value === "string" && value.match(/%/g)) {
+                        if(axis === 'y') value = (parseFloat(value) / 100) * windowHeight;
+                        if(axis === 'x') value = (parseFloat(value) / 100) * windowWidth;
+                    }
+                    return value;
+                };
 
-        /*  Helpers
-         -------------------------------------------------- */
+                throwError = function() {
+                    $body.addClass('page-error')
+                };
 
-        convertPercentToPx = function(value, axis) {
-            if(typeof value === "string" && value.match(/%/g)) {
-                if(axis === 'y') value = (parseFloat(value) / 100) * windowHeight;
-                if(axis === 'x') value = (parseFloat(value) / 100) * windowWidth;
-            }
-            return value;
-        };
+                isTouchDevice = function() {
+                    return 'ontouchstart' in window // works on most browsers
+                        || 'onmsgesturechange' in window; // works on ie10
+                };
 
-        throwError = function() {
-            $body.addClass('page-error')
-        };
-
-        isTouchDevice = function() {
-            return 'ontouchstart' in window // works on most browsers
-                || 'onmsgesturechange' in window; // works on ie10
-        };
-
-        init();
-    })
-}).call(this);
+                init();
+            })
+        }).call(this);
+    }
+});

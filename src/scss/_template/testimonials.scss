@@ -66,7 +66,7 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 		}
 		@include respond-to(small-max) {
 			width: 100%;
-			padding-bottom: 100px !important;
+			padding-bottom: 120px !important;
 		}
 
 
@@ -166,10 +166,16 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 			@include respond-to(hard-max) {
 				left: 30px;
 			}
+			@include respond-to(small-max) {
+				left: 0;
+			}
 		}
 		&-next {
 			@include respond-to(hard-max) {
 				right: 30px;
+			}
+			@include respond-to(small-max) {
+				right: 0;
 			}
 		}
 		&-prev,
@@ -180,7 +186,7 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 				top: 200px;
 			}
 			@include respond-to(small-max) {
-				top: 270px;
+				top: 245px;
 			}
 		}
 		&-dots {
@@ -196,7 +202,7 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 				width: calc(100% - 140px);
 			}
 			@include respond-to(small-max) {
-				top: 265px;
+				top: 270px;
 				width: 100%;
 			}
 

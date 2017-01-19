@@ -50,6 +50,10 @@ body{
 
 	&.open-menu {
 		overflow: hidden;
+		position: fixed;
+		height: 100%;
+		top: 0;
+		left: 0;
 	}
 
 
