@@ -1,10 +1,12 @@
 
 .header__fixed {
+  position: relative;
+  z-index: 100;
   height: 140px;
   background: #232323;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1366px) {
   
   .header__fixed {
     height: 100px;
@@ -14,12 +16,10 @@
 
 .fixed .header__fixed {
   position: fixed;
-  z-index: 100;
+  z-index: 101;
   left: 0;
   top: 0;
   width: 100%;
-  -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.1);
 }
 
 
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1366px) {
   
   .header__fixed-logo {
     margin-top: 39px;
@@ -45,7 +45,7 @@
   height: 23px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1366px) {
   
   .header__fixed-btn {
     top: 38px;
@@ -216,7 +216,7 @@
   height: calc(100% - 140px);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1366px) {
   
   .nav {
     top: 100px;
@@ -330,6 +330,14 @@
 .fixed .header {
   min-height: -webkit-calc(100vh - 140px);
   min-height: calc(100vh - 140px);
+}
+
+@media screen and (max-width: 1366px) {
+  
+  .fixed .header {
+    min-height: -webkit-calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+  }
 }
 
 
@@ -544,6 +552,8 @@
 
 .special__row {
   float: left;
+  position: relative;
+  z-index: 11;
   width: 55%;
 }
 
@@ -760,7 +770,7 @@
   
   .device__price-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -803,7 +813,7 @@
   
   .device__price-num:after {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -828,6 +838,14 @@
     padding-top: 40px;
     min-height: 980px;
   }
+}
+
+
+.quality .main__title {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 @media screen and (max-width: 767px) {
@@ -963,7 +981,7 @@
   
   .quality__price-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1007,7 +1025,7 @@
   
   .quality__price-num:after {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1304,7 +1322,7 @@
   
   .phone__btn-android:before {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1320,7 +1338,7 @@
   
   .phone__btn-android:hover:before {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1336,7 +1354,7 @@
   
   .phone__btn-android:active:before {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1357,7 +1375,7 @@
   
   .phone__btn-iphone:before {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1373,7 +1391,7 @@
   
   .phone__btn-iphone:hover:before {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1389,7 +1407,7 @@
   
   .phone__btn-iphone:active:before {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -1479,7 +1497,9 @@
 
 .salon__row {
   float: left;
-  width: 55%;
+  position: relative;
+  z-index: 11;
+  width: 50%;
 }
 
 @media screen and (max-width: 991px) {
@@ -1565,10 +1585,11 @@
 
 .salon__carousel {
   position: absolute;
+  z-index: 100;
   right: 0;
   top: 130px;
-  width: 100%;
-  height: 620px;
+  max-width: 840px;
+  height: 610px;
   background-color: #fff;
   -webkit-box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.18);
           box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.18);
@@ -1598,7 +1619,7 @@
 
 
 .salon__carousel.owl-carousel .owl-item {
-  height: 620px;
+  height: 610px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -1673,6 +1694,7 @@
     left: 0;
     right: 0;
     margin-left: auto;
+    margin-right: auto;
     bottom: -70px;
     text-align: center;
     width: -webkit-calc(100% - 68px);
@@ -1703,6 +1725,13 @@
   min-height: 700px;
   padding-top: 40px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 991px) {
+  
+  .nature {
+    padding-top: 0;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -1744,6 +1773,7 @@
 @media screen and (max-width: 991px) {
   
   .city {
+    padding-top: 0;
     overflow: hidden;
   }
 }
@@ -2144,7 +2174,7 @@
   
   .sentence__price:after {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -2218,6 +2248,7 @@
 
 .more__btn-wrap {
   width: 350px;
+  color: #686868;
 }
 
 @media screen and (max-width: 767px) {
@@ -2226,6 +2257,11 @@
     width: 50%;
     text-align: center;
   }
+}
+
+
+.more__btn-wrap.active {
+  color: #232323;
 }
 
 
@@ -2342,6 +2378,7 @@
 @media screen and (max-width: 991px) {
   
   .tripWithout {
+    padding-top: 0;
     overflow: hidden;
   }
 }
@@ -2698,6 +2735,13 @@
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  
+  .owl-carousel.testimonials__carousel .owl-dots {
+    top: 395px !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   
   .owl-carousel.testimonials__carousel .owl-dots {
@@ -2834,7 +2878,7 @@
   
   .delivery__icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -2925,7 +2969,7 @@
   
   .delivery__price-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -2969,7 +3013,7 @@
 
 .footer__btn-vk {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -2199px;
+  background-position: 0px -2263px;
   width: 22px;
   height: 13px;
 }
@@ -2978,7 +3022,7 @@
   
   .footer__btn-vk {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -2994,7 +3038,7 @@
   
   .footer__btn-fb {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3220,7 +3264,7 @@
   
   .main__title-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3326,7 +3370,7 @@
   
   .btn:hover .btn-icon, .btn:active .btn-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3345,7 +3389,7 @@
   
   .btn-icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3459,7 +3503,7 @@
   
   .main__list-diff .main__icon-0 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3475,7 +3519,7 @@
   
   .main__list-diff .main__icon-1 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3491,7 +3535,7 @@
   
   .main__list-diff .main__icon-2 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3507,7 +3551,7 @@
   
   .main__list-device .main__icon-0 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3523,7 +3567,7 @@
   
   .main__list-device .main__icon-1 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3539,7 +3583,7 @@
   
   .main__list-device .main__icon-2 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3555,7 +3599,7 @@
   
   .main__list-device .main__icon-3 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3571,7 +3615,7 @@
   
   .main__list-phone .main__icon-0 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3587,7 +3631,7 @@
   
   .main__list-phone .main__icon-1 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3603,14 +3647,14 @@
   
   .main__list-phone .main__icon-2 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-0 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1572px;
+  background-position: 0px -1636px;
   width: 72px;
   height: 58px;
 }
@@ -3619,14 +3663,14 @@
   
   .main__list-technical .main__icon-0 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-1 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1635px;
+  background-position: 0px -1699px;
   width: 55px;
   height: 57px;
 }
@@ -3635,14 +3679,14 @@
   
   .main__list-technical .main__icon-1 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-2 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1697px;
+  background-position: 0px -1761px;
   width: 94px;
   height: 58px;
 }
@@ -3651,14 +3695,14 @@
   
   .main__list-technical .main__icon-2 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-3 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1760px;
+  background-position: 0px -1824px;
   width: 97px;
   height: 63px;
 }
@@ -3667,14 +3711,14 @@
   
   .main__list-technical .main__icon-3 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-4 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1828px;
+  background-position: 0px -1892px;
   width: 60px;
   height: 56px;
 }
@@ -3683,14 +3727,14 @@
   
   .main__list-technical .main__icon-4 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-5 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1889px;
+  background-position: 0px -1953px;
   width: 58px;
   height: 55px;
 }
@@ -3699,14 +3743,14 @@
   
   .main__list-technical .main__icon-5 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-6 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -1949px;
+  background-position: 0px -2013px;
   width: 73px;
   height: 58px;
 }
@@ -3715,14 +3759,14 @@
   
   .main__list-technical .main__icon-6 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-7 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -2012px;
+  background-position: 0px -2076px;
   width: 73px;
   height: 57px;
 }
@@ -3731,14 +3775,14 @@
   
   .main__list-technical .main__icon-7 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-8 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -2074px;
+  background-position: 0px -2138px;
   width: 57px;
   height: 59px;
 }
@@ -3747,14 +3791,14 @@
   
   .main__list-technical .main__icon-8 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
 
 .main__list-technical .main__icon-9 {
   background-image: url(../img/sprite_AKENORI.png);
-  background-position: 0px -2138px;
+  background-position: 0px -2202px;
   width: 128px;
   height: 56px;
 }
@@ -3763,7 +3807,7 @@
   
   .main__list-technical .main__icon-9 {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3804,8 +3848,16 @@
   -webkit-flex: 1 320px;
       -ms-flex: 1 320px;
           flex: 1 320px;
+  max-width: 50%;
   padding: 0 10px 20px;
   color: #b7b7b7;
+}
+
+@media screen and (max-width: 767px) {
+  
+  .small__item {
+    max-width: 100%;
+  }
 }
 
 
@@ -3821,7 +3873,7 @@
   
   .small__icon {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -3999,7 +4051,7 @@
   
   .owl-prev {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4017,7 +4069,7 @@
   
   .owl-prev {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4035,7 +4087,7 @@
   
   .owl-prev:hover, .owl-prev:active {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4051,7 +4103,7 @@
   
   .owl-next {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4069,7 +4121,7 @@
   
   .owl-next {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4087,7 +4139,7 @@
   
   .owl-next:hover, .owl-next:active {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4179,6 +4231,15 @@
         -ms-transform: translate(0);
             transform: translate(0);
   }
+}
+
+
+.left .main__title,
+.right .main__title {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 
@@ -4305,7 +4366,7 @@
   
   .btn_play {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4321,7 +4382,7 @@
   
   .btn_play:hover {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4337,7 +4398,7 @@
   
   .btn_play:active {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4353,7 +4414,7 @@
   
   .btn_pause {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4369,7 +4430,7 @@
   
   .btn_pause:hover {
     background-image: url(../img/sprite_AKENORI@2x.png);
-    background-size: 128px 2212px;
+    background-size: 128px 2276px;
   }
 }
 
@@ -4383,6 +4444,14 @@ html {
 html,
 body {
   width: 100%;
+}
+
+@media screen and (max-width: 1199px) {
+  
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 
@@ -4406,15 +4475,28 @@ body {
 
 body.open-menu {
   overflow: hidden;
-  position: fixed;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 
 body.fixed {
   padding-top: 140px;
+}
+
+@media screen and (max-width: 1366px) {
+  
+  body.fixed {
+    padding-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  
+  body.open-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
 }
 
 

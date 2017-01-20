@@ -79,7 +79,9 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__row {
 		float: left;
-		width: 55%;
+		position: relative;
+		z-index: 11;
+		width: 50%;
 		@include respond-to(medium-max) {
 			float: none;
 			width: $w-all;
@@ -137,9 +139,11 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__carousel {
 		position: absolute;
+		z-index: 100;
 		right: 0;
 		top: 130px;
-		@include mixinDimensions($w-all, 620px);
+		max-width: 840px;
+		height: 610px;
 		background-color: $c-white;
 		box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
 		@include respond-to(medium-max) {
@@ -159,7 +163,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 		&.owl-carousel {
 			.owl-item {
-				height: 620px;
+				height: 610px;
 				@include respond-to(medium) {
 					height: 580px;
 				}
@@ -208,6 +212,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 					left: 0;
 					right: 0;
 					margin-left: auto;
+					margin-right: auto;
 					bottom: -70px;
 					text-align: center;
 					width: calc(100% - 68px);

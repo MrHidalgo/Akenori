@@ -18,6 +18,7 @@ $c-white            : return-value(color, white);
 	padding-bottom: 20px;
 	min-height: 620px;
 	@include respond-to(medium-max) {
+		padding-top: 0;
 		overflow: hidden;
 	}
 

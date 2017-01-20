@@ -59,6 +59,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&__row {
 		float: left;
+		position: relative;
+		z-index: 11;
 		width: 55%;
 		@include respond-to(medium) {
 			width: 60%;

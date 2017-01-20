@@ -37,6 +37,9 @@ $f-PN_light         : return-value(fonts, PN_light);
 
 	.fixed & {
 		min-height: calc(100vh - 140px);
+		@include respond-to(hard-max) {
+			min-height: calc(100vh - 100px);
+		}
 	}
 
 

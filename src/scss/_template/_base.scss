@@ -365,8 +365,12 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__item {
 		display: flex;
 		flex: 1 320px;
+		max-width: 50%;
 		padding: 0 10px 20px;
 		color: $c-pinkSwan;
+		@include respond-to(small-max) {
+			max-width: 100%;
+		}
 	}
 
 
@@ -613,6 +617,11 @@ $f-PN_black         : return-value(fonts, PN_black);
 				}
 			}
 		}
+	}
+
+
+	.main__title {
+		justify-content: flex-start;
 	}
 }
 .right {

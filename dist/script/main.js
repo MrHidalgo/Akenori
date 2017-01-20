@@ -49,7 +49,7 @@ $(document).ready(function(){
     /* SALON */
     $('.salon__carousel').owlCarousel({
         items:1,
-        lazyLoad: true,
+        loop: true,
         dots: true,
         nav:true
     });
@@ -67,6 +67,7 @@ $(document).ready(function(){
     });
     $(".more__carousel").owlCarousel({
         items:1,
+        loop: true,
         dots: true,
         nav:true
     });
@@ -75,10 +76,11 @@ $(document).ready(function(){
     /* TESTIMONIALS */
     $(".testimonials__carousel").owlCarousel({
         items:1,
-        lazyLoad: true,
+        loop: true,
         dots: true,
         nav:true
     });
+    var count = 1;
     $(".testimonials__carousel .owl-dot").each(function(){
         $(this).find("span").text("0" + count);
         count++;

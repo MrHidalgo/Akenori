@@ -30,6 +30,11 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 	}
 
 
+	.main__title {
+		justify-content: flex-start;
+	}
+
+
 	.row {
 		&__left {
 			@include respond-to(small-max) {

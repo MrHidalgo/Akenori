@@ -201,6 +201,9 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 				text-align: center;
 				width: calc(100% - 140px);
 			}
+			@include respond-to(medium) {
+				top: 395px !important;
+			}
 			@include respond-to(small-max) {
 				top: 270px;
 				width: 100%;

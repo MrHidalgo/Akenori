@@ -13,6 +13,7 @@ $c-white            : return-value(color, white);
 $c-ruby             : return-value(color, ruby);
 $c-pinkSwan         : return-value(color, pinkSwan);
 $c-nero             : return-value(color, nero);
+$c-matterhorn       : return-value(color, matterhorn);
 
 $f-PN_bold          : return-value(fonts, PN_bold);
 $f-PN_black         : return-value(fonts, PN_black);
@@ -42,6 +43,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 		&-wrap {
 			width: 350px;
+			color: lighten($c-matterhorn, 10%);
 			@include respond-to(small-max) {
 				width: 50%;
 				text-align: center;
@@ -49,6 +51,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 
 			&.active {
+				color: $c-nero;
 				.more__num {
 					opacity: 1;
 				}

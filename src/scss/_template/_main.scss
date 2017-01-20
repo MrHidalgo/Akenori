@@ -22,6 +22,9 @@ html {
 html,
 body {
 	width: $w-all;
+	@include respond-to(large-max) {
+		overflow-x: hidden;
+	}
 }
 
 
@@ -47,18 +50,24 @@ body{
 
 	overflow-x: hidden;
 
-
 	&.open-menu {
 		overflow: hidden;
-		position: fixed;
-		height: 100%;
-		top: 0;
-		left: 0;
 	}
-
 
 	&.fixed {
 		padding-top: 140px;
+		@include respond-to(hard-max) {
+			padding-top: 100px;
+		}
+	}
+}
+
+@media only screen and(max-width: 1024px) {
+	body.open-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
 	}
 }
 

@@ -27,7 +27,7 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	background-color: $c-neroLight;
 	width: $w-all;
 	height: calc(100% - 140px);
-	@include respond-to(small-max) {
+	@include respond-to(hard-max) {
 		top: 100px;
 		padding-top: 40px;
 		height: calc(100% - 100px);

@@ -17,6 +17,9 @@ $c-white            : return-value(color, white);
 	min-height: 700px;
 	padding-top: 40px;
 	overflow: hidden;
+	@include respond-to(medium-max) {
+		padding-top: 0;
+	}
 
 
 	.main__title {
