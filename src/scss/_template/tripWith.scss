@@ -16,13 +16,24 @@ $c-white            : return-value(color, white);
 	position: relative;
 	min-height: 620px;
 	@include respond-to(medium-max) {
+		padding-top: 50px;
 		overflow: hidden;
+	}
+	@include respond-to(small-max) {
+		padding-top: 0;
 	}
 
 
 	.main__title {
 		@include respond-to(medium-max) {
 			display: none;
+		}
+	}
+
+
+	&__title {
+		@include respond-to(medium) {
+			top: 0;
 		}
 	}
 

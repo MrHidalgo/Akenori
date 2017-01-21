@@ -18,8 +18,11 @@ $c-white            : return-value(color, white);
 	padding-bottom: 20px;
 	min-height: 620px;
 	@include respond-to(medium-max) {
-		padding-top: 0;
+		padding-top: 50px;
 		overflow: hidden;
+	}
+	@include respond-to(small-max) {
+		padding-top: 0;
 	}
 
 
@@ -40,6 +43,13 @@ $c-white            : return-value(color, white);
 				display: flex;
 				justify-content: flex-start;
 			}
+		}
+	}
+
+
+	&__title {
+		@include respond-to(medium) {
+			top: 0;
 		}
 	}
 }

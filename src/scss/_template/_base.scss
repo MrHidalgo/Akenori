@@ -50,6 +50,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 	margin-left: auto;
 	margin-right: auto;
 	bottom: 3%;
+	@include respond-to(small-max) {
+		display: none !important;
+	}
 }
 
 .header {
@@ -65,6 +68,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 .quality {
 	.img-shadow {
 		bottom: -100px;
+		@include respond-to(small-max) {
+			bottom: 100px;
+		}
 	}
 }
 .salon,
@@ -167,6 +173,8 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 	text-transform: uppercase;
 	color: $c-matterhorn;
+	line-height: 1;
+	letter-spacing: 10px;
 	opacity: .1;
 	white-space: nowrap;
 	position: absolute;
@@ -190,16 +198,6 @@ $f-PN_black         : return-value(fonts, PN_black);
 	font: {
 		size: 20px;
 		family: $f-PN_black;
-	}
-	
-	
-	&_light {
-		background-color: $c-magnolia;
-	}
-
-
-	&_dark {
-		//background-color: $c-nero;
 	}
 
 
@@ -357,7 +355,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 		justify-content: space-between;
 		align-items: flex-start;
 		@include respond-to(medium-max) {
-			margin-top: 10px;
+			margin-top: 0;
 		}
 	}
 
@@ -395,7 +393,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 .testimonials__carousel {
 	.owl {
 		&-nav {
-			left: -84%;
+			left: -63%;
 		}
 
 
@@ -488,6 +486,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 			margin-left: auto;
 			margin-right: auto;
 			text-align: center;
+			@include respond-to(medium) {
+				margin-top: 110px;
+			}
 			@include respond-to(small-max) {
 				width: $w-all;
 				margin-top: 60px;
@@ -534,28 +535,28 @@ $f-PN_black         : return-value(fonts, PN_black);
 .owl {
 	&-prev {
 		@include retina-sprite($sp-i-prev-group);
-		@include respond-to(small-max) {
+		@include respond-to(medium-max) {
 			@include retina-sprite($sp-i-prev-mobile-group);
 		}
 
 
 		&:hover,
 		&:active {
-			@include respond-to(small-min) {
+			@include respond-to(extra-large) {
 				@include retina-sprite($sp-i-prev-h-group);
 			}
 		}
 	}
 	&-next {
 		@include retina-sprite($sp-i-next-group);
-		@include respond-to(small-max) {
+		@include respond-to(medium-max) {
 			@include retina-sprite($sp-i-next-mobile-group);
 		}
 
 
 		&:hover,
 		&:active {
-			@include respond-to(small-min) {
+			@include respond-to(extra-large) {
 				@include retina-sprite($sp-i-next-h-group);
 			}
 		}
@@ -628,6 +629,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__row {
 		float: left;
 		padding-right: 30px;
+		padding-left: 10%;
+		@include respond-to(hard-max) {
+			padding-left: 0;
+		}
 		@include respond-to(medium-max) {
 			padding-right: 0;
 		}
@@ -658,6 +663,10 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__row {
 		float: right;
 		padding-left: 30px;
+		padding-right: 10%;
+		@include respond-to(hard-max) {
+			padding-right: 0;
+		}
 		@include respond-to(medium-max) {
 			padding-left: 0;
 		}

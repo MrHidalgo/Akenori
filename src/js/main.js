@@ -14,7 +14,27 @@ function scrollWindowNavigationFixedLarge() {
     }
 }
 
+function checkboxInit() {
+    $(".checkbox__btn").click(function(e) {
+        e.preventDefault();
+
+        var inputCheckbox = $(this).find('input');
+        if ($(this).hasClass('disabled')){
+            return false;
+        }
+        $(this).toggleClass('active');
+        if(inputCheckbox.prop('checked') == true){
+            inputCheckbox.prop('checked', false).change();
+        } else {
+            inputCheckbox.prop('checked', true).change();
+        }
+        return false;
+    });
+}
+
+
 $(document).ready(function(){
+    checkboxInit();
 
     /* LOGO CLICK SCROLL TO TOP */
     $(".header__fixed-logo").on("click", function(e) {
@@ -27,7 +47,7 @@ $(document).ready(function(){
 
     /* BODY CLICK */
     $('body').on('click', function (e) {
-        var classForBody = ".btn-burger, .nav";
+        var classForBody = ".btn-burger, .nav, .header__fixed";
 
         if (!$(e.target).closest(classForBody).length) {
             $('.btn-burger').removeClass("active");
@@ -89,13 +109,31 @@ $(document).ready(function(){
     /* BTN PLAY/PAUSE */
     $(".btn-video").on("click", function(e) {
         e.preventDefault();
+        var vid = $(this).prev("#video");
 
         if($(this).hasClass("btn_play")) {
             $(this).removeClass('btn_play').addClass("btn_pause");
+            vid.trigger('play');
         } else {
             $(this).removeClass('btn_pause').addClass("btn_play");
+            vid.trigger('pause');
         }
-    })
+    });
+
+    /* MODAL */
+    var buyBtn = ".difference__btn, .device__btn, .quality__btn, .salon__btn, .sentence__btn, .delivery__btn";
+    $(buyBtn).on("click", function(e) {
+        e.preventDefault();
+
+        $("body").addClass("open-popup");
+        $(".modal").fadeIn(300);
+    });
+    $(document).on("keyup", function(e) {
+        if (e.keyCode == 27) {
+            $("body").removeClass("open-popup");
+            $(".modal").fadeOut(300);
+        }
+    });
 });
 
 $(window).on("load resize ready scroll", function(){

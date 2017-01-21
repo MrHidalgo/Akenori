@@ -63,6 +63,9 @@ html(lang="en")
         block footer
             include _template/footer
 
+        block modal
+            include _template/modal
+
 
         - for(var i = 0; i < linkSite.scriptLink.length; i++)
             script(src= linkSite.scriptLink[i])

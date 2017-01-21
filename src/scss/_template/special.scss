@@ -35,6 +35,29 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 
 
+	.main__title {
+		justify-content: flex-end;
+		@include respond-to(medium-max) {
+			display: none;
+		}
+	}
+
+
+	&__hide {
+		&.main__title {
+			display: none;
+			padding-left: 15px;
+			padding-right: 15px;
+			@include respond-to(medium-max) {
+				display: flex;
+				justify-content: flex-start;
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+
+
 	&__img {
 		position: absolute;
 		z-index: 10;
@@ -42,12 +65,15 @@ $f-PN_black         : return-value(fonts, PN_black);
 		bottom: 0;
 		right: 0;
 		margin: auto;
+		@include respond-to(medium) {
+			top: 150px;
+		}
 	}
 
 
 	&__title {
-		left: -800px;
-		top: 220px;
+		left: -700px;
+		top: 230px;
 		@include respond-to(hard-max) {
 			top: 50px;
 		}
@@ -74,10 +100,13 @@ $f-PN_black         : return-value(fonts, PN_black);
 
 	&__wrap {
 		float: right;
-		width: 54.5%;
-		@include respond-to(small-max) {
+		width: 330px;
+		@include respond-to(medium-max) {
 			float: left;
 			width: 100%;
+		}
+		@include respond-to(medium) {
+			margin-bottom: 150px;
 		}
 	}
 

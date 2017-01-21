@@ -65,6 +65,10 @@
       </div>
     </div>
     <div class="special">
+          <div class="main__title main__title_white special__hide">
+            <div class="main__title-icon-wrap"><i class="main__title-icon"></i></div><i class="main__title-line"></i>
+            <p class="main__title-text">Создан специально </br> <span class='main__title-text_color'>для внедорожников</span></p>
+          </div>
       <div class="row">
         <div class="row__left row__left-up"></div>
         <div class="row__right row__right-down"><img src="./img/img-special.png" title="image special car" alt="image special car" class="img_responsive special__img"></div>
@@ -138,14 +142,22 @@
                   <div class="quality__wrap-line"></div>
                   <p class="quality__wrap-text">Четкая картинка, без </br> бликов и засвечиваний днем</p>
                 </div>
-                <div class="quality__wrap-right"><img src="./img/img-quality-0.png" alt="" title="" class="quality__wrap-img"><a href="javascript:void(0);" title="" class="quality__wrap-btn btn-video btn_play"></a></div>
+                <div class="quality__wrap-right">
+                  <video id="video" width="100%" height="100%">
+                    <source src="./video/video.mp4">
+                  </video><a href="javascript:void(0);" title="" class="quality__wrap-btn btn-video btn_play"></a>
+                </div>
               </div>
               <div class="quality__wrap">
                 <div class="quality__wrap-left">
                   <div class="quality__wrap-line"></div>
                   <p class="quality__wrap-text">Качественная съемка и </br> полная видимость на дороге </br> ночью</p>
                 </div>
-                <div class="quality__wrap-right"><img src="./img/img-quality-1.png" alt="" title="" class="quality__wrap-img"><a href="javascript:void(0);" title="" class="quality__wrap-btn btn-video btn_play"></a></div>
+                <div class="quality__wrap-right">
+                  <video id="video" width="100%" height="100%">
+                    <source src="./video/video.mp4">
+                  </video><a href="javascript:void(0);" title="" class="quality__wrap-btn btn-video btn_play"></a>
+                </div>
               </div>
           <div class="quality__bottom">
             <div class="quality__wrap-price">
@@ -496,7 +508,11 @@
         <div class="owl-carousel testimonials__carousel clearfix">
           <div class="testimonials__item clearfix">
             <div class="testimonials__right">
-              <div class="testimonials__right-wrap"><img src="./img/img-quality-0.png" alt="" title="" class="testimonials__carousel-img img_centered"><a href="javascript:void(0);" title="" class="testimonials__wrap-btn btn-video btn_play"></a></div>
+              <div class="testimonials__right-wrap">
+                <video id="video" width="100%" height="100%">
+                  <source src="./video/video.mp4">
+                </video><a href="javascript:void(0);" title="" class="testimonials__wrap-btn btn-video btn_play"></a>
+              </div>
             </div>
             <div class="testimonials__left">
               <div class="testimonials__left-top clearfix"><span class="testimonials__name">Имя Отчество</span><span class="testimonials__city">Город</span></div>
@@ -505,7 +521,11 @@
           </div>
           <div class="testimonials__item clearfix">
             <div class="testimonials__right">
-              <div class="testimonials__right-wrap"><img src="./img/img-quality-0.png" alt="" title="" class="testimonials__carousel-img img_centered"><a href="javascript:void(0);" title="" class="testimonials__wrap-btn btn-video btn_play"></a></div>
+              <div class="testimonials__right-wrap">
+                <video id="video" width="100%" height="100%">
+                  <source src="./video/video.mp4">
+                </video><a href="javascript:void(0);" title="" class="testimonials__wrap-btn btn-video btn_play"></a>
+              </div>
             </div>
             <div class="testimonials__left">
               <div class="testimonials__left-top clearfix"><span class="testimonials__name">Имя Отчество</span><span class="testimonials__city">Город</span></div>
@@ -514,7 +534,11 @@
           </div>
           <div class="testimonials__item clearfix">
             <div class="testimonials__right">
-              <div class="testimonials__right-wrap"><img src="./img/img-quality-0.png" alt="" title="" class="testimonials__carousel-img img_centered"><a href="javascript:void(0);" title="" class="testimonials__wrap-btn btn-video btn_play"></a></div>
+              <div class="testimonials__right-wrap">
+                <video id="video" width="100%" height="100%">
+                  <source src="./video/video.mp4">
+                </video><a href="javascript:void(0);" title="" class="testimonials__wrap-btn btn-video btn_play"></a>
+              </div>
             </div>
             <div class="testimonials__left">
               <div class="testimonials__left-top clearfix"><span class="testimonials__name">Имя Отчество</span><span class="testimonials__city">Город</span></div>
@@ -564,6 +588,47 @@
         <div class="footer__btn"><a href="javascript:void(0);" title="" class="footer__btn-vk"></a><a href="javascript:void(0);" title="" class="footer__btn-fb"></a></div>
       </div>
     </footer>
+    <div class="modal">
+      <div class="modal__container"><img src="./img/img-modal.png" alt="" title="" class="img_responsive modal__img">
+        <div class="modal__header">
+          <div class="modal__title">Заголовок который говорит что заполните пожалуйста форму</div>
+        </div>
+        <form action="" class="modal__form">
+          <div class="modal__section">
+            <div class="modal__row">
+              <input type="text" name="" placeholder="Имя" class="modal__input"><span class="modal__error"></span>
+            </div>
+            <div class="modal__row">
+              <input type="text" name="" placeholder="Телефон" class="modal__input"><span class="modal__error"></span>
+            </div>
+            <p class="modal__title-sub">Какой вид кузова у вашего автомобиля?</p>
+            <div class="modal__wrap">
+              <div class="modal__checkbox checkbox__btn">
+                <input type="checkbox" name="checkbox" checked="checked" id="checkbox-0" class="modal__checkbox-input">
+                <label for="checkbox-0" class="modal__checkbox-label"><i class="checkbox__btn-icon"></i><span class="chekbox__text">Хетч-бек</span></label>
+              </div>
+              <div class="modal__checkbox checkbox__btn">
+                <input type="checkbox" name="checkbox" checked="checked" id="checkbox-1" class="modal__checkbox-input">
+                <label for="checkbox-1" class="modal__checkbox-label"><i class="checkbox__btn-icon"></i><span class="chekbox__text">Седан</span></label>
+              </div>
+              <div class="modal__checkbox checkbox__btn">
+                <input type="checkbox" name="checkbox" checked="checked" id="checkbox-2" class="modal__checkbox-input">
+                <label for="checkbox-2" class="modal__checkbox-label"><i class="checkbox__btn-icon"></i><span class="chekbox__text">Купе</span></label>
+              </div>
+              <div class="modal__checkbox checkbox__btn">
+                <input type="checkbox" name="checkbox" checked="checked" id="checkbox-3" class="modal__checkbox-input">
+                <label for="checkbox-3" class="modal__checkbox-label"><i class="checkbox__btn-icon"></i><span class="chekbox__text">Кроссовер</span></label>
+              </div>
+              <div class="modal__checkbox checkbox__btn">
+                <input type="checkbox" name="checkbox" checked="checked" id="checkbox-4" class="modal__checkbox-input">
+                <label for="checkbox-4" class="modal__checkbox-label"><i class="checkbox__btn-icon"></i><span class="chekbox__text">Минивен</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer"><a href="javascript:void(0);" title="" class="btn btn-modal">отправить</a></div>
+        </form>
+      </div>
+    </div>
     <script src="./script/jquery-1.11.1.min.js"></script>
     <script src="./script/owl.carousel.min.js"></script>
     <script src="./script/main.min.js"></script>

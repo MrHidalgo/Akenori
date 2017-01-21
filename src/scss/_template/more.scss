@@ -29,7 +29,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 	}
 	@include respond-to(small-max) {
 		padding-top: 40px;
-		min-height: 550px;
+		min-height: 600px;
 	}
 
 
@@ -39,6 +39,9 @@ $f-PN_black         : return-value(fonts, PN_black);
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		@include respond-to(medium-max) {
+			padding-top: 60px;
+		}
 
 
 		&-wrap {

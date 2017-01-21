@@ -1,0 +1,70 @@
+-
+    var checkboxText = [
+        "Хетч-бек",
+        "Седан",
+        "Купе",
+        "Кроссовер",
+        "Минивен"
+    ];
+
+
+.modal
+    .modal__container
+
+        img(
+            src="./img/img-modal.png"
+            alt=""
+            title=""
+            class="img_responsive modal__img"
+        )
+
+        .modal__header
+            .modal__title!= "Заголовок который говорит что заполните пожалуйста форму"
+
+        form(action="", class="modal__form")
+            .modal__section
+                .modal__row
+                    input(
+                        type="text",
+                        name="",
+                        class="modal__input",
+                        placeholder="Имя"
+                    )
+                    span.modal__error
+
+                .modal__row
+                    input(
+                        type="text",
+                        name="",
+                        class="modal__input",
+                        placeholder="Телефон"
+                    )
+                    span.modal__error
+
+                p.modal__title-sub!= "Какой вид кузова у вашего автомобиля?"
+
+                .modal__wrap
+                    -for(var i = 0; i < checkboxText.length; i++)
+                        .modal__checkbox.checkbox__btn
+                            input(
+                                type="checkbox"
+                                name="checkbox"
+                                class="modal__checkbox-input"
+                                checked="checked"
+                                id="checkbox-" + i
+                            )
+                            label(
+                                for="checkbox-" + i
+                                class="modal__checkbox-label"
+                            )
+                                i.checkbox__btn-icon
+                                span.chekbox__text!= checkboxText[i]
+
+    
+            .modal__footer
+                a(
+                    href="javascript:void(0);"
+                    title=""
+                    class="btn btn-modal"
+                )
+                    | отправить

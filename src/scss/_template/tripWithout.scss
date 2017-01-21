@@ -18,8 +18,11 @@ $c-white            : return-value(color, white);
 	padding-top: 40px;
 	padding-bottom: 20px;
 	@include respond-to(medium-max) {
-		padding-top: 0;
+		padding-top: 80px;
 		overflow: hidden;
+	}
+	@include respond-to(small-max) {
+		padding-top: 0;
 	}
 
 
@@ -31,6 +34,13 @@ $c-white            : return-value(color, white);
 	.main__title {
 		@include respond-to(medium-max) {
 			display: none;
+		}
+	}
+
+
+	&__title {
+		@include respond-to(medium) {
+			top: 0 !important;
 		}
 	}
 
@@ -56,5 +66,13 @@ $c-white            : return-value(color, white);
 
 	.left__img-wrap {
 		top: 80px;
+	}
+
+
+	&__row {
+		margin-top: 100px;
+		@include respond-to(medium-max) {
+			margin-top: 0;
+		}
 	}
 }

@@ -83,6 +83,10 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 		position: relative;
 		z-index: 10;
 		width: 60%;
+		padding-left: 10%;
+		@include respond-to(hard-max) {
+			padding-left: 0;
+		}
 		@include respond-to(large-max) {
 			float: none;
 			width: 100%;
@@ -159,7 +163,6 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 	&__wrap {
 		padding-top: 80px;
 		display: flex;
-		flex-flow: row wrap;
 		align-items: center;
 		justify-content: space-between;
 		@include respond-to(hard-max) {

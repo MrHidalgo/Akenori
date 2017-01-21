@@ -23,7 +23,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 	min-height: 820px;
 	padding-bottom: 40px;
 	overflow: hidden;
-	@include respond-to(medium-max) {
+	@include respond-to(hard-max) {
 		padding-top: 100px;
 	}
 	@include respond-to(small-max) {
@@ -31,14 +31,25 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 	}
 
 
+	.main__title {
+		justify-content: flex-end;
+		@include respond-to(hard-max) {
+			justify-content: center;
+		}
+		@include respond-to(small-max) {
+			justify-content: flex-start;
+		}
+	}
+
+
 	.row {
 		&__left {
-			@include respond-to(medium-max) {
+			@include respond-to(hard-max) {
 				display: none;
 			}
 		}
 		&__right {
-			@include respond-to(medium-max) {
+			@include respond-to(hard-max) {
 				position: static;
 				width: $w-all;
 				margin-left: auto;
@@ -50,7 +61,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	.main__title {
 		white-space: nowrap;
-		@include respond-to(medium-max) {
+		@include respond-to(hard-max) {
 			display: none;
 		}
 	}
@@ -62,7 +73,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 			display: none;
 			padding-left: 15px;
 			padding-right: 15px;
-			@include respond-to(medium-max) {
+			@include respond-to(hard-max) {
 				display: flex;
 				white-space: normal;
 				margin-bottom: 30px;
@@ -72,8 +83,8 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 
 	&__title {
-		left: -650px;
-		top: 0;
+		left: -700px;
+		top: 50px;
 	}
 
 
@@ -81,8 +92,8 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		float: left;
 		position: relative;
 		z-index: 11;
-		width: 50%;
-		@include respond-to(medium-max) {
+		width: 49%;
+		@include respond-to(hard-max) {
 			float: none;
 			width: $w-all;
 			margin-left: auto;
@@ -96,10 +107,13 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__wrap {
 		float: right;
-		width: 60%;
-		@include respond-to(medium-max) {
+		width: 400px;
+		@include respond-to(hard-max) {
 			float: none;
-			width: 100%;
+			width: auto;
+			max-width: 840px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -109,7 +123,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		padding-bottom: 280px;
 		font-size: 20px;
 		color: $c-white;
-		@include respond-to(medium-max) {
+		@include respond-to(hard-max) {
 			padding-bottom: 30px;
 			padding-top: 30px;
 			width: 50%;
@@ -125,7 +139,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 
 	&__btn {
 		display: block;
-		@include respond-to(medium-max) {
+		@include respond-to(hard-max) {
 			margin-top: 30px;
 			float: right;
 		}
@@ -146,7 +160,7 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 		height: 610px;
 		background-color: $c-white;
 		box-shadow: 0 10px 12px 0 rgba(0,0,0,0.18);
-		@include respond-to(medium-max) {
+		@include respond-to(hard-max) {
 			position: relative;
 			left: 0;
 			top: 0;
@@ -154,10 +168,12 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 			margin-left: auto;
 			margin-right: auto;
 			width: calc(100% - 30px);
+			overflow: hidden;
 			background-color: transparent;
 		}
 		@include respond-to(small-max) {
 			height: 300px;
+			overflow: visible;
 		}
 
 
@@ -172,8 +188,11 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 				}
 			}
 			.owl-nav {
-				@include respond-to(medium-max) {
-					display: none;
+				@include respond-to(hard-max) {
+					left: 0;
+					top: 50%;
+					margin-top: -42.5px;
+					width: $w-all;
 				}
 				@include respond-to(small-max) {
 					display: block;
@@ -186,23 +205,34 @@ $f-PN_bold					: return-value(fonts, PN_bold);
 				}
 			}
 			.owl-prev {
+				@include respond-to(hard-max) {
+					left: 20px;
+					@include retina-sprite($sp-i-prev-mobile-group);
+				}
 				@include respond-to(small-max) {
 					left: 0;
 				}
 			}
 			.owl-next {
+				@include respond-to(hard-max) {
+					right: 20px;
+					@include retina-sprite($sp-i-next-mobile-group);
+				}
 				@include respond-to(small-max) {
 					right: 0;
 				}
 			}
 			.owl-prev,
 			.owl-next {
+				@include respond-to(hard-max) {
+					position: absolute;
+				}
 				@include respond-to(small-max) {
 					position: absolute;
 				}
 			}
 			.owl-dots {
-				@include respond-to(medium-max) {
+				@include respond-to(hard-max) {
 					top: auto;
 					left: 20px;
 					bottom: 20px;

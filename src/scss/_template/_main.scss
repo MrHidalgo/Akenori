@@ -50,7 +50,8 @@ body{
 
 	overflow-x: hidden;
 
-	&.open-menu {
+	&.open-menu,
+	&.open-popup {
 		overflow: hidden;
 	}
 
@@ -168,8 +169,16 @@ input[type="text"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	border: none;
 	margin: 0;
 	padding: 0;
+	filter: alpha(opacity=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	outline: 0;
 }
 
 
