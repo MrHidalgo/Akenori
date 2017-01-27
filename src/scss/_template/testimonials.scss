@@ -12,8 +12,12 @@ $w-all              : return-value(dimension, all);
 $c-white            : return-value(color, white);
 $c-pinkSwan         : return-value(color, pinkSwan);
 $c-matterhorn       : return-value(color, matterhorn);
+$c-dimGray	        : return-value(color, dimGray);
+$c-silver	        : return-value(color, silver);
+$c-ruby	        	: return-value(color, ruby);
 
-$f-PN_extraBold			: return-value(fonts, PN_extraBold);
+$f-PN_extraBold		: return-value(fonts, PN_extraBold);
+$f-PN_bold			: return-value(fonts, PN_bold);
 ///
 /// MAIN BLOCK
 ///
@@ -22,7 +26,6 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 	min-height: 720px;
 	padding-top: 100px;
 	padding-bottom: 40px;
-	overflow: hidden;
 	@include respond-to(hard-max) {
 		padding-top: 60px;
 	}
@@ -38,8 +41,8 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 
 	&__img {
 		position: absolute;
-		bottom: -50px;
-		left: -100px;
+		z-index: 15;
+		bottom: -250px;
 		@include respond-to(hard-max) {
 			display: none;
 		}
@@ -56,168 +59,152 @@ $f-PN_extraBold			: return-value(fonts, PN_extraBold);
 	}
 
 
-	&__right {
-		width: 50%;
-		@include respond-to(hard-max) {
-			width: calc(100% - 140px);
-			margin-left: auto;
-			margin-right: auto;
-			padding-bottom: 60px !important;
-		}
-		@include respond-to(small-max) {
-			width: 100%;
-			padding-bottom: 120px !important;
-		}
-
-
-		&-wrap {
-			position: relative;
-			overflow: hidden;
-			@include mixinDimensions(470px, 280px);
-			@include respond-to(hard-max) {
-				@include mixinDimensions($w-all, 400px);
-			}
-			@include respond-to(small-max) {
-				height: 230px;
-			}
-		}
-	}
-
-
-	&__left,
-	&__right {
+	&__item {
+		width: 800px;
 		float: right;
-		padding: 30px;
 		@include respond-to(hard-max) {
+			width: 100%;
 			float: none;
-			padding: 0;
+		}
+
+
+		&-img {
+			display: inline-block !important;
+			vertical-align: top;
+			margin-left: 40px;
+			@include respond-to(small-max) {
+				display: block;
+				margin: {
+					left: 0;
+					top: 20px;
+				}
+			}
 		}
 	}
 
 
-	&__left {
-		width: 40%;
-		padding-top: 90px;
+	&__icon {
+		display: block;
+		margin-bottom: 20px;
+		@include retina-sprite($sp-i-quotation-group);
+	}
+
+
+	&__text {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: -.32em;
+		width: 430px;
+
+		font: {
+			size: 25px;
+			family: $f-PN_bold;
+		}
+		color: $c-dimGray;
 		@include respond-to(hard-max) {
-			padding-top: 0;
-			width: calc(100% - 140px);
-			margin-left: auto;
-			margin-right: auto;
+			width: 50%;
 		}
 		@include respond-to(small-max) {
-			width: 100%;
-		}
-
-
-		&-top {
-			padding-bottom: 20px;
-		}
-
-
-		&-bottom {
-			color: $c-matterhorn;
+			display: block;
+			width: $w-all;
+			font-size: 20px;
 		}
 	}
 
 
-	&__wrap-btn {
-		position: absolute;
-		bottom: 20px;
-		left: 20px;
-		@include respond-to(hard-max) {
-			bottom: 0;
-			left: 0;
-			right: 0;
-			top: 0;
-			margin: auto;
-		}
-	}
-
-
-	&__name {
-		float: left;
-		font-family: $f-PN_extraBold;
-	}
-
-
-	&__city {
-		float: right;
-		padding-right: 20px;
-	}
-
-
-	&__name,
-	&__city {
-		font-size: 25px;
-	}
-}
-
-
-.owl-carousel.testimonials__carousel {
 	.owl {
-		&-nav {
-			top: 30px;
-			left: 140px;
-			@include respond-to(hard-max) {
-				position: static;
-			}
-		}
-		&-prev {
-			@include respond-to(hard-max) {
-				left: 30px;
-			}
-			@include respond-to(small-max) {
-				left: 0;
-			}
-		}
-		&-next {
-			@include respond-to(hard-max) {
-				right: 30px;
-			}
-			@include respond-to(small-max) {
-				right: 0;
-			}
-		}
-		&-prev,
-		&-next {
-			@include respond-to(hard-max) {
-				position: absolute;
-				z-index: 11;
-				top: 200px;
-			}
-			@include respond-to(small-max) {
-				top: 245px;
-			}
-		}
+		&-nav,
 		&-dots {
-			top: 25px;
-			left: 343px;
+			display: inline-block;
+		}
+
+
+		&-nav {
+			margin-left: (1170 - 800) * 1px;
 			@include respond-to(hard-max) {
-				top: 445px;
-				left: 0;
-				right: 0;
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-				width: calc(100% - 140px);
-			}
-			@include respond-to(medium) {
-				top: 395px !important;
+				margin-left: 0;
 			}
 			@include respond-to(small-max) {
-				top: 270px;
-				width: 100%;
+				width: $w-all;
+				position: relative;
+			}
+		}
+
+
+		&-next {
+			margin-left: 80px;
+			@include respond-to(small-max) {
+				margin-left: 0;
+				right: 0;
+			}
+		}
+
+		&-prev {
+			@include respond-to(small-max) {
+				left: 0;
+			}
+		}
+
+
+		&-next,
+		&-prev {
+			@include respond-to(small-max) {
+				position: absolute;
+			}
+		}
+
+		&-dots {
+			position: relative;
+			margin-left: 200px;
+			@include respond-to(small-max) {
+				display: block;
+				text-align: center;
+				margin-top: 17px;
+				width: calc(100% - 100px);
+				margin: {
+					left: auto;
+					right: auto;
+				};
 			}
 
 
 			&:after {
-				@include respond-to(hard-max) {
+				content: "";
+				position: absolute;
+				top: 17px;
+				@include mixinDimensions(100px, 2px);
+				background-color: $c-silver;
+				@include respond-to(small-max) {
 					display: none;
 				}
 			}
 		}
+
 		&-dot {
-			color: $c-pinkSwan;
+			display: inline-block;
+			vertical-align: middle;
+			padding-top: 6px;
+			margin-left: 10px;
+			margin-right: 10px;
+			color: $c-silver;
+			font: {
+				size: 18px;
+				family: $f-PN_bold;
+			}
+
+
+			&.active {
+				color: $c-ruby;
+			}
+		}
+	}
+
+
+	&__btn {
+		display: block;
+		margin: {
+			top: 60px;
+			bottom: 40px;
 		}
 	}
 }

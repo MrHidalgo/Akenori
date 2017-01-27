@@ -1,7 +1,7 @@
 -
-    var testimonialsTitle = "<span class='main__title-text_color'>Отзывы</span> покупателей";
+    var testimonialsTitle = "<span class='main__title-text_color'>обзоры </span> сми";
 
-    var testimonialsText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+    var testimonialsText = "Ожидания полностью оправдал, с функцией регистратора справляется отлично";
 
 .testimonials
     
@@ -18,22 +18,25 @@
 
         .owl-carousel.testimonials__carousel.clearfix
             -for(var i = 0; i < 3; i++)
-                .testimonials__item.clearfix
+                .testimonials__item
 
-                    .testimonials__right
-                        .testimonials__right-wrap
-                            video(id='video', width='100%', height='100%', autoplay=false, muted=false, loop=false, controls=false)
-                                source(src='./video/video.mp4')
+                    i.testimonials__icon
 
-                            a(
-                                href="javascript:void(0);"
-                                title=""
-                                class="testimonials__wrap-btn btn-video btn_play"
-                            )
+                    .testimonials__item-wrap.clearfix
 
-                    .testimonials__left
-                        .testimonials__left-top.clearfix
-                            span.testimonials__name!= "Имя Отчество"
-                            span.testimonials__city!= "Город"
+                        p.testimonials__text!= testimonialsText
 
-                        p.testimonials__left-bottom!= testimonialsText
+                        img(
+                            src="./img/img-logo-comp.png"
+                            alt=""
+                            title=""
+                            class="img_responsive testimonials__item-img"
+                        )
+
+                    a(
+                        href="javascript:void(0);"
+                        title="buy"
+                        class="testimonials__btn btn-read btn"
+                    )
+                        | читать...
+                        i.btn-icon

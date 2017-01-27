@@ -389,8 +389,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 }
 
 //- owl dots & nav
-.salon__carousel,
-.testimonials__carousel {
+.salon__carousel {
 	.owl {
 		&-nav {
 			left: -63%;
