@@ -11,5 +11,10 @@
     "./script/owl.carousel.min.js",
     "./script/jquery.viewportchecker.min.js",
     "./script/main.min.js"
+  ],
+
+  "styleLinkThx" : [
+    "./css/fonts.min.css",
+    "./css/thx.min.css"
   ]
 }

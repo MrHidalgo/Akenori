@@ -1,0 +1,215 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+///
+/// DECLARATION VARIABLE
+///
+$w-all              : return-value(dimension, all);
+
+$c-white            : return-value(color, white);
+$c-nero             : return-value(color, nero);
+$c-ruby             : return-value(color, ruby);
+
+$f-PN_bold          : return-value(fonts, PN_bold);
+$f-PN_black         : return-value(fonts, PN_black);
+///
+/// MAIN BLOCK
+///
+.header {
+  position: relative;
+  min-height: 100vh;
+  background: $c-nero;
+
+  padding-top: 140px;
+  padding-bottom: 40px;
+  @include respond-to(medium-max) {
+    min-height: calc(100vh - 115px);
+  }
+  @include respond-to(medium) {
+    padding-top: 100px;
+  }
+  @include respond-to(small-max) {
+    padding-top: 50px;
+  }
+
+
+  .container {
+    z-index: 15;
+  }
+
+
+  .row {
+    @include respond-to(medium-max) {
+      display: none;
+    }
+  }
+
+
+  &__logo {
+    &-0 {
+      margin-bottom: 20px;
+    }
+    &-1 {
+      margin-bottom: 110px;
+      @include respond-to(medium) {
+        margin-bottom: 65px;
+      }
+      @include respond-to(small-max) {
+        margin-bottom: 35px;
+      }
+    }
+
+    &-0,
+    &-1 {
+      display: block;
+
+      margin: {
+        left: auto;
+        right: auto;
+      };
+    }
+  }
+
+
+  &__title {
+    font: {
+      size: 52px;
+      family: $f-PN_bold;
+    }
+    text-transform: uppercase;
+    color: $c-white;
+    line-height: 1.2;
+
+    margin-bottom: 60px;
+    @include respond-to(large) {
+      font-size: 45px;
+    }
+    @include respond-to(medium) {
+      font-size: 35px;
+      margin-bottom: 35px;
+    }
+    @include respond-to(small-max) {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+
+    &-sub {
+      font: {
+        size: 30px;
+      }
+      color: $c-white;
+      line-height: 1.2;
+
+      margin-bottom: 60px;
+      @include respond-to(large) {
+        font-size: 28px;
+      }
+      @include respond-to(medium) {
+        font-size: 24px;
+        margin-bottom: 35px;
+      }
+      @include respond-to(small-max) {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+
+  &__shadow {
+    position: absolute;
+    opacity: .9;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20%;
+    @include respond-to(medium-max) {
+      display: none !important;
+    }
+  }
+
+
+  &__btn {
+    display: block;
+    position: relative;
+    @include mixinDimensions(230px, 56px);
+    line-height: 54px;
+    padding-left: 20px;
+    border: 3px solid $c-ruby;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    color: $c-ruby;
+    font: {
+      size: 20px;
+      family: $f-PN_black;
+    }
+
+
+    &:hover,
+    &:active {
+      background-color: $c-ruby;
+      color: $c-white;
+      transition: all .3s ease-in-out;
+
+
+      .header__btn-icon {
+        background: url("../img/i-btn-h.png");
+      }
+    }
+
+
+    &-icon {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      @include mixinDimensions(19px, 22px);
+      transition: all .3s ease-in-out;
+      background: url("../img/i-btn.png");
+    }
+  }
+
+
+  &__box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include respond-to(medium-max) {
+      display: none !important;
+    }
+  }
+}
+
+
+.row {
+  &__left {
+    left: 0;
+  }
+  &__right {
+    right: 0;
+
+
+    &.row__right-half {
+      @include respond-to(large) {
+        width: 70%;
+      }
+    }
+  }
+
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 0;
+    height: $w-all;
+
+
+    &-half {
+      width: 50%;
+    }
+  }
+}
