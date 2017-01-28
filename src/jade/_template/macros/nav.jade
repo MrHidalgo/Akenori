@@ -1,13 +1,19 @@
 -
     var navLink = [
-        "Пункт меню 1",
-        "Пункт меню 2",
-        "Пункт меню 3",
-        "Пункт меню 4",
-        "Пункт меню 5",
-        "Пункт меню 6",
-        "Пункт меню 7",
-        "Пункт меню 8"
+        "Главная",
+        "Об устройстве",
+        "Технические особенности",
+        "Доставка и оплата",
+        "Контакты",
+        "Технические поддержка"
+    ];
+    var navLinkHref = [
+        "#top",
+        "#difference",
+        "#technical",
+        "#delivery",
+        "#",
+        "#"
     ];
 
 
@@ -17,7 +23,7 @@ nav.nav
             -for(var i = 0; i < navLink.length; i++)
                 li.nav__item
                     a(
-                        href="javascript:void(0);"
+                        href= navLinkHref[i]
                         title=""
                         class="nav__btn"
                     )!= navLink[i]

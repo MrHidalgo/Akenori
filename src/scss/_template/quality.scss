@@ -217,6 +217,7 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 
 
 		&-btn {
+			display: none;
 			position: absolute;
 			left: 20px;
 			bottom: 20px;
@@ -228,5 +229,9 @@ $f-PN_extraBold     : return-value(fonts, PN_extraBold);
 				margin: auto;
 			}
 		}
+	}
+
+	iframe {
+		@include mixinDimensions($w-all);
 	}
 }

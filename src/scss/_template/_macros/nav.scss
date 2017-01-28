@@ -56,7 +56,9 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 	&__item {
 		width: 50%;
 		overflow: hidden;
-		flex: 1 320px;
+		@include respond-to(small-max) {
+			width: 100%;
+		}
 	}
 
 
@@ -88,17 +90,17 @@ $f-PN_bold          : return-value(fonts, PN_bold);
 
 
 		&:hover {
-			@include respond-to(small-min) {
-				padding-left: 110px;
-				transition: all .3s ease-in-out;
-			}
-
-
-			&:before {
-				@include respond-to(small-min) {
-					left: 0;
-				}
-			}
+			//@include respond-to(small-min) {
+			//	padding-left: 110px;
+			//	transition: all .3s ease-in-out;
+			//}
+            //
+            //
+			//&:before {
+			//	@include respond-to(small-min) {
+			//		left: 0;
+			//	}
+			//}
 		}
 	}
 }

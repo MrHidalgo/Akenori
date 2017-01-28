@@ -51,7 +51,7 @@ $c-white            : return-value(color, white);
 
 	&__img {
 		position: absolute;
-		bottom: -100px;
+		bottom: 0;
 		left: -100px;
 		@include respond-to(small-max) {
 			left: -20px;

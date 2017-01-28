@@ -6,20 +6,17 @@
         "Качественная съемка и </br> полная видимость на дороге </br> ночью"
     ];
 
-    var qualityWrapImg = [
-        "./img/img-quality-0.png",
-        "./img/img-quality-1.png"
-    ];
 
-
-mixin qualityWrap(arrText, arrImg)
+mixin qualityWrap(arrText)
     .quality__wrap
         .quality__wrap-left
             .quality__wrap-line
             p.quality__wrap-text!= arrText[i]
         .quality__wrap-right
-            video(id='video', width='100%', height='100%', autoplay=false, muted=false, loop=false, controls=false)
-                source(src='./video/video.mp4')
+            if(i === 0)
+                iframe(src="https://www.youtube.com/embed/m5XozId5sPA" frameborder="0" allowfullscreen)
+            else
+                iframe(src="https://www.youtube.com/embed/3pHDqucH-Ys" frameborder="0" allowfullscreen)
 
             a(
                 href="javascript:void(0);"
@@ -54,7 +51,7 @@ mixin qualityWrap(arrText, arrImg)
             +mainTitle("white", qualityTitle)
 
             - for(var i = 0; i < qualityWrapText.length; i++)
-                +qualityWrap(qualityWrapText, qualityWrapImg)
+                +qualityWrap(qualityWrapText)
 
             .quality__bottom
 

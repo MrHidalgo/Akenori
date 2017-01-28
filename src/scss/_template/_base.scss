@@ -233,7 +233,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 	&__item {
 		display: flex;
 		align-items: flex-start;
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 		@include respond-to(small-max) {
 		  flex-direction: row-reverse;
 			justify-content: center;
