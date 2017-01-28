@@ -84,8 +84,25 @@ $(document).ready(function(){
 
     /* MORE */
     $(".more__btn-wrap").on("click", function() {
+        var linkAttr = $(this).attr("data-more");
+
         $(".more__btn-wrap").removeClass("active");
         $(this).addClass("active");
+
+        $(".more__carousel").css(
+            {
+                opacity: 0,
+                height: 0,
+                visibility: "hidden"
+            }
+        );
+        $(".more__carousel-" + linkAttr).css(
+            {
+                opacity: 1,
+                height: "auto",
+                visibility: "visible"
+            }
+        );
     });
     $(".more__carousel").owlCarousel({
         items:1,
@@ -172,6 +189,27 @@ $(document).ready(function(){
             }, 1000);
         }
     });
+
+
+    /* ANIMATION - VIEW PORT CHECK PAGE */
+    if($(window).width() > '767') {
+        var classNameSection    =   ".difference, .device, .phone, .technical, .more, .testimonials, " +
+                                    ".special__title, .special__row, .special__img, " +
+                                    ".quality__img, .quality__title, .quality__row, " +
+                                    ".salon__title, .salon__carousel, .salon__row, " +
+                                    ".nature__title, .nature__img, .nature__row, " +
+                                    ".city__title, .city__img, .city__row, " +
+                                    ".sentence__title, .sentence__row, .sentence__center, .sentence__bottom, " +
+                                    ".tripWithout__title, .tripWithoutW__img, .tripWithout__row, " +
+                                    ".tripWith__title, .tripWith__img, .tripWith__row, " +
+                                    ".delivery__title, .delivery__img, .delivery__row";
+
+        $(classNameSection).addClass('hidden').viewportChecker({
+                classToAdd: 'visible animated slideInUp',
+                classToRemove : 'hidden'
+            }
+        );
+    }
 });
 
 

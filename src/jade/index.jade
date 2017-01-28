@@ -9,62 +9,24 @@ html(lang="en")
 
     body
 
-        //- BLOCK HEADER [nav, bottomInfo, logo, slogan]
-        block header
-            include _template/header
-
-        block difference
-            include _template/difference
-
-        block special
-            include _template/special
-
-        block device
-            include _template/device
-
-        block quality
-            include _template/quality
-
-        block phone
-            include _template/phone
-
-        block salon
-            include _template/salon
-
-        block nature
-            include _template/nature
-
-        block city
-            include _template/city
-
-        block technical
-            include _template/technical
-
-        block sentence
-            include _template/sentence
-
-        block more
-            include _template/more
-
-        block tripWithout
-            include _template/tripWithout
-
-        block tripWith
-            include _template/tripWith
-
-        block testimonials
-            include _template/testimonials
-
-        block delivery
-            include _template/delivery
-
-        //- BLOCK FOOTER
-        block footer
-            include _template/footer
-
-        block modal
-            include _template/modal
-
+        include _template/header
+        include _template/difference
+        include _template/special
+        include _template/device
+        include _template/quality
+        include _template/phone
+        include _template/salon
+        include _template/nature
+        include _template/city
+        include _template/technical
+        include _template/sentence
+        include _template/more
+        include _template/tripWithout
+        include _template/tripWith
+        include _template/testimonials
+        include _template/delivery
+        include _template/footer
+        include _template/modal
 
         - for(var i = 0; i < linkSite.scriptLink.length; i++)
             script(src= linkSite.scriptLink[i])

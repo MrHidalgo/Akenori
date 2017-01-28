@@ -449,12 +449,16 @@ $f-PN_black         : return-value(fonts, PN_black);
 }
 .more__carousel {
 	.owl {
+		&-stage-outer {
+			margin-bottom: 30px;
+		}
+
+
 		&-nav {
 			position: relative;
 			width: 370px;
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: 80px;
 			text-align: center;
 			@include respond-to(small-max) {
 				margin-top: 30px;
@@ -486,7 +490,7 @@ $f-PN_black         : return-value(fonts, PN_black);
 			margin-right: auto;
 			text-align: center;
 			@include respond-to(medium) {
-				margin-top: 110px;
+				margin-top: 60px;
 			}
 			@include respond-to(small-max) {
 				width: $w-all;

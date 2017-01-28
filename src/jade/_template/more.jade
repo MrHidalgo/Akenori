@@ -10,22 +10,186 @@
         .more__btn
             -for(var i = 0, j = 1; i < 2; i++, j++)
                 if(i == 0)
-                    p.more__btn-wrap.active
+                    p(class="more__btn-wrap active", data-more="device")
                         span.more__num!= "0" + j
                         span.more__line
                         span.more__text!= "Устройство"
                 else
-                    p.more__btn-wrap
+                    p(class="more__btn-wrap", data-more="kit")
                         span.more__num!= "0" + j
                         span.more__line
                         span.more__text!= "Комплектация"
 
-        .owl-carousel.more__carousel
-            -for(var k = 0; k < 4; k++)
-                .more__item
-                    img(
-                        src="./img/img-more.png"
-                        alt=""
-                        title=""
-                        class="more__img"
-                    )
+
+        div(class="owl-carousel more__carousel more__carousel-device")
+            .more__item.more__item-0
+                img(
+                    src="./img/device/img-device-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/device/img-device-0-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+                img(
+                    src="./img/device/img-device-0-line-1.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-1"
+                )
+                img(
+                    src="./img/device/img-device-0-line-2.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-2"
+                )
+                img(
+                    src="./img/device/img-device-0-line-3.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-3"
+                )
+
+                p.more__item-text.more__item-text-0!= "ON/OFF"
+                p.more__item-text.more__item-text-1!= "Indicator led"
+                p.more__item-text.more__item-text-2!= "WI-FI ON/OFF"
+                p.more__item-text.more__item-text-3!= "Emergency video save"
+
+            .more__item.more__item-1
+                img(
+                    src="./img/device/img-device-1.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/device/img-device-1-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+                img(
+                    src="./img/device/img-device-1-line-1.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-1"
+                )
+                img(
+                    src="./img/device/img-device-1-line-2.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-2"
+                )
+
+                p.more__item-text.more__item-text-0!= "HDMI slot"
+                p.more__item-text.more__item-text-1!= "SD card slot"
+                p.more__item-text.more__item-text-2!= "Reset button"
+
+            .more__item.more__item-2
+                img(
+                    src="./img/device/img-device-2.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/device/img-device-2-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+
+                p.more__item-text.more__item-text-0!= "Динамик"
+
+            .more__item.more__item-3
+                img(
+                    src="./img/device/img-device-3.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/device/img-device-3-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+
+                p.more__item-text.more__item-text-0!= "Power mini USB"
+
+        div(class="owl-carousel more__carousel more__carousel-kit" style="opacity:0; height: 0; visibility:hidden;")
+            .more__item.more__item-0
+                img(
+                    src="./img/kit/img-complect-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+
+            .more__item.more__item-1
+                img(
+                    src="./img/kit/img-complect-1.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/kit/img-complect-1-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+
+                p.more__item-text.more__item-text-0!= "Блок зарядки"
+
+            .more__item.more__item-2
+                img(
+                    src="./img/kit/img-complect-2.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/kit/img-complect-2-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+
+                p.more__item-text.more__item-text-0!= "USB шнур"
+
+            .more__item.more__item-3
+                img(
+                    src="./img/kit/img-complect-3.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/kit/img-complect-3-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+
+                p.more__item-text.more__item-text-0!= "Крепление</br>к лобовому стеклу"
+
+            .more__item.more__item-4
+                img(
+                    src="./img/kit/img-complect-4.png"
+                    alt=""
+                    title=""
+                    class="img_responsive"
+                )
+                img(
+                    src="./img/kit/img-complect-4-line-0.png"
+                    alt=""
+                    title=""
+                    class="img_responsive more__item-line more__item-line-0"
+                )
+
+                p.more__item-text.more__item-text-0!= "Power mini USB"
