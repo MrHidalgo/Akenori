@@ -206,7 +206,8 @@ $(document).ready(function(){
 
         $(classNameSection).addClass('hidden').viewportChecker({
                 classToAdd: 'visible animated slideInUp',
-                classToRemove : 'hidden'
+                classToRemove : 'hidden',
+                removeClassAfterAnimation: true
             }
         );
     }
